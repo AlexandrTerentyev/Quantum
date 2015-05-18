@@ -2,6 +2,7 @@ package kpfu.terentyev.quantum_emulator;
 
 import javafx.beans.property.IntegerProperty;
 
+import javax.print.DocFlavor;
 import java.util.Vector;
 
 /**
@@ -12,6 +13,7 @@ public abstract class QuantumGate {
 //    Complex [][] matrix;
     protected int qubitsNumber;
     protected double size;
+
 
 //    public QuantumGate (int qubitsNumber, Complex [][] matrix){
 //        this.qubitsNumber = qubitsNumber;
