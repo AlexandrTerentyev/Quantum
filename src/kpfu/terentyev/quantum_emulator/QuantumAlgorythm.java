@@ -67,6 +67,7 @@ public class QuantumAlgorythm {
             if (count>0){
                 gravityCenter = mainGateIndexesSum/count;
             }
+            int upperQubit, lowerQubit;
         }
     }
 
