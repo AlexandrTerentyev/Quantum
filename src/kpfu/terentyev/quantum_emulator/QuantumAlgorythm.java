@@ -38,6 +38,7 @@ public class QuantumAlgorythm {
                 mainGateQubits.add(qubitNum);
             }
         }
+        Complex [][] gateMatrix = gates.get(mainGateID).getMatrix();
         Complex result[][] = {{Complex.unit()}};
         if (checkAdjustment(mainGateQubits)){
             //if qubits is near to each other just multiply identity gates and mainGate matrices (tensors)
@@ -49,9 +50,8 @@ public class QuantumAlgorythm {
                         currentQubit++;
                         ind = currentQubit;
                     }
-                    Complex [][] gateMatrx = gates.get(mainGateID).getMatrix();
                     ComplexMath.tensorMultiplication(result,result.length,result.length,
-                            gateMatrx, gateMatrx.length, gateMatrx.length);
+                            gateMatrix, gateMatrix.length, gateMatrix.length);
                 }else if (qubitParams.gateID.equals(QuantumSchemeStepQubitAttributes.IdentityGateID)){
                     Complex [][] gateMatrx = QuantumGate.identityGateMatrix();
                     ComplexMath.tensorMultiplication(result,result.length,result.length,
@@ -68,6 +68,66 @@ public class QuantumAlgorythm {
                 gravityCenter = mainGateIndexesSum/count;
             }
             int upperQubit, lowerQubit;
+            int levelNumber = mainGateQubits.size()/2;
+            ArrayList <Complex[][]> swapMatrices = new ArrayList<Complex[][]>();
+            Complex[][] centralMatrix = {{Complex.unit()}}; //matrix perfomed main gate when all qubits are near
+            Complex[][] swapGateMatrix = QuantumGate.swapGateMatrix();
+            Complex [][] identityMatrx = QuantumGate.identityGateMatrix();
+
+            for (int level=0; level< levelNumber; level++){
+
+                //find upper and lower qubits. Upper index is less than lower index
+                upperQubit=-1; lowerQubit=-1; //empty
+                int distance=level;
+                for (; distance<=qubitsNumber/2; distance++){
+                    QuantumSchemeStepQubitAttributes upperQubitParams = algorythmMatrix[gravityCenter-distance][step];
+                    QuantumSchemeStepQubitAttributes lowerQubitParams = algorythmMatrix[gravityCenter+distance][step];
+                    if (upperQubit==-1 && upperQubitParams.gateID.equals(mainGateID)){
+                        upperQubit=gravityCenter-distance;
+                    }
+                    if (lowerQubit == -1 && lowerQubitParams.gateID.equals(mainGateID)){
+                        lowerQubit = gravityCenter + distance;
+                    }
+
+                    if (lowerQubit>-1 && upperQubit>-1){
+                        break;
+                    }
+                }
+
+                //move qubits to gravity center + level
+                for (; distance>level; distance--){
+                    //form swap matrix
+                    Complex currentDistanceSwap[][] = {{Complex.unit()}};
+                    for (int i=0; i<qubitsNumber; ){
+                        if ((i==upperQubit && upperQubit==gravityCenter-distance) ||
+                                (i==lowerQubit-1 && lowerQubit==gravityCenter+distance)){
+                            //need to swap upper gate
+                            ComplexMath.tensorMultiplication(currentDistanceSwap, currentDistanceSwap.length,
+                                    currentDistanceSwap.length, swapGateMatrix,
+                                    swapGateMatrix.length, swapGateMatrix.length);
+                            i+=2;
+                        }else {
+                            ComplexMath.tensorMultiplication(currentDistanceSwap, currentDistanceSwap.length,
+                                    currentDistanceSwap.length, identityMatrx,
+                                    identityMatrx.length, identityMatrx.length);
+                            i++;
+                        }
+                    }
+                    swapMatrices.add(currentDistanceSwap);
+                }
+
+            }
+
+            //form central matrix after swaps
+            for (int i=0; i<qubitsNumber; i++){
+                if (i==gravityCenter-levelNumber/2){
+                    ComplexMath.tensorMultiplication(centralMatrix, centralMatrix.length, centralMatrix.length,
+                            gateMatrix, gateMatrix.length, gateMatrix.length);
+                }else {
+                    ComplexMath.tensorMultiplication(centralMatrix, centralMatrix.length, centralMatrix.length,
+                            identityMatrx, identityMatrx.length, identityMatrx.length);
+                }
+            }
         }
     }
 
