@@ -34,5 +34,19 @@ public class ComplexMath {
             result[i]=sum;
         }
         return result;
+    }
+
+    public  static Complex[][] squareMatricesMultiplication (Complex[][] matrixA, Complex [][] matrixB, int size){
+        Complex [][]result = new Complex[size][size];
+        for (int i=0; i<size; i++){
+            for (int j=0; j<size; j++){
+                Complex sum = Complex.zero();
+                for (int z=0; z<size; z++){
+                    sum = Complex.add(sum, Complex.mult(matrixA[i][z],matrixB[z][j]));
+                }
+                result [i][j]=sum;
+            }
         }
+        return result;
+    }
 }

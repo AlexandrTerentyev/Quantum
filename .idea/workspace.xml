@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/ComplexMath.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/ComplexMath.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumAlgorythm.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumAlgorythm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -103,12 +107,22 @@
       <file leaf-file-name="QuantumAlgorythm.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumAlgorythm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31170887">
-              <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.33227345">
+              <caret line="77" column="78" selection-start-line="77" selection-start-column="78" selection-end-line="77" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3203#3216#0" expanded="true" />
+                <element signature="e#3210#3223#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComplexMath.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/ComplexMath.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -175,21 +189,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UGate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Gates/UGate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="docComment;class#UGate#0" expanded="false" />
-                <element signature="e#509#510#0" expanded="false" />
-                <element signature="e#538#539#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -216,7 +215,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumStep.java" />
-        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/ComplexMath.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumRegister.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Complex.java" />
@@ -236,6 +234,7 @@
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumGate.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumSchemeStepQubitAttributes.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Gates/PauliXGate.java" />
+        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/ComplexMath.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumAlgorythm.java" />
       </list>
     </option>
@@ -247,7 +246,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="729" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -277,6 +276,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -357,7 +357,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -593,7 +592,7 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="729" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="726" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -681,12 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#UGate#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
-            <element signature="e#538#539#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,7 +743,7 @@
           <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3203#3216#0" expanded="true" />
+            <element signature="e#3210#3223#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -801,7 +794,7 @@
           <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3203#3216#0" expanded="true" />
+            <element signature="e#3210#3223#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -941,16 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/ComplexMath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
-          <folding>
-            <element signature="docComment;class#ComplexMath#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Gates/ControlledNotGate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -983,12 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#UGate#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
-            <element signature="e#538#539#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,13 +1055,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/ComplexMath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumAlgorythm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31170887">
-          <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.33227345">
+          <caret line="77" column="78" selection-start-line="77" selection-start-column="78" selection-end-line="77" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3203#3216#0" expanded="true" />
+            <element signature="e#3210#3223#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -25,7 +25,7 @@ public class QuantumAlgorythm {
     String [] mainGateIDs;
     Map <String, QuantumGate> gates;
 
-    void generateStepMatrix(int step) throws Exception {
+    Complex[][] generateStepMatrix(int step) throws Exception {
         int mainGateIndexesSum = 0;
         int count=0;
         String mainGateID = mainGateIDs[step];
@@ -75,7 +75,7 @@ public class QuantumAlgorythm {
             Complex [][] identityMatrx = QuantumGate.identityGateMatrix();
 
             for (int level=0; level< levelNumber; level++){
-
+//TODO: Need realize an odd qubit count. How near mov qubits to gravity center
                 //find upper and lower qubits. Upper index is less than lower index
                 upperQubit=-1; lowerQubit=-1; //empty
                 int distance=level;
@@ -128,7 +128,17 @@ public class QuantumAlgorythm {
                             identityMatrx, identityMatrx.length, identityMatrx.length);
                 }
             }
+            //form common matrix, using matrix associative property, mult all matrices
+            result=swapMatrices.get(0).clone();
+            for (int i=1 ; i<swapMatrices.size(); i++){
+                result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
+            }
+            result=ComplexMath.squareMatricesMultiplication(result, centralMatrix, result.length);
+            for (int i=swapMatrices.size() ; i>=0; i--){
+                result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
+            }
         }
+        return result;
     }
 
     boolean checkAdjustment (ArrayList<Number> listToCheck){
