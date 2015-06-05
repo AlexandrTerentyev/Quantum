@@ -78,29 +78,37 @@ public class QuantumAlgorythm {
 //TODO: Need realize an odd qubit count. How near mov qubits to gravity center
                 //find upper and lower qubits. Upper index is less than lower index
                 upperQubit=-1; lowerQubit=-1; //empty
-                int distance=level;
-                for (; distance<=qubitsNumber/2; distance++){
-                    QuantumSchemeStepQubitAttributes upperQubitParams = algorythmMatrix[gravityCenter-distance][step];
-                    QuantumSchemeStepQubitAttributes lowerQubitParams = algorythmMatrix[gravityCenter+distance][step];
-                    if (upperQubit==-1 && upperQubitParams.gateID.equals(mainGateID)){
-                        upperQubit=gravityCenter-distance;
-                    }
-                    if (lowerQubit == -1 && lowerQubitParams.gateID.equals(mainGateID)){
-                        lowerQubit = gravityCenter + distance;
-                    }
+                int upperPlace = gravityCenter-level;
+                int lowerPlace = gravityCenter+1+level;
+                int upperIndex = upperPlace;
+                int lowerIndex = lowerPlace;
 
-                    if (lowerQubit>-1 && upperQubit>-1){
+
+                int distance;
+                for (; upperIndex>=0 && lowerIndex < qubitsNumber; upperIndex--, lowerIndex++){
+                    QuantumSchemeStepQubitAttributes upperQubitParams = algorythmMatrix[upperIndex][step];
+                    if (upperQubit==-1 && upperQubitParams.gateID.equals(mainGateID)){
+                        upperQubit=upperIndex;
                         break;
                     }
                 }
+
+                for (; lowerIndex<qubitsNumber; lowerIndex++){
+                    QuantumSchemeStepQubitAttributes lowerQubitParams = algorythmMatrix[lowerIndex][step];
+                    if (lowerQubit == -1 && lowerQubitParams.gateID.equals(mainGateID)){
+                        lowerQubit = lowerIndex;
+                        break;
+                    }
+                }
+                distance = Math.max(upperPlace-upperQubit, lowerQubit-lowerPlace);
 
                 //move qubits to gravity center + level
                 for (; distance>level; distance--){
                     //form swap matrix
                     Complex currentDistanceSwap[][] = {{Complex.unit()}};
                     for (int i=0; i<qubitsNumber; ){
-                        if ((i==upperQubit && upperQubit==gravityCenter-distance) ||
-                                (i==lowerQubit-1 && lowerQubit==gravityCenter+distance)){
+                        if ((i==upperQubit && upperQubit==upperPlace-distance) ||
+                                (i==lowerQubit-1 && lowerQubit==lowerPlace+distance)){
                             //need to swap upper gate
                             ComplexMath.tensorMultiplication(currentDistanceSwap, currentDistanceSwap.length,
                                     currentDistanceSwap.length, swapGateMatrix,
