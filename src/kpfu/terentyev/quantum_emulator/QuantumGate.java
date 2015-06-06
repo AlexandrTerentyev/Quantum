@@ -33,7 +33,7 @@ public abstract class QuantumGate {
         return result;
     }
 
-    public abstract Complex [][] getMatrix ();
+    public abstract Complex [][] getMatrix () throws Exception;
 
 
     //Gate matrices

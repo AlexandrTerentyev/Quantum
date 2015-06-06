@@ -16,7 +16,7 @@ import java.util.Map;
 // Generally quantum step and algorythm are quantum gates too.
 
 
-public class QuantumAlgorythm {
+public class QuantumAlgorythm extends QuantumGate {
 
     private int qubitsNumber;
     private int stepsNumber;
@@ -156,5 +156,14 @@ public class QuantumAlgorythm {
             }
         }
         return true;
+    }
+
+    @Override
+    public Complex[][] getMatrix() throws Exception {
+        Complex [][]result = generateStepMatrix(stepsNumber-1);
+        for (int i=stepsNumber-2; i>=0; i--){
+            result=ComplexMath.squareMatricesMultiplication(result, generateStepMatrix(i), result.length);
+        }
+        return result;
     }
 }
