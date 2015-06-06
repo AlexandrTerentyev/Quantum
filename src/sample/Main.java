@@ -6,6 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import kpfu.terentyev.quantum_emulator.*;
+import kpfu.terentyev.quantum_emulator.Gates.ControlledNotGate;
+import kpfu.terentyev.quantum_emulator.Gates.HadamardGate;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main extends Application {
 
@@ -24,9 +29,17 @@ public class Main extends Application {
 //        System.out.print(QuantumGate.controlledNOTGate()+"\n");
 //        System.out.print(QuantumGate.toffoliGate()+"\n");
 //        System.out.print(QuantumGate.fredkinGate()+"\n");
-        QuantumRegister register = new QuantumRegister(1);
+        QuantumRegister register = new QuantumRegister(3);
         System.out.print(register+"\n\n");
-        register.multiplyOnMatrix(QuantumGate.pauliXGateMatrix());
+
+        QuantumSchemeStepQubitAttributes[][] algMatr  =  {{new QuantumSchemeStepQubitAttributes("TestGate",false)},
+                {new QuantumSchemeStepQubitAttributes()},
+                {new QuantumSchemeStepQubitAttributes("TestGate",false)}};
+        String[] mainGateIDs = {"TestGate"};
+        Map<String, QuantumGate> gates = new HashMap<String, QuantumGate>();
+        gates.put("TestGate", new ControlledNotGate());
+        QuantumAlgorythm algorythm = new QuantumAlgorythm(algMatr,mainGateIDs,gates);
+        register.performAlgorythm(algorythm);
         System.out.print(register);
 
     }

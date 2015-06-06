@@ -22,7 +22,12 @@ public abstract class QuantumGate {
 //    }
     @Override
     public String toString(){
-        Complex [][] matrix = this.getMatrix();
+        Complex [][] matrix = new Complex[0][];
+        try {
+            matrix = this.getMatrix();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         String result = "";
         for (int i=0; i<size; i++){
             for (int j=0; j<size; j++){

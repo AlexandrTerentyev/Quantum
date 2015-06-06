@@ -25,6 +25,15 @@ public class QuantumAlgorythm extends QuantumGate {
     String [] mainGateIDs;
     Map <String, QuantumGate> gates;
 
+    public QuantumAlgorythm(QuantumSchemeStepQubitAttributes[][] algorythmMatrix, String [] mainGateIDs,
+                            Map<String, QuantumGate> gates) {
+        this.algorythmMatrix = algorythmMatrix;
+        this.gates = gates;
+        this.mainGateIDs = mainGateIDs;
+        qubitsNumber = algorythmMatrix.length;
+        stepsNumber= algorythmMatrix[0].length;
+    }
+
     Complex[][] generateStepMatrix(int step) throws Exception {
         int mainGateIndexesSum = 0;
         int count=0;
@@ -85,7 +94,7 @@ public class QuantumAlgorythm extends QuantumGate {
 
 
                 int distance;
-                for (; upperIndex>=0 && lowerIndex < qubitsNumber; upperIndex--, lowerIndex++){
+                for (; upperIndex>=0; upperIndex--){
                     QuantumSchemeStepQubitAttributes upperQubitParams = algorythmMatrix[upperIndex][step];
                     if (upperQubit==-1 && upperQubitParams.gateID.equals(mainGateID)){
                         upperQubit=upperIndex;
@@ -110,12 +119,13 @@ public class QuantumAlgorythm extends QuantumGate {
                         if ((i==upperQubit && upperQubit==upperPlace-distance) ||
                                 (i==lowerQubit-1 && lowerQubit==lowerPlace+distance)){
                             //need to swap upper gate
-                            ComplexMath.tensorMultiplication(currentDistanceSwap, currentDistanceSwap.length,
-                                    currentDistanceSwap.length, swapGateMatrix,
+                            currentDistanceSwap = ComplexMath.tensorMultiplication(currentDistanceSwap,
+                                    currentDistanceSwap.length, currentDistanceSwap.length,
+                                    swapGateMatrix,
                                     swapGateMatrix.length, swapGateMatrix.length);
                             i+=2;
                         }else {
-                            ComplexMath.tensorMultiplication(currentDistanceSwap, currentDistanceSwap.length,
+                            currentDistanceSwap = ComplexMath.tensorMultiplication(currentDistanceSwap, currentDistanceSwap.length,
                                     currentDistanceSwap.length, identityMatrx,
                                     identityMatrx.length, identityMatrx.length);
                             i++;
@@ -129,10 +139,10 @@ public class QuantumAlgorythm extends QuantumGate {
             //form central matrix after swaps
             for (int i=0; i<qubitsNumber; i++){
                 if (i==gravityCenter-levelNumber/2){
-                    ComplexMath.tensorMultiplication(centralMatrix, centralMatrix.length, centralMatrix.length,
+                    centralMatrix = ComplexMath.tensorMultiplication(centralMatrix, centralMatrix.length, centralMatrix.length,
                             gateMatrix, gateMatrix.length, gateMatrix.length);
                 }else {
-                    ComplexMath.tensorMultiplication(centralMatrix, centralMatrix.length, centralMatrix.length,
+                    centralMatrix = ComplexMath.tensorMultiplication(centralMatrix, centralMatrix.length, centralMatrix.length,
                             identityMatrx, identityMatrx.length, identityMatrx.length);
                 }
             }
@@ -142,7 +152,7 @@ public class QuantumAlgorythm extends QuantumGate {
                 result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
             }
             result=ComplexMath.squareMatricesMultiplication(result, centralMatrix, result.length);
-            for (int i=swapMatrices.size() ; i>=0; i--){
+            for (int i=swapMatrices.size()-1 ; i>=0; i--){
                 result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
             }
         }
@@ -151,7 +161,7 @@ public class QuantumAlgorythm extends QuantumGate {
 
     boolean checkAdjustment (ArrayList<Number> listToCheck){
         for (int i=1; i<listToCheck.size(); i++){
-            if (listToCheck.get(i).intValue()>listToCheck.get(i).intValue()+1){
+            if (listToCheck.get(i).intValue()>listToCheck.get(i-1).intValue()+1){
                 return false;
             }
         }
@@ -160,7 +170,7 @@ public class QuantumAlgorythm extends QuantumGate {
 
     @Override
     public Complex[][] getMatrix() throws Exception {
-        Complex [][]result = generateStepMatrix(stepsNumber-1);
+        Complex [][]result = generateStepMatrix(stepsNumber - 1);
         for (int i=stepsNumber-2; i>=0; i--){
             result=ComplexMath.squareMatricesMultiplication(result, generateStepMatrix(i), result.length);
         }

@@ -15,6 +15,14 @@ public class QuantumRegister {
     public QuantumRegister (int qubitsNumber) {
         this.setQubitsNumber(qubitsNumber);
     }
+    public QuantumRegister (int qubitsNumber, Complex [] vector) throws Exception {
+        this.qubitsNumber = qubitsNumber;
+        size = ((int) Math.pow(2, qubitsNumber));
+        this.vector =vector;
+        if (size != vector.length){
+            throw new Exception();
+        }
+    }
 
     public int getQubitsNumber() {
         return qubitsNumber;
@@ -44,5 +52,9 @@ public class QuantumRegister {
             result= result+ vector[i] +" |"+i+">\n";
         }
         return result;
+    }
+
+    public void performAlgorythm (QuantumAlgorythm algorythm) throws Exception {
+        vector = ComplexMath.multiplication(algorythm.getMatrix(), size, vector);
     }
 }
