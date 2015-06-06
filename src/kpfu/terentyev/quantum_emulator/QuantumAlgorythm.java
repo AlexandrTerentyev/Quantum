@@ -84,7 +84,7 @@ public class QuantumAlgorythm extends QuantumGate {
             Complex [][] identityMatrx = QuantumGate.identityGateMatrix();
 
             for (int level=0; level< levelNumber; level++){
-//TODO: Need realize an odd qubit count. How near mov qubits to gravity center
+//TODO: Swap if controlled gate is not at the bottom
                 //find upper and lower qubits. Upper index is less than lower index
                 upperQubit=-1; lowerQubit=-1; //empty
                 int upperPlace = gravityCenter-level;

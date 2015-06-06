@@ -12,7 +12,7 @@ import java.util.Vector;
 public abstract class QuantumGate {
 //    Complex [][] matrix;
     protected int qubitsNumber;
-    protected double size;
+    protected int size;
 
 
 //    public QuantumGate (int qubitsNumber, Complex [][] matrix){

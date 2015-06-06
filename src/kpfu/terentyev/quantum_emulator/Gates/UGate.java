@@ -10,7 +10,7 @@ public class UGate extends QuantumGate {
     private Complex[][] matrix;
     public UGate (int qubitsNumber, Complex [][] uMatrix){
         this.qubitsNumber = qubitsNumber;
-        this.size = Math.pow(2, qubitsNumber);
+        this.size = (int) Math.pow(2, qubitsNumber);
         this.matrix = uMatrix;
     }
     @Override
