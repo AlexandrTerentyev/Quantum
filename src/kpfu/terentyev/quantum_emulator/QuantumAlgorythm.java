@@ -50,6 +50,7 @@ public class QuantumAlgorythm extends QuantumGate {
         Complex [][] gateMatrix = gates.get(mainGateID).getMatrix();
         Complex result[][] = {{Complex.unit()}};
         if (checkAdjustment(mainGateQubits)){
+            Complex centralMatr[][] = {{Complex.unit()}};
             //if qubits is near to each other just multiply identity gates and mainGate matrices (tensors)
             for (int currentQubit=0; currentQubit<qubitsNumber;){//loop for each qubit
                 Number ind = currentQubit;
@@ -59,17 +60,59 @@ public class QuantumAlgorythm extends QuantumGate {
                         currentQubit++;
                         ind = currentQubit;
                     }
-                    ComplexMath.tensorMultiplication(result,result.length,result.length,
+                    centralMatr = ComplexMath.tensorMultiplication(centralMatr,centralMatr.length,centralMatr.length,
                             gateMatrix, gateMatrix.length, gateMatrix.length);
                 }else if (qubitParams.gateID.equals(QuantumSchemeStepQubitAttributes.IdentityGateID)){
                     Complex [][] gateMatrx = QuantumGate.identityGateMatrix();
-                    ComplexMath.tensorMultiplication(result,result.length,result.length,
+                    centralMatr =ComplexMath.tensorMultiplication(centralMatr,centralMatr.length,centralMatr.length,
                             gateMatrx, gateMatrx.length, gateMatrx.length);
                     currentQubit++;
                 }else {
                     throw new Exception("Two non trivial gates at step!");
                 }
             }
+
+            //Move controlled qubit to bottom if need
+            int controlledQubitIndex = -1;
+            for (int i=0; i<mainGateQubits.size()-1; i++){
+                if (algorythmMatrix[mainGateQubits.get(i).intValue()][step].controlled)
+                    controlledQubitIndex=i;
+            }
+
+            ArrayList <Complex[][]> swapMatrices = new ArrayList<Complex[][]>();
+            
+            if (controlledQubitIndex!=-1) {
+                Complex[][] swapGateMatrix = QuantumGate.swapGateMatrix();
+                Complex [][] identityMatrx = QuantumGate.identityGateMatrix();
+                int lowerQubitIndex = mainGateQubits.get(mainGateQubits.size()-1).intValue();
+                for (; controlledQubitIndex<lowerQubitIndex; controlledQubitIndex++){
+                    Complex currentSwap[][] = {{Complex.unit()}};
+                    for (int i=0; i<qubitsNumber;){
+                        if (i==controlledQubitIndex){
+                            currentSwap = ComplexMath.tensorMultiplication(currentSwap,
+                                    currentSwap.length, currentSwap.length,
+                                    swapGateMatrix, swapGateMatrix.length, swapGateMatrix.length);
+                            i+=2;
+                        }else {
+                            currentSwap = ComplexMath.tensorMultiplication(currentSwap, currentSwap.length,
+                                    currentSwap.length, identityMatrx,
+                                    identityMatrx.length, identityMatrx.length);
+                        }
+                    }
+                    swapMatrices.add(currentSwap);
+                }
+                result=swapMatrices.get(0).clone();
+                for (int i=1 ; i<swapMatrices.size(); i++){
+                    result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
+                }
+                result=ComplexMath.squareMatricesMultiplication(result, centralMatr, result.length);
+                for (int i=swapMatrices.size()-1 ; i>=0; i--){
+                    result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
+                }
+            }else {
+                result=centralMatr;
+            }
+
         }else{//Group one gate qubits
             //check Type of gravityCenter (maybe needs double)
             int gravityCenter=0;
@@ -136,6 +179,32 @@ public class QuantumAlgorythm extends QuantumGate {
 
             }
 
+            //Move controlled qubit to bottom if need
+            int controlledQubitIndex = -1;
+            for (int i=0; i<mainGateQubits.size()-1; i++){
+                if (algorythmMatrix[mainGateQubits.get(i).intValue()][step].controlled)
+                    controlledQubitIndex=i;
+            }
+            if (controlledQubitIndex!=-1) {
+                //project to current positions
+                controlledQubitIndex = gravityCenter - (levelNumber - 1) + controlledQubitIndex;
+                for (; controlledQubitIndex< gravityCenter+levelNumber; controlledQubitIndex++){
+                    Complex currentSwap[][] = {{Complex.unit()}};
+                    for (int i=0; i<qubitsNumber;){
+                        if (i==controlledQubitIndex){
+                            currentSwap = ComplexMath.tensorMultiplication(currentSwap,
+                                    currentSwap.length, currentSwap.length,
+                                    swapGateMatrix, swapGateMatrix.length, swapGateMatrix.length);
+                            i+=2;
+                        }else {
+                            currentSwap = ComplexMath.tensorMultiplication(currentSwap, currentSwap.length,
+                                    currentSwap.length, identityMatrx,
+                                    identityMatrx.length, identityMatrx.length);
+                        }
+                    }
+                    swapMatrices.add(currentSwap);
+                }
+            }
             //form central matrix after swaps
             for (int i=0; i<qubitsNumber; i++){
                 if (i==gravityCenter-levelNumber/2){
