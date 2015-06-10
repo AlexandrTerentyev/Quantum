@@ -29,18 +29,33 @@ public class Main extends Application {
 //        System.out.print(QuantumGate.controlledNOTGate()+"\n");
 //        System.out.print(QuantumGate.toffoliGate()+"\n");
 //        System.out.print(QuantumGate.fredkinGate()+"\n");
-        QuantumRegister register = new QuantumRegister(3);
-        System.out.print(register+"\n\n");
+//        QuantumRegister register = new QuantumRegister(3);
+//        System.out.print(register+"\n\n");
+//
+//        QuantumSchemeStepQubitAttributes[][] algMatr  =  {{new QuantumSchemeStepQubitAttributes("TestGate",false)},
+//                {new QuantumSchemeStepQubitAttributes()},
+//                {new QuantumSchemeStepQubitAttributes("TestGate",false)}};
+//        String[] mainGateIDs = {"TestGate"};
+//        Map<String, QuantumGate> gates = new HashMap<String, QuantumGate>();
+//        gates.put("TestGate", new ControlledNotGate());
+//        QuantumAlgorythm algorythm = new QuantumAlgorythm(algMatr,mainGateIDs,gates);
+//        register.performAlgorythm(algorythm);
+//        System.out.print(register);
 
-        QuantumSchemeStepQubitAttributes[][] algMatr  =  {{new QuantumSchemeStepQubitAttributes("TestGate",false)},
-                {new QuantumSchemeStepQubitAttributes()},
-                {new QuantumSchemeStepQubitAttributes("TestGate",false)}};
-        String[] mainGateIDs = {"TestGate"};
-        Map<String, QuantumGate> gates = new HashMap<String, QuantumGate>();
-        gates.put("TestGate", new ControlledNotGate());
-        QuantumAlgorythm algorythm = new QuantumAlgorythm(algMatr,mainGateIDs,gates);
-        register.performAlgorythm(algorythm);
-        System.out.print(register);
+        int n=4;
+        int size = (int)Math.pow(2,n);
+        Complex[] vector = new Complex[size];
+        for (int i =0; i<size ; i++){
+            if (i%2==1)
+            vector[i]= new Complex(1.0/Math.sqrt(size/2.0), 0);
+            else {
+                vector[i] = Complex.zero();
+            }
+        }
+        QuantumRegister reg = new QuantumRegister(n, vector);
+        System.out.print(reg);
+        System.out.print("\n\n Qubit value: "+reg.measureQubit(1));
+        System.out.print("\n\n"+reg);
 
     }
 

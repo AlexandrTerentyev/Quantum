@@ -36,6 +36,31 @@ public class ComplexMath {
         return result;
     }
 
+    public  static Complex[][] matricesMultiplication (Complex[][] matrixA, int heightA, int widthA,
+                                                       Complex [][] matrixB, int heightB, int widthB){
+        Complex [][]result = new Complex[heightA][widthB];
+        for (int i=0; i<heightA; i++){
+            for (int j=0; j<widthB; j++){
+                Complex sum = Complex.zero();
+                for (int z=0; z<widthA; z++){
+                    sum = Complex.add(sum, Complex.mult(matrixA[i][z],matrixB[z][j]));
+                }
+                result [i][j]=sum;
+            }
+        }
+        return result;
+    }
+
+    public static Complex [][] zeroMatrix (int height, int width){
+        Complex [] [] result = new Complex [height][width];
+        for (int i=0 ; i<height; i++){
+            for (int j = 0; j<width; j++){
+                result [i][j] = Complex.unit().zero();
+            }
+        }
+        return result;
+    }
+
     public  static Complex[][] squareMatricesMultiplication (Complex[][] matrixA, Complex [][] matrixB, int size){
         Complex [][]result = new Complex[size][size];
         for (int i=0; i<size; i++){
