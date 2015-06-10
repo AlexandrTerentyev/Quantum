@@ -48,7 +48,7 @@ public class QuantumAlgorythm extends QuantumGate {
             }
         }
         Complex [][] gateMatrix = gates.get(mainGateID).getMatrix();
-        Complex result[][] = {{Complex.unit()}};
+        Complex [][] result = {{Complex.unit()}};
         if (checkAdjustment(mainGateQubits)){
             Complex centralMatr[][] = {{Complex.unit()}};
             //if qubits is near to each other just multiply identity gates and mainGate matrices (tensors)
@@ -56,7 +56,8 @@ public class QuantumAlgorythm extends QuantumGate {
                 Number ind = currentQubit;
                 QuantumSchemeStepQubitAttributes qubitParams = algorythmMatrix[currentQubit][step];
                 if (qubitParams.gateID.equals(mainGateID)){
-                    while ( currentQubit<qubitsNumber && algorythmMatrix[currentQubit][step].gateID.equals(mainGateID)){
+                    while ( currentQubit<qubitsNumber &&
+                            algorythmMatrix[currentQubit][step].gateID.equals(mainGateID)){
                         currentQubit++;
                         ind = currentQubit;
                     }
@@ -121,10 +122,12 @@ public class QuantumAlgorythm extends QuantumGate {
             }
             int upperQubit, lowerQubit;
             int levelNumber = mainGateQubits.size()/2;
-            ArrayList <Complex[][]> swapMatrices = new ArrayList<Complex[][]>();
+//            ArrayList <Complex[][]> swapMatrices = new ArrayList<Complex[][]>();
             Complex[][] centralMatrix = {{Complex.unit()}}; //matrix perfomed main gate when all qubits are near
             Complex[][] swapGateMatrix = QuantumGate.swapGateMatrix();
             Complex [][] identityMatrx = QuantumGate.identityGateMatrix();
+
+            Complex[][] swapMatrix = null;
 
             for (int level=0; level< levelNumber; level++){
 //TODO: Swap if controlled gate is not at the bottom
@@ -174,7 +177,13 @@ public class QuantumAlgorythm extends QuantumGate {
                             i++;
                         }
                     }
-                    swapMatrices.add(currentDistanceSwap);
+//                    swapMatrices.add(currentDistanceSwap);
+                    if (swapMatrix == null){
+                        swapMatrix = currentDistanceSwap.clone();
+                    }else {
+                        swapMatrix = ComplexMath.squareMatricesMultiplication(currentDistanceSwap, swapMatrix,
+                                swapMatrix.length);
+                    }
                 }
 
             }
@@ -202,28 +211,36 @@ public class QuantumAlgorythm extends QuantumGate {
                                     identityMatrx.length, identityMatrx.length);
                         }
                     }
-                    swapMatrices.add(currentSwap);
+//                    swapMatrices.add(currentSwap);
+                    swapMatrix = ComplexMath.squareMatricesMultiplication(currentSwap, swapMatrix, swapMatrix.length);
                 }
             }
             //form central matrix after swaps
-            for (int i=0; i<qubitsNumber; i++){
+            for (int i=0; i<qubitsNumber;){
                 if (i==gravityCenter-levelNumber/2){
                     centralMatrix = ComplexMath.tensorMultiplication(centralMatrix, centralMatrix.length, centralMatrix.length,
                             gateMatrix, gateMatrix.length, gateMatrix.length);
+                    i+=mainGateQubits.size();
                 }else {
                     centralMatrix = ComplexMath.tensorMultiplication(centralMatrix, centralMatrix.length, centralMatrix.length,
                             identityMatrx, identityMatrx.length, identityMatrx.length);
+                    i++;
                 }
             }
+            Complex [][] swapConjugateMatrix = ComplexMath.hermitianTransposeForMatrix(swapMatrix,
+                    swapMatrix.length, swapMatrix.length);
+            result = ComplexMath.squareMatricesMultiplication(centralMatrix, swapMatrix,swapMatrix.length);
+            result = ComplexMath.squareMatricesMultiplication(swapConjugateMatrix, result, swapMatrix.length);
+
             //form common matrix, using matrix associative property, mult all matrices
-            result=swapMatrices.get(0).clone();
-            for (int i=1 ; i<swapMatrices.size(); i++){
-                result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
-            }
-            result=ComplexMath.squareMatricesMultiplication(result, centralMatrix, result.length);
-            for (int i=swapMatrices.size()-1 ; i>=0; i--){
-                result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
-            }
+//            result=swapMatrices.get(0).clone();
+//            for (int i=1 ; i<swapMatrices.size(); i++){
+//                result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
+//            }
+//            result=ComplexMath.squareMatricesMultiplication(result, centralMatrix, result.length);
+//            for (int i=swapMatrices.size()-1 ; i>=0; i--){
+//                result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
+//            }
         }
         return result;
     }

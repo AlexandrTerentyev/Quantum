@@ -68,6 +68,10 @@ public class Complex {
                 one.getReal()*two.getImaginary()+one.getImaginary()*two.getReal());
     }
 
+    public Complex conjugate (){
+        return new Complex(real, -imaginary);
+    }
+
     public static Complex zero (){
         return new Complex (0.0,0.0);
     }
