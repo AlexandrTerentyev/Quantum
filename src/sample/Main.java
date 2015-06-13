@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import kpfu.terentyev.quantum_emulator.*;
 import kpfu.terentyev.quantum_emulator.Gates.ControlledNotGate;
-import kpfu.terentyev.quantum_emulator.Gates.HadamardGate;
 import kpfu.terentyev.quantum_emulator.Gates.PauliZGate;
 
 import java.util.HashMap;
@@ -41,7 +40,7 @@ public class Main extends Application {
         Map<String, QuantumGate> gates = new HashMap<String, QuantumGate>();
         gates.put("PauliZGate", new PauliZGate());
         gates.put("TestGate", new ControlledNotGate());
-        QuantumAlgorythm algorythm = new QuantumAlgorythm(algMatr,mainGateIDs,gates);
+        QuantumAlgorithm algorythm = new QuantumAlgorithm(algMatr,mainGateIDs,gates);
         register.performAlgorythm(algorythm);
         System.out.print(register);
 

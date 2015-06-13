@@ -1,9 +1,6 @@
 package kpfu.terentyev.quantum_emulator;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.Vector;
 
 /**
  * Created by alexandrterentyev on 25.02.15.
@@ -55,7 +52,7 @@ public class QuantumRegister {
         return result;
     }
 
-    public void performAlgorythm (QuantumAlgorythm algorythm) throws Exception {
+    public void performAlgorythm (QuantumAlgorithm algorythm) throws Exception {
         vector = ComplexMath.multiplication(algorythm.getMatrix(), size, vector);
     }
     public int measureQubit (int qubit) throws Exception {
