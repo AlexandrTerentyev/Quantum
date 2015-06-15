@@ -7,7 +7,7 @@ import java.util.Map;
  * Created by alexandrterentyev on 09.03.15.
  */
 
-//Algorithm is a matrix. Each cell is the QuantumSchemeStepQubitAttributesю
+//Algorithm is a matrix. Each cell is the QuantumSchemeStepQubitAttributes
 // (Map) gates :{gateID:specifications (Quantum gate)}.
 // Generally quantum step and algorithm are quantum gates too.
 

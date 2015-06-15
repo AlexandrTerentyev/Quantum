@@ -15,11 +15,6 @@ public abstract class QuantumGate {
     protected int size;
 
 
-//    public QuantumGate (int qubitsNumber, Complex [][] matrix){
-//        this.qubitsNumber = qubitsNumber;
-//        this.size = Math.pow(2,qubitsNumber);
-//        this.matrix=matrix;
-//    }
     @Override
     public String toString(){
         Complex [][] matrix = new Complex[0][];
@@ -149,36 +144,4 @@ public abstract class QuantumGate {
         };
         return result;
     }
-
-    //Gates
-//    public static QuantumGate identityGate(){
-//        return new QuantumGate(1, QuantumGate.identityGateMatrix());
-//    }
-//    public static QuantumGate hadamardGate(){
-//        return new QuantumGate(1, QuantumGate.hadamardGateMatrix());
-//    }
-//    public static QuantumGate pauliXGate(){
-//        return new QuantumGate(1, QuantumGate.pauliXGateMatrix());
-//    }
-//    public static QuantumGate pauliYGate(){
-//        return new QuantumGate(1, QuantumGate.pauliYGateMatrix());
-//    }
-//    public static QuantumGate pauliZGate(){
-//        return new QuantumGate(1, QuantumGate.pauliZGateMatrix());
-//    }
-//    public static QuantumGate swapGate (){
-//        return new QuantumGate (2, QuantumGate.swapGateMatrix());
-//    }
-//    public static QuantumGate controlledNOTGate(){
-//        return new QuantumGate(2, QuantumGate.controlledNOTGateMatrix());
-//    }
-//    public static QuantumGate controlledUGate (Complex[][]uMatrix) throws Exception{
-//        return new QuantumGate(2, QuantumGate.controlledUGateMatrix(uMatrix));
-//    }
-//    public static QuantumGate toffoliGate (){
-//        return new QuantumGate(3, QuantumGate.toffoliGateMatrix());
-//    }
-//    public static QuantumGate fredkinGate (){
-//        return new QuantumGate(3, QuantumGate.fredkinGateMatrix());
-//    }
 }
