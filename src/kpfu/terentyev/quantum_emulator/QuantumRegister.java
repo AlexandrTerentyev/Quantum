@@ -22,6 +22,19 @@ public class QuantumRegister {
         }
     }
 
+    public QuantumRegister (Qubit... qubits){
+        qubitsNumber = qubits.length;
+        size = ((int) Math.pow(2, qubitsNumber));
+        vector = qubits[0].getVector();
+        for (int i=1; i< qubits.length; i++){
+            vector = ComplexMath.tensorMultiplication(vector, qubits[i].getVector());
+        }
+    }
+
+    public Complex[] getVector(){
+        return vector;
+    }
+
     public int getQubitsNumber() {
         return qubitsNumber;
     }
@@ -55,6 +68,9 @@ public class QuantumRegister {
     public void performAlgorythm (QuantumAlgorithm algorythm) throws Exception {
         vector = ComplexMath.multiplication(algorythm.getMatrix(), size, vector);
     }
+
+
+/// Измерение
     public int measureQubit (int qubit) throws Exception {
         if (qubit >= qubitsNumber){
             throw  new Exception();

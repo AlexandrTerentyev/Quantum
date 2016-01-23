@@ -36,6 +36,10 @@ public class ComplexMath {
         return result;
     }
 
+    public static Complex[] tensorMultiplication(Complex[] a, Complex[] b){
+//        TODO: multiply vectors as tensors
+    }
+
     public  static Complex[][] matricesMultiplication (Complex[][] matrixA, int heightA, int widthA,
                                                        Complex [][] matrixB, int heightB, int widthB){
         Complex [][]result = new Complex[heightA][widthB];
