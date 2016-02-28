@@ -38,6 +38,13 @@ public class ComplexMath {
 
     public static Complex[] tensorMultiplication(Complex[] a, Complex[] b){
 //        TODO: multiply vectors as tensors
+        Complex [] result = new Complex[a.length*b.length];
+        for (int i=0; i< a.length; i++){
+            for (int j=0; j<b.length; j++){
+                result[i*b.length+j] = Complex.sub(a[i], b[j]);
+            }
+        }
+        return result;
     }
 
     public  static Complex[][] matricesMultiplication (Complex[][] matrixA, int heightA, int widthA,

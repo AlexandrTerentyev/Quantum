@@ -9,10 +9,15 @@ import kpfu.terentyev.quantum_emulator.*;
 import kpfu.terentyev.quantum_emulator.Gates.ControlledNotGate;
 import kpfu.terentyev.quantum_emulator.Gates.PauliZGate;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main extends Application {
+
+    public class TestClass{
+        String value;
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -20,29 +25,30 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
-        QuantumRegister register = new QuantumRegister(3);
-        register = new QuantumRegister(3, new Complex [] { new Complex(Math.sqrt(2.0/3.0),0),
-                Complex.zero(),
-                Complex.zero(),
-                Complex.zero(),
-                Complex.zero(),
-                Complex.zero(),
-         new Complex(Math.sqrt(1.0/3.0),0),
-                Complex.zero(),});
-        System.out.print(register+"\n\n");
+//        QuantumRegister register = new QuantumRegister(3);
+//        register = new QuantumRegister(3, new Complex [] { new Complex(Math.sqrt(2.0/3.0),0),
+//                Complex.zero(),
+//                Complex.zero(),
+//                Complex.zero(),
+//                Complex.zero(),
+//                Complex.zero(),
+//         new Complex(Math.sqrt(1.0/3.0),0),
+//                Complex.zero(),});
+//        System.out.print(register+"\n\n");
 
-        QuantumSchemeStepQubitAttributes[][] algMatr  =  {
-                {new QuantumSchemeStepQubitAttributes(), new QuantumSchemeStepQubitAttributes("TestGate",false)},
-                {new QuantumSchemeStepQubitAttributes(), new QuantumSchemeStepQubitAttributes("TestGate",false)},
-                {new QuantumSchemeStepQubitAttributes("PauliZGate", false) ,new QuantumSchemeStepQubitAttributes()}
-        };
-        String[] mainGateIDs = {"PauliZGate" ,"TestGate"};
-        Map<String, QuantumGate> gates = new HashMap<String, QuantumGate>();
-        gates.put("PauliZGate", new PauliZGate());
-        gates.put("TestGate", new ControlledNotGate());
-        QuantumAlgorithm algorythm = new QuantumAlgorithm(algMatr,mainGateIDs,gates);
-        register.performAlgorythm(algorythm);
-        System.out.print(register);
+//        QuantumSchemeStepQubitAttributes[][] algMatr  =  {
+//                {new QuantumSchemeStepQubitAttributes(), new QuantumSchemeStepQubitAttributes("TestGate",false)},
+//                {new QuantumSchemeStepQubitAttributes(), new QuantumSchemeStepQubitAttributes("TestGate",false)},
+//                {new QuantumSchemeStepQubitAttributes("PauliZGate", false) ,new QuantumSchemeStepQubitAttributes()}
+//        };
+//        String[] mainGateIDs = {"PauliZGate" ,"TestGate"};
+//        Map<String, QuantumGate> gates = new HashMap<String, QuantumGate>();
+//        gates.put("PauliZGate", new PauliZGate());
+//        gates.put("TestGate", new ControlledNotGate());
+//        QuantumAlgorithm algorythm = new QuantumAlgorithm(algMatr,mainGateIDs,gates);
+//        register.performAlgorythm(algorythm);
+//        System.out.print(register);
+
 
 //        int n=4;
 //        int size = (int)Math.pow(2,n);
