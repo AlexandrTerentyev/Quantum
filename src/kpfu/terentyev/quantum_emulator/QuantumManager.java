@@ -48,7 +48,7 @@ public class QuantumManager {
 
 
     //Service functions
-    private RegisterInfo checkAndMergeRegistersIfNeedForQubits (Qubit... qubits) throws Exception {
+    protected RegisterInfo checkAndMergeRegistersIfNeedForQubits (Qubit... qubits) throws Exception {
         ArrayList<String> usedRegisterAddresses = new ArrayList<String>();
         for (Qubit qubit: qubits) {
             if (!usedRegisterAddresses.contains(qubit.registerAddress)){
