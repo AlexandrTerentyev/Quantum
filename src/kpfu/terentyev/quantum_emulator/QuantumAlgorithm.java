@@ -14,11 +14,14 @@ import java.util.Map;
 
 public class QuantumAlgorithm extends QuantumGate {
 
-    private int stepsNumber;
-//    private AlgorithmStep [] steps;
+    int stepsNumber;
     QuantumSchemeStepQubitAttributes [][] algorithmSchemeMatrix;
     String [] mainGateIDs;
     Map <String, QuantumGate> gates;
+
+    public  QuantumAlgorithm(){
+        stepsNumber = 0;
+    }
 
     public QuantumAlgorithm(QuantumSchemeStepQubitAttributes[][] algorithmSchemeMatrix, String[] mainGateIDs,
                             Map<String, QuantumGate> gates) {

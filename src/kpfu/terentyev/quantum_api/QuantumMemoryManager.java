@@ -3,6 +3,7 @@ package kpfu.terentyev.quantum_api;
 import kpfu.terentyev.quantum_emulator.Complex;
 import kpfu.terentyev.quantum_emulator.OneStepAlgorythm;
 import kpfu.terentyev.quantum_emulator.Gates.PhaseGate;
+import kpfu.terentyev.quantum_emulator.OneStepTwoQubitControlledGateAlgorythm;
 
 /**
  * Created by aleksandrterentev on 08.03.16.
@@ -30,6 +31,19 @@ public class QuantumMemoryManager extends QuantumManager {
                 qubit.addressInRegister
         );
         registerInfo.register.performAlgorythm(oneStepAlgorythm);
+    }
+
+    void cQET (double thetaInRadians, Qubit controllingQubit, Qubit controlledQubit) throws Exception {
+        RegisterInfo registerInfo = checkAndMergeRegistersIfNeedForQubits(controllingQubit, controlledQubit);
+//        TODO: fill matrix!!!
+        Complex[][] matrix = {};
+        OneStepTwoQubitControlledGateAlgorythm algorythm = new OneStepTwoQubitControlledGateAlgorythm(
+                registerInfo.register.getQubitsNumber(),
+                controllingQubit.addressInRegister,
+                controlledQubit.addressInRegister,
+                matrix
+                );
+        registerInfo.register.performAlgorythm(algorythm);
     }
 
     int measure (Qubit qubit) throws Exception {
