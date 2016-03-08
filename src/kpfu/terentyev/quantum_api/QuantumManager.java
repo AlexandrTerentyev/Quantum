@@ -1,5 +1,9 @@
-package kpfu.terentyev.quantum_emulator;
+package kpfu.terentyev.quantum_api;
 
+
+import kpfu.terentyev.quantum_emulator.Complex;
+import kpfu.terentyev.quantum_emulator.ComplexMath;
+import kpfu.terentyev.quantum_emulator.QuantumRegister;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,28 +16,28 @@ import java.util.Map;
 
 public class QuantumManager {
 
-    public class Qubit {
+    public static class Qubit {
         // Можно было сделать его частным случаем регистра, но пока удобнее хранить идентификаторы регистров и их номер в регистре
-        private String registerAddress;
-        private int addressInRegister;
-        private Qubit (String registerAddress, int addressInRegister){
+        String registerAddress;
+        int addressInRegister;
+        Qubit (String registerAddress, int addressInRegister){
             this.registerAddress = registerAddress;
             this.addressInRegister = addressInRegister;
         }
     }
 
-    private class RegisterInfo{
-        QuantumRegister register;
-        ArrayList <Qubit> qubits;
+    protected static class RegisterInfo{
+        public QuantumRegister register;
+        public ArrayList <Qubit> qubits;
 
-        public RegisterInfo(ArrayList<Qubit> qubits, QuantumRegister register) {
+        RegisterInfo(ArrayList<Qubit> qubits, QuantumRegister register) {
             this.qubits = qubits;
             this.register = register;
         }
     }
 
     // This class must contain quantum registeres
-    HashMap <String, RegisterInfo> registers;
+    protected HashMap <String, RegisterInfo> registers;
 
 //    Qubit creation
     public Qubit initNewQubit(){
@@ -61,7 +65,7 @@ public class QuantumManager {
         }
 
         //       Create new register merged registers
-        Complex [] newRegisterConfiguration = {Complex.unit()};
+        Complex[] newRegisterConfiguration = {Complex.unit()};
         ArrayList <Qubit> newRegisterQubits = new ArrayList<Qubit>();
         String newRegisterAddress = Double.toString(new Date().getTime());
 

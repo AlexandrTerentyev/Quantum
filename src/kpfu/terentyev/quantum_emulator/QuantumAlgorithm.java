@@ -14,20 +14,19 @@ import java.util.Map;
 
 public class QuantumAlgorithm extends QuantumGate {
 
-    private int qubitsNumber;
     private int stepsNumber;
 //    private AlgorithmStep [] steps;
-    QuantumSchemeStepQubitAttributes [][] algorithmMatrix;
+    QuantumSchemeStepQubitAttributes [][] algorithmSchemeMatrix;
     String [] mainGateIDs;
     Map <String, QuantumGate> gates;
 
-    public QuantumAlgorithm(QuantumSchemeStepQubitAttributes[][] algorithmMatrix, String[] mainGateIDs,
+    public QuantumAlgorithm(QuantumSchemeStepQubitAttributes[][] algorithmSchemeMatrix, String[] mainGateIDs,
                             Map<String, QuantumGate> gates) {
-        this.algorithmMatrix = algorithmMatrix;
+        this.algorithmSchemeMatrix = algorithmSchemeMatrix;
         this.gates = gates;
         this.mainGateIDs = mainGateIDs;
-        qubitsNumber = algorithmMatrix.length;
-        stepsNumber= algorithmMatrix[0].length;
+        qubitsNumber = algorithmSchemeMatrix.length;
+        stepsNumber= algorithmSchemeMatrix[0].length;
     }
 
     Complex[][] generateStepMatrix(int step) throws Exception {
@@ -36,7 +35,7 @@ public class QuantumAlgorithm extends QuantumGate {
         String mainGateID = mainGateIDs[step];
         ArrayList<Number> mainGateQubits = new ArrayList<Number>();
         for (int qubitNum=0; qubitNum<qubitsNumber; qubitNum++){//loop for each qubit
-            QuantumSchemeStepQubitAttributes qubitParams = algorithmMatrix[qubitNum][step];
+            QuantumSchemeStepQubitAttributes qubitParams = algorithmSchemeMatrix[qubitNum][step];
             if (qubitParams.gateID.equals(mainGateID)){
                 mainGateIndexesSum+=qubitNum;
                 count++;
@@ -50,10 +49,10 @@ public class QuantumAlgorithm extends QuantumGate {
             //if qubits is near to each other just multiply identity gates and mainGate matrices (tensors)
             for (int currentQubit=0; currentQubit<qubitsNumber;){//loop for each qubit
                 Number ind = currentQubit;
-                QuantumSchemeStepQubitAttributes qubitParams = algorithmMatrix[currentQubit][step];
+                QuantumSchemeStepQubitAttributes qubitParams = algorithmSchemeMatrix[currentQubit][step];
                 if (qubitParams.gateID.equals(mainGateID)){
                     while ( currentQubit<qubitsNumber &&
-                            algorithmMatrix[currentQubit][step].gateID.equals(mainGateID)){
+                            algorithmSchemeMatrix[currentQubit][step].gateID.equals(mainGateID)){
                         currentQubit++;
                         ind = currentQubit;
                     }
@@ -72,7 +71,7 @@ public class QuantumAlgorithm extends QuantumGate {
             //Move controlled qubit to bottom if need
             int controlledQubitIndex = -1;
             for (int i=0; i<mainGateQubits.size()-1; i++){
-                if (algorithmMatrix[mainGateQubits.get(i).intValue()][step].controlled)
+                if (algorithmSchemeMatrix[mainGateQubits.get(i).intValue()][step].controlled)
                     controlledQubitIndex=i;
             }
 
@@ -136,7 +135,7 @@ public class QuantumAlgorithm extends QuantumGate {
 
                 int distance;
                 for (; upperIndex>=0; upperIndex--){
-                    QuantumSchemeStepQubitAttributes upperQubitParams = algorithmMatrix[upperIndex][step];
+                    QuantumSchemeStepQubitAttributes upperQubitParams = algorithmSchemeMatrix[upperIndex][step];
                     if (upperQubit==-1 && upperQubitParams.gateID.equals(mainGateID)){
                         upperQubit=upperIndex;
                         break;
@@ -144,7 +143,7 @@ public class QuantumAlgorithm extends QuantumGate {
                 }
 
                 for (; lowerIndex<qubitsNumber; lowerIndex++){
-                    QuantumSchemeStepQubitAttributes lowerQubitParams = algorithmMatrix[lowerIndex][step];
+                    QuantumSchemeStepQubitAttributes lowerQubitParams = algorithmSchemeMatrix[lowerIndex][step];
                     if (lowerQubit == -1 && lowerQubitParams.gateID.equals(mainGateID)){
                         lowerQubit = lowerIndex;
                         break;
@@ -186,7 +185,7 @@ public class QuantumAlgorithm extends QuantumGate {
             //Move controlled qubit to bottom if need
             int controlledQubitIndex = -1;
             for (int i=0; i<mainGateQubits.size()-1; i++){
-                if (algorithmMatrix[mainGateQubits.get(i).intValue()][step].controlled)
+                if (algorithmSchemeMatrix[mainGateQubits.get(i).intValue()][step].controlled)
                     controlledQubitIndex=i;
             }
             if (controlledQubitIndex!=-1) {

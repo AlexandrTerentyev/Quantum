@@ -5,13 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import kpfu.terentyev.quantum_emulator.*;
-import kpfu.terentyev.quantum_emulator.Gates.ControlledNotGate;
-import kpfu.terentyev.quantum_emulator.Gates.PauliZGate;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import kpfu.terentyev.quantum_api.QuantumManager;
 
 public class Main extends Application {
 
@@ -25,6 +19,11 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+
+        QuantumManager manager = new QuantumManager();
+        QuantumManager.Qubit a = manager.initNewQubit();
+
+
 //        QuantumRegister register = new QuantumRegister(3);
 //        register = new QuantumRegister(3, new Complex [] { new Complex(Math.sqrt(2.0/3.0),0),
 //                Complex.zero(),
