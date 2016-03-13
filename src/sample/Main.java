@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import kpfu.terentyev.quantum_api.QuantumManager;
+import kpfu.terentyev.quantum.api.QuantumManager;
 
 public class Main extends Application {
 
