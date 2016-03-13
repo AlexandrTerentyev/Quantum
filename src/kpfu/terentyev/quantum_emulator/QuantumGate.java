@@ -10,7 +10,6 @@ import java.util.Vector;
  */
 
 public abstract class QuantumGate {
-//    Complex [][] matrix;
     protected int qubitsNumber;
     protected int size;
 

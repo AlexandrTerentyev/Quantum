@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum_api/QuantumMemoryManager.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum_api/QuantumMemoryManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumGate.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,6 +82,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="QuantumGate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumGate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="QuantumManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_api/QuantumManager.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -151,8 +161,8 @@
       <file leaf-file-name="QuantumMemoryManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_api/QuantumMemoryManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0">
-              <caret line="88" column="81" selection-start-line="88" selection-start-column="81" selection-end-line="88" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.38879457">
+              <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -165,16 +175,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -223,7 +223,6 @@
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Gates/QFT.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Complex.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumAlgorythm.java" />
-        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumGate.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Qubit.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/AlgorithmHelper.java" />
         <option value="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/com/sun/org/apache/xpath/internal/operations/String.java" />
@@ -241,6 +240,7 @@
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/OneStepTwoQubitControlledGateAlgorythm.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/ComplexMath.java" />
+        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumGate.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_api/QuantumMemoryManager.java" />
       </list>
     </option>
@@ -908,12 +908,12 @@
       <workItem from="1457360662090" duration="268000" />
       <workItem from="1457437307953" duration="2426000" />
       <workItem from="1457443268736" duration="14357000" />
-      <workItem from="1457887786736" duration="43000" />
+      <workItem from="1457887786736" duration="786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35855000" />
+    <option name="totallyTimeSpent" value="36598000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1016,6 +1016,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,6 +1070,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1115,6 +1117,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1262,13 +1265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumGate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Gates/PauliXGate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1356,16 +1352,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_api/QuantumManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/OneStepTwoQubitControlledGateAlgorythm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1402,10 +1388,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_api/QuantumManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/QuantumGate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum_api/QuantumMemoryManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0">
-          <caret line="88" column="81" selection-start-line="88" selection-start-column="81" selection-end-line="88" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.38879457">
+          <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

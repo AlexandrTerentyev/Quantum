@@ -42,7 +42,7 @@ public class QuantumMemoryManager extends QuantumManager {
     }
 
 
-    void checkQubitsBeforePerformTransformation (Qubit ... qubits) throws Exception {
+    public void checkQubitsBeforePerformTransformation (Qubit ... qubits) throws Exception {
         for (Qubit q: qubits) {
             if (q.registerAddress.equals(qubitDestroyedRegisterAddress)) {
                 throw (new Exception("One ore more qubits already destroyed!"));
@@ -55,7 +55,7 @@ public class QuantumMemoryManager extends QuantumManager {
     /**
      * This tranformation must be performed for qubit that loaded to proccessor unit
      * */
-    void phase (double thetaInRadians, Qubit qubit) throws Exception {
+    public void phase (double thetaInRadians, Qubit qubit) throws Exception {
         checkQubitsBeforePerformTransformation(qubit);
         RegisterInfo registerInfo = registers.get(qubit.registerAddress);
         OneStepAlgorythm oneStepAlgorythm = new OneStepAlgorythm(registerInfo.register.getQubitsNumber(),
@@ -68,7 +68,7 @@ public class QuantumMemoryManager extends QuantumManager {
     /**
      * This tranformation must be performed for qubit that loaded to proccessor unit
      * */
-    void QET (double thetaInRadians, Qubit qubit) throws Exception {
+    public void QET (double thetaInRadians, Qubit qubit) throws Exception {
         checkQubitsBeforePerformTransformation(qubit);
         RegisterInfo registerInfo = registers.get(qubit.registerAddress);
         Complex[][] matrix = {
@@ -85,11 +85,17 @@ public class QuantumMemoryManager extends QuantumManager {
     /**
      * This tranformation must be performed for qubits that loaded to proccessor units
      * */
-    void cQET (double thetaInRadians, Qubit controllingQubit, Qubit controlledQubit) throws Exception {
+    public void cQET (double thetaInRadians, Qubit controllingQubit, Qubit controlledQubit) throws Exception {
         checkQubitsBeforePerformTransformation(controlledQubit, controllingQubit);
         RegisterInfo registerInfo = checkAndMergeRegistersIfNeedForQubits(controllingQubit, controlledQubit);
 //        TODO: fill matrix!!!
-        Complex[][] matrix = {};
+        Complex temp = new Complex(Math.cos(- thetaInRadians), Math.sin(-thetaInRadians));
+        Complex[][] matrix = {
+                {Complex.unit(), Complex.zero(), Complex.zero(), Complex.zero()},
+                {Complex.zero(), Complex.unit(), Complex.zero(), Complex.zero()},
+                {Complex.zero(), Complex.zero(), Complex.unit(), Complex.zero()},
+                {Complex.zero(), Complex.zero(), Complex.zero(), temp}
+        };
         OneStepTwoQubitControlledGateAlgorythm algorythm = new OneStepTwoQubitControlledGateAlgorythm(
                 registerInfo.register.getQubitsNumber(),
                 controllingQubit.addressInRegister,
@@ -99,7 +105,7 @@ public class QuantumMemoryManager extends QuantumManager {
         registerInfo.register.performAlgorythm(algorythm);
     }
 
-    int measure (Qubit qubit) throws Exception {
+    public int measure (Qubit qubit) throws Exception {
         RegisterInfo regInfo = registers.get(qubit.registerAddress);
         int result = regInfo.register.measureQubit(qubit.addressInRegister);
         regInfo.qubits.remove(qubit.addressInRegister);
