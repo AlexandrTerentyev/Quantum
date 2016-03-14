@@ -91,10 +91,10 @@ public class QuantumMemoryManager extends QuantumManager {
 //        TODO: fill matrix!!!
         Complex temp = new Complex(Math.cos(- thetaInRadians), Math.sin(-thetaInRadians));
         Complex[][] matrix = {
-                {Complex.unit(), Complex.zero(), Complex.zero(), Complex.zero()},
-                {Complex.zero(), Complex.unit(), Complex.zero(), Complex.zero()},
+                {new Complex(Math.cos(thetaInRadians/2), 0), new Complex(0, Math.sin(thetaInRadians/2)), Complex.zero(), Complex.zero()},
+                {new Complex(0, Math.sin(thetaInRadians/2)), new Complex(Math.cos(thetaInRadians/2), 0), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.zero(), Complex.unit(), Complex.zero()},
-                {Complex.zero(), Complex.zero(), Complex.zero(), temp}
+                {Complex.zero(), Complex.zero(), Complex.zero(), Complex.unit()}
         };
         OneStepTwoQubitControlledGateAlgorythm algorythm = new OneStepTwoQubitControlledGateAlgorythm(
                 registerInfo.register.getQubitsNumber(),
