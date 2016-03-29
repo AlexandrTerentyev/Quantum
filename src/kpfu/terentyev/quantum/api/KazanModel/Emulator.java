@@ -23,14 +23,14 @@ public class Emulator {
         //        TODO: implement it!
     }
 
-    public void QET (int proccessUnitNum, double phase) throws Exception {
-        processingUnits[proccessUnitNum].QET(phase);
+    public void QET (int proccessingUnitNum, double phase) throws Exception {
+        processingUnits[proccessingUnitNum].QET(phase);
     }
-    public void cQET (int proccessUnitNum, double phase) throws Exception {
-        processingUnits[proccessUnitNum].cQET(phase);
+    public void cQET (int proccessingUnitNum, double phase) throws Exception {
+        processingUnits[proccessingUnitNum].cQET(phase);
     }
-    public void PHASE (int proccessUnitNum, double phase) throws Exception {
-        processingUnits[proccessUnitNum].PHASE(phase);
+    public void PHASE (int proccessingUnitNum, double phase) throws Exception {
+        processingUnits[proccessingUnitNum].PHASE(phase);
     }
 
     public int measure (QuantumMemoryAddress address) throws Exception {

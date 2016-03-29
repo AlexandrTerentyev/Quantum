@@ -7,15 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingAddress.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCell.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumProccessorHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/QuantumManager.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/QuantumManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/QuantumMemoryManager.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/QuantumMemoryManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -143,8 +135,8 @@
       <file leaf-file-name="Emulator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30560273">
-              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.50933784">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#initQubitForAddress#0;class#Emulator#0" expanded="false" />
@@ -966,12 +958,12 @@
       <workItem from="1457443268736" duration="14357000" />
       <workItem from="1457887786736" duration="1147000" />
       <workItem from="1457890534509" duration="146000" />
-      <workItem from="1459278028023" duration="8353000" />
+      <workItem from="1459278028023" duration="8544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45458000" />
+    <option name="totallyTimeSpent" value="45649000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1471,8 +1463,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30560273">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.50933784">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initQubitForAddress#0;class#Emulator#0" expanded="false" />
