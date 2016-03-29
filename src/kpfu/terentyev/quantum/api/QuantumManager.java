@@ -38,6 +38,8 @@ public class QuantumManager {
     // This class must contain quantum registeres
     protected HashMap <String, RegisterInfo> registers;
 
+    protected static final String qubitDestroyedRegisterAddress = "Qubit destroyed";
+
 //    Qubit creation
     public Qubit initNewQubit(){
         QuantumRegister newRegister = new QuantumRegister(1);
@@ -51,7 +53,7 @@ public class QuantumManager {
 
 
     //Service functions
-    protected RegisterInfo checkAndMergeRegistersIfNeedForQubits (Qubit... qubits) throws Exception {
+    RegisterInfo checkAndMergeRegistersIfNeedForQubits (Qubit... qubits) throws Exception {
         ArrayList<String> usedRegisterAddresses = new ArrayList<String>();
         for (Qubit qubit: qubits) {
             if (!usedRegisterAddresses.contains(qubit.registerAddress)){
@@ -89,5 +91,11 @@ public class QuantumManager {
 
 
     // Operations
-
+    public int measure (Qubit qubit) throws Exception {
+        RegisterInfo regInfo = registers.get(qubit.registerAddress);
+        int result = regInfo.register.measureQubit(qubit.addressInRegister);
+        regInfo.qubits.remove(qubit.addressInRegister);
+        qubit.registerAddress = qubitDestroyedRegisterAddress;
+        return result;
+    }
 }

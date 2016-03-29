@@ -14,7 +14,6 @@ import java.util.Set;
 public class QuantumMemoryManager extends QuantumManager {
 
     private int proccessorsUnitsCount = 4;
-    private static final String qubitDestroyedRegisterAddress = "Qubit destroyed";
 
 
     Set proccessorsUnitsRegisters;
@@ -103,13 +102,5 @@ public class QuantumMemoryManager extends QuantumManager {
                 matrix
                 );
         registerInfo.register.performAlgorythm(algorythm);
-    }
-
-    public int measure (Qubit qubit) throws Exception {
-        RegisterInfo regInfo = registers.get(qubit.registerAddress);
-        int result = regInfo.register.measureQubit(qubit.addressInRegister);
-        regInfo.qubits.remove(qubit.addressInRegister);
-        qubit.registerAddress = qubitDestroyedRegisterAddress;
-        return result;
     }
 }
