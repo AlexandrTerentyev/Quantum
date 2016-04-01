@@ -9,7 +9,11 @@ import java.util.Map;
  * Created by aleksandrterentev on 29.03.16.
  */
 public class QuantumMemory {
-    public static class QuantumMemoryAddress{}
+
+    private double maximumAvailableFrequency;
+    private double minimumAvailableFrequency;
+
+    private double timeInterval;
 
     public QuantumProccessorHelper helper;
 
