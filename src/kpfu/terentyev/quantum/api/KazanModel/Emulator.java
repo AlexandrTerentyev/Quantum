@@ -1,6 +1,5 @@
 package kpfu.terentyev.quantum.api.KazanModel;
 
-import kpfu.terentyev.quantum.api.KazanModel.QuantumMemory.QuantumMemoryAddress;
 import kpfu.terentyev.quantum.api.QuantumManager;
 
 /**
@@ -8,13 +7,22 @@ import kpfu.terentyev.quantum.api.QuantumManager;
  */
 public class Emulator {
     private QuantumProccessorHelper helper = new QuantumProccessorHelper();
-    private QuantumMemory memory = new QuantumMemory(helper);
+    private QuantumMemory memory;
 
-    private int processingUnitsCount = 3;
-    private ProcessingUnit[] processingUnits = new ProcessingUnit[processingUnitsCount];
+    public Emulator (double maxMemoryFrequency, double minMemoryFrequency, double memoryTimeCycle,
+                     int processingUnitsCount){
+        memory = new QuantumMemory(new QuantumMemoryInfo(maxMemoryFrequency, minMemoryFrequency, memoryTimeCycle), helper);
+        processingUnits = new ProcessingUnit[processingUnitsCount];
+    }
+
+    private int processingUnitsCount;
+    private ProcessingUnit[] processingUnits;
 
     public int getProcessingUnitsCount() {
         return processingUnitsCount;
+    }
+    public QuantumMemoryInfo getMemoryInfo(){
+        return memory.getInfo();
     }
 
     public void initQubitForAddress (QuantumMemoryAddress address){
@@ -73,6 +81,6 @@ public class Emulator {
 //    Service methods
     private ProcessingUnitCell cellForProcessingAddress(ProcessingAddress processingAddress){
         return processingUnits[processingAddress.getProccessingUnitNumber()]
-                .cellForUnitAddress(processingAddress.getProccessingUnitCellAddress())
+                .cellForUnitAddress(processingAddress.getProccessingUnitCellAddress());
     }
 }

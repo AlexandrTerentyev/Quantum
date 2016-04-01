@@ -9,17 +9,22 @@ import java.util.Map;
  * Created by aleksandrterentev on 29.03.16.
  */
 public class QuantumMemory {
+    private QuantumMemoryInfo info;
 
-    private double maximumAvailableFrequency;
-    private double minimumAvailableFrequency;
+    public QuantumMemoryInfo getInfo() {
+        return info;
+    }
 
-    private double timeInterval;
+    public void setInfo(QuantumMemoryInfo info) {
+        this.info = info;
+    }
 
-    public QuantumProccessorHelper helper;
-
-    public QuantumMemory (QuantumProccessorHelper helper){
+    public QuantumMemory(QuantumMemoryInfo info, QuantumProccessorHelper helper) {
+        this.info = info;
         this.helper = helper;
     }
+
+    public QuantumProccessorHelper helper;
 
     private Map<QuantumMemoryAddress, QuantumManager.Qubit> qubits = new HashMap<QuantumMemoryAddress, QuantumManager.Qubit>();
 
@@ -27,10 +32,21 @@ public class QuantumMemory {
         return qubits.containsKey(address);
     }
 
+    boolean addressIsOutOfRanges (QuantumMemoryAddress address){
+        return address.getFrequency() > info.getMaximumAvailableFrequency()
+                || address.getFrequency() < info.getMinimumAvailableFrequency()
+                || address.getTimeDelay() < info.getTimeInterval();
+    }
+
     public void initQubitForAddress(QuantumMemoryAddress address) throws Exception {
         if (addressIsUsed(address)){
             throw new Exception("This address is already used!");
         }
+
+        if (addressIsOutOfRanges(address)){
+            throw new Exception("Address is out of available range");
+        }
+
         QuantumManager.Qubit qubit = helper.initNewQubit();
         qubits.put(address, qubit);
     }

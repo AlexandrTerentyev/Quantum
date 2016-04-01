@@ -7,40 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCellAddress.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryAddress.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_api/QuantumManager$Qubit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_api/QuantumManager$RegisterInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_api/QuantumManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_api/QuantumMemoryManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Complex.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/ComplexMath.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/ControlledNotGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/ControlledUGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/FredkinGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/HadamardGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/IdentityGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/PauliXGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/PauliYGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/PauliZGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/PhaseGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/QFT.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/SwapGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/ToffoliGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/Gates/UGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/OneStepAlgorythm.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/OneStepTwoQubitControlledGateAlgorythm.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/QuantumAlgorithm.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/QuantumGate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/QuantumRegister.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum_emulator/QuantumSchemeStepQubitAttributes.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/sample/Main$TestClass.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/sample/Main.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingAddress.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingAddress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnit.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCell.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCell.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -106,13 +75,17 @@
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <caret line="83" column="87" selection-start-line="83" selection-start-column="87" selection-end-line="83" selection-end-column="87" />
               <folding>
                 <element signature="docComment;class#Emulator#0" expanded="false" />
+                <element signature="method#Emulator#0;class#Emulator#0" expanded="false" />
                 <element signature="method#initQubitForAddress#0;class#Emulator#0" expanded="false" />
+                <element signature="method#load#0;class#Emulator#0" expanded="false" />
+                <element signature="method#save#0;class#Emulator#0" expanded="false" />
                 <element signature="method#QET#0;class#Emulator#0" expanded="false" />
                 <element signature="method#cQET#0;class#Emulator#0" expanded="false" />
                 <element signature="method#PHASE#0;class#Emulator#0" expanded="false" />
+                <element signature="method#measure#0;class#Emulator#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -136,9 +109,40 @@
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#QuantumMemory#0" expanded="false" />
+                <element signature="method#QuantumMemory#0;class#QuantumMemory#0" expanded="false" />
+                <element signature="method#addressIsOutOfRanges#0;class#QuantumMemory#0" expanded="false" />
+                <element signature="method#initQubitForAddress#0;class#QuantumMemory#0" expanded="false" />
+                <element signature="method#popQubit#0;class#QuantumMemory#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProcessingUnitCellAddress.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCellAddress.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuantumMemoryInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+              <folding>
+                <element signature="e#840#841#0" expanded="true" />
+                <element signature="e#888#889#0" expanded="true" />
+                <element signature="e#1083#1084#0" expanded="true" />
+                <element signature="e#1118#1119#0" expanded="true" />
+                <element signature="e#1174#1175#0" expanded="true" />
+                <element signature="e#1222#1223#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -194,7 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Gates/ToffoliGate.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Gates/SwapGate.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Gates/PauliZGate.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum_emulator/Gates/PauliYGate.java" />
@@ -242,9 +245,10 @@
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnit.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingAddress.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCell.java" />
-        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" />
-        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryAddress.java" />
+        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryInfo.java" />
+        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java" />
+        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" />
       </list>
     </option>
   </component>
@@ -941,12 +945,12 @@
       <workItem from="1457887786736" duration="1147000" />
       <workItem from="1457890534509" duration="146000" />
       <workItem from="1459278028023" duration="8917000" />
-      <workItem from="1459531577234" duration="6059000" />
+      <workItem from="1459531577234" duration="7429000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52081000" />
+    <option name="totallyTimeSpent" value="53451000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -962,7 +966,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3241491" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1045,13 +1049,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumGate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1365,14 +1362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCellAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingAddress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1393,24 +1382,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCell.java">
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="e#888#889#0" expanded="true" />
+            <element signature="e#1083#1084#0" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1427,16 +1409,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="docComment;class#QuantumMemory#0" expanded="false" />
+            <element signature="method#QuantumMemory#0;class#QuantumMemory#0" expanded="false" />
+            <element signature="method#addressIsOutOfRanges#0;class#QuantumMemory#0" expanded="false" />
+            <element signature="method#initQubitForAddress#0;class#QuantumMemory#0" expanded="false" />
+            <element signature="method#popQubit#0;class#QuantumMemory#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCellAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <caret line="83" column="87" selection-start-line="83" selection-start-column="87" selection-end-line="83" selection-end-column="87" />
           <folding>
             <element signature="docComment;class#Emulator#0" expanded="false" />
+            <element signature="method#Emulator#0;class#Emulator#0" expanded="false" />
             <element signature="method#initQubitForAddress#0;class#Emulator#0" expanded="false" />
+            <element signature="method#load#0;class#Emulator#0" expanded="false" />
+            <element signature="method#save#0;class#Emulator#0" expanded="false" />
             <element signature="method#QET#0;class#Emulator#0" expanded="false" />
             <element signature="method#cQET#0;class#Emulator#0" expanded="false" />
             <element signature="method#PHASE#0;class#Emulator#0" expanded="false" />
+            <element signature="method#measure#0;class#Emulator#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
           </folding>
         </state>
       </provider>
