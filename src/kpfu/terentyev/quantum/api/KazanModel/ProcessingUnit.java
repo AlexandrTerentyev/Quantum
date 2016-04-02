@@ -53,16 +53,16 @@ public class ProcessingUnit {
 
     public void QET(double phase) throws Exception {
         checkCells(false);
-        processorHelper.physicalQET(cell0.getQubit(), cell1.getQubit());
+        processorHelper.physicalQET(cell0.getQubit(), cell1.getQubit(), phase);
     }
 
     public void cQET (double phase) throws Exception {
         checkCells(true);
-        processorHelper.physicalCQET(cell0.getQubit(), controlPoint.getQubit(), cell1.getQubit());
+        processorHelper.physicalCQET(cell0.getQubit(), controlPoint.getQubit(), cell1.getQubit(), phase);
     }
 
     public void PHASE (double phase) throws Exception {
         checkCells(false);
-        processorHelper.physicalPHASE(cell0.getQubit(), cell1.getQubit());
+        processorHelper.physicalPHASE(cell0.getQubit(), cell1.getQubit(), phase);
     }
 }

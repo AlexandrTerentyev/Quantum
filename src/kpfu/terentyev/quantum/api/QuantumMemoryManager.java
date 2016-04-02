@@ -1,9 +1,9 @@
 package kpfu.terentyev.quantum.api;
 
 import kpfu.terentyev.quantum.emulator.Complex;
-import kpfu.terentyev.quantum.emulator.OneStepAlgorythm;
+import kpfu.terentyev.quantum.emulator.OneStepOneQubitGateAlgorythm;
 import kpfu.terentyev.quantum.emulator.Gates.PhaseGate;
-import kpfu.terentyev.quantum.emulator.OneStepTwoQubitControlledGateAlgorythm;
+import kpfu.terentyev.quantum.emulator.OneStepTwoQubitGateAlgorythm;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -57,11 +57,11 @@ public class QuantumMemoryManager extends QuantumManager {
     public void phase (double thetaInRadians, Qubit qubit) throws Exception {
         checkQubitsBeforePerformTransformation(qubit);
         RegisterInfo registerInfo = registers.get(qubit.registerAddress);
-        OneStepAlgorythm oneStepAlgorythm = new OneStepAlgorythm(registerInfo.register.getQubitsNumber(),
+        OneStepOneQubitGateAlgorythm oneStepOneQubitGateAlgorythm = new OneStepOneQubitGateAlgorythm(registerInfo.register.getQubitsNumber(),
                 new PhaseGate(thetaInRadians),
                 qubit.addressInRegister
                 );
-        registerInfo.register.performAlgorythm(oneStepAlgorythm);
+        registerInfo.register.performAlgorythm(oneStepOneQubitGateAlgorythm);
     }
 
     /**
@@ -74,11 +74,11 @@ public class QuantumMemoryManager extends QuantumManager {
                 {new Complex(Math.cos(thetaInRadians/2), 0), new Complex(0, Math.sin(thetaInRadians/2))},
                 {new Complex(0, Math.sin(thetaInRadians/2)), new Complex(Math.cos(thetaInRadians/2), 0)}
         };
-        OneStepAlgorythm oneStepAlgorythm = new OneStepAlgorythm(registerInfo.register.getQubitsNumber(),
+        OneStepOneQubitGateAlgorythm oneStepOneQubitGateAlgorythm = new OneStepOneQubitGateAlgorythm(registerInfo.register.getQubitsNumber(),
                 matrix,
                 qubit.addressInRegister
         );
-        registerInfo.register.performAlgorythm(oneStepAlgorythm);
+        registerInfo.register.performAlgorythm(oneStepOneQubitGateAlgorythm);
     }
 
     /**
@@ -88,14 +88,13 @@ public class QuantumMemoryManager extends QuantumManager {
         checkQubitsBeforePerformTransformation(controlledQubit, controllingQubit);
         RegisterInfo registerInfo = checkAndMergeRegistersIfNeedForQubits(controllingQubit, controlledQubit);
 //        TODO: fill matrix!!!
-        Complex temp = new Complex(Math.cos(- thetaInRadians), Math.sin(-thetaInRadians));
         Complex[][] matrix = {
                 {new Complex(Math.cos(thetaInRadians/2), 0), new Complex(0, Math.sin(thetaInRadians/2)), Complex.zero(), Complex.zero()},
                 {new Complex(0, Math.sin(thetaInRadians/2)), new Complex(Math.cos(thetaInRadians/2), 0), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.zero(), Complex.unit(), Complex.zero()},
                 {Complex.zero(), Complex.zero(), Complex.zero(), Complex.unit()}
         };
-        OneStepTwoQubitControlledGateAlgorythm algorythm = new OneStepTwoQubitControlledGateAlgorythm(
+        OneStepTwoQubitGateAlgorythm algorythm = new OneStepTwoQubitGateAlgorythm(
                 registerInfo.register.getQubitsNumber(),
                 controllingQubit.addressInRegister,
                 controlledQubit.addressInRegister,

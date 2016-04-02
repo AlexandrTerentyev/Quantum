@@ -1,9 +1,7 @@
 package kpfu.terentyev.quantum.api;
 
 
-import kpfu.terentyev.quantum.emulator.Complex;
-import kpfu.terentyev.quantum.emulator.ComplexMath;
-import kpfu.terentyev.quantum.emulator.QuantumRegister;
+import kpfu.terentyev.quantum.emulator.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -53,7 +51,8 @@ public class QuantumManager {
 
 
     //Service functions
-    RegisterInfo checkAndMergeRegistersIfNeedForQubits (Qubit... qubits) throws Exception {
+    protected RegisterInfo checkAndMergeRegistersIfNeedForQubits (Qubit... qubits) throws Exception {
+        // TODO: 02.04.16 maybe need make qubit in right order for transition here?
         ArrayList<String> usedRegisterAddresses = new ArrayList<String>();
         for (Qubit qubit: qubits) {
             if (!usedRegisterAddresses.contains(qubit.registerAddress)){
@@ -87,6 +86,17 @@ public class QuantumManager {
         registers.put(newRegisterAddress, newRegisterInfo);
 
         return newRegisterInfo;
+    }
+
+    protected int qubitAddressInRegister(Qubit q){
+        return q.addressInRegister;
+    }
+
+    protected void performTransitionForQubits (Complex[][] transitionMatrix, int firstQubitAddressInRegister,
+                                     RegisterInfo mergedRegisterInfo, Qubit ... qubits) throws Exception {
+        OneStepAlgorythm alg = new OneStepAlgorythm(mergedRegisterInfo.qubits.size(),
+                firstQubitAddressInRegister, qubits.length, transitionMatrix);
+        mergedRegisterInfo.register.performAlgorythm(alg);
     }
 
 

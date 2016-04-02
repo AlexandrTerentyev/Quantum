@@ -1,44 +1,32 @@
 package kpfu.terentyev.quantum.emulator;
 
-import kpfu.terentyev.quantum.emulator.Gates.IdentityGate;
+import kpfu.terentyev.quantum.emulator.Gates.UGate;
+import kpfu.terentyev.quantum.emulator.QuantumAlgorithm;
+
+import java.util.HashMap;
 
 /**
- * Created by aleksandrterentev on 08.03.16.
+ * Created by aleksandrterentev on 02.04.16.
  */
-public class OneStepAlgorythm extends QuantumGate  {
-
-    /**
-     * New gate for register that for transition qubit at position
-     * */
-
-    Complex [][] matrix;
-
-    public OneStepAlgorythm(int qubitsNumber, QuantumGate oneQubitGate, int qubitPosition) throws Exception {
-        configureGateForOneQubitTransition(qubitsNumber, oneQubitGate.getMatrix(), qubitPosition);
-    }
-
-    public OneStepAlgorythm(int qubitsNumber, Complex[][] oneQubitGateMatrix, int qubitPosition) throws Exception {
-        configureGateForOneQubitTransition(qubitsNumber, oneQubitGateMatrix, qubitPosition);
-    }
-
-    private void configureGateForOneQubitTransition(int qubitsNumber, Complex[][] oneQubitGateMatrix, int qubitPosition) throws Exception {
-        matrix = new Complex[][]{{Complex.unit()}};
-        QuantumGate identityGate = new IdentityGate();
-        for (int i=0; i< qubitPosition; i++){
-            matrix = ComplexMath.tensorMultiplication(matrix, matrix.length, matrix.length, identityGate.getMatrix(), 2,2);
+public class OneStepAlgorythm extends QuantumAlgorithm {
+    public OneStepAlgorythm(int qubitsInRegister,
+                                        int firstQubitPosition,
+                                        int numberOfQubitsInGate,
+                                        Complex[][] transformationMatrix) throws Exception {
+        stepsNumber = 1;
+        QuantumSchemeStepQubitAttributes [][] algSheme = new QuantumSchemeStepQubitAttributes[qubitsInRegister][1];
+        String gateId = "Gate";
+        for (int i = 0; i < qubitsInRegister; i++){
+            if (i >= firstQubitPosition && i < firstQubitPosition+numberOfQubitsInGate){
+                algSheme[i][0] = new QuantumSchemeStepQubitAttributes(gateId, false);
+            }else {
+                algSheme[i][0] = new QuantumSchemeStepQubitAttributes();
+            }
         }
-        matrix = ComplexMath.tensorMultiplication(matrix, matrix.length, matrix.length, oneQubitGateMatrix, 2,2);
-
-        for (int i= qubitPosition+1; i< qubitsNumber; i++){
-            matrix = ComplexMath.tensorMultiplication(matrix, matrix.length, matrix.length, identityGate.getMatrix(), 2,2);
-        }
-
-        this.qubitsNumber = qubitsNumber;
-        this.size = (int) Math.pow(2, qubitsNumber);
-    }
-
-    @Override
-    public Complex[][] getMatrix() throws Exception {
-        return matrix;
+        gates = new HashMap<String, QuantumGate>();
+        mainGateIDs = new String[]{gateId};
+        QuantumGate gate = new UGate(numberOfQubitsInGate, transformationMatrix);
+        gates.put(gateId, gate);
+        algorithmSchemeMatrix = algSheme;
     }
 }

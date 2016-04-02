@@ -71,7 +71,7 @@ public class QuantumRegister {
         vector = ComplexMath.multiplication(algorythm.getMatrix(), size, vector);
     }
 
-    public void performAlgorythm (OneStepAlgorythm algorythm) throws Exception {
+    public void performAlgorythm (OneStepOneQubitGateAlgorythm algorythm) throws Exception {
         vector = ComplexMath.multiplication(algorythm.getMatrix(), size, vector);
     }
 

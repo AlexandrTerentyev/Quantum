@@ -5,6 +5,10 @@ package kpfu.terentyev.quantum.emulator;
  */
 public class QuantumSchemeStepQubitAttributes {
     public String gateID;
+
+    /*
+    * This equals to qubit is "upper than other"
+    * */
     boolean controlled;
     public static String IdentityGateID = "IdentityGateID";
 
