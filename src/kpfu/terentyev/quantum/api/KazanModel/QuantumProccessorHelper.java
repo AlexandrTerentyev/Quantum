@@ -42,7 +42,7 @@ public class QuantumProccessorHelper extends QuantumManager {
                     {z,z,z,z, z, z, u, z},
                     {z,z,z,z, z, z, z, u}
             };
-            performTransitionForQubits(matrix, minAddressOfAB,
+            performTransitionForQubits(matrix, qubitAddressInRegister(control),
                     regInfo, a, b, control);
         }else if (qubitAddressInRegister(control) > minAddressOfAB &&
                 qubitAddressInRegister(control) < maxAddressOfAB){
@@ -77,6 +77,9 @@ public class QuantumProccessorHelper extends QuantumManager {
                     {z,z,z,z, z, z, z, u},
                     {z, z, z, u, z,z,z,z}
             };
+
+            performTransitionForQubits(matrix, minAddressOfAB,
+                    regInfo, a, b, control);
         }
     }
     void physicalPHASE (Qubit a, Qubit b, double thetaInRadians) throws Exception {
