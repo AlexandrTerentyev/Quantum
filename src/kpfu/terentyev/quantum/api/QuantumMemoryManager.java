@@ -87,7 +87,6 @@ public class QuantumMemoryManager extends QuantumManager {
     public void cQET (double thetaInRadians, Qubit controllingQubit, Qubit controlledQubit) throws Exception {
         checkQubitsBeforePerformTransformation(controlledQubit, controllingQubit);
         RegisterInfo registerInfo = checkAndMergeRegistersIfNeedForQubits(controllingQubit, controlledQubit);
-//        TODO: fill matrix!!!
         Complex[][] matrix = {
                 {new Complex(Math.cos(thetaInRadians/2), 0), new Complex(0, Math.sin(thetaInRadians/2)), Complex.zero(), Complex.zero()},
                 {new Complex(0, Math.sin(thetaInRadians/2)), new Complex(Math.cos(thetaInRadians/2), 0), Complex.zero(), Complex.zero()},

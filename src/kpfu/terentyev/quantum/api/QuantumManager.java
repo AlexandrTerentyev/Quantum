@@ -52,7 +52,6 @@ public class QuantumManager {
 
     //Service functions
     protected RegisterInfo checkAndMergeRegistersIfNeedForQubits (Qubit... qubits) throws Exception {
-        // TODO: 02.04.16 maybe need make qubit in right order for transition here?
         ArrayList<String> usedRegisterAddresses = new ArrayList<String>();
         for (Qubit qubit: qubits) {
             if (!usedRegisterAddresses.contains(qubit.registerAddress)){
