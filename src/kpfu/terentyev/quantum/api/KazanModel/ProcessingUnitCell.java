@@ -9,7 +9,6 @@ import kpfu.terentyev.quantum.api.QuantumManager.Qubit;
 public class ProcessingUnitCell {
     private Qubit qubit;
 
-//    FIXME: что делать в случае, если кубит уже был загружен и загружаем ещё один?
     public void loadQubit (Qubit qubit){
         this.qubit = qubit;
     }

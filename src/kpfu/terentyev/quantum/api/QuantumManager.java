@@ -6,6 +6,7 @@ import kpfu.terentyev.quantum.emulator.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Random;
 
 /**
  * Created by aleksandrterentev on 24.01.16.
@@ -34,14 +35,14 @@ public class QuantumManager {
     }
 
     // This class must contain quantum registeres
-    protected HashMap <String, RegisterInfo> registers;
+    protected HashMap <String, RegisterInfo> registers = new HashMap<String, RegisterInfo>();
 
     protected static final String qubitDestroyedRegisterAddress = "Qubit destroyed";
 
 //    Qubit creation
     public Qubit initNewQubit(){
         QuantumRegister newRegister = new QuantumRegister(1);
-        String registerID = Double.toString(new Date().getTime());
+        String registerID = Double.toString(new Date().getTime() + new Random().nextDouble());
         Qubit newQubit = new Qubit(registerID, 0);
         ArrayList<Qubit> qubits = new ArrayList<Qubit>();
         qubits.add(newQubit);

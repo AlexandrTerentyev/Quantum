@@ -5,11 +5,15 @@ package kpfu.terentyev.quantum.api.KazanModel;
  */
 public class ProcessingUnit {
 
-    private ProcessingUnitCell cell0;
-    private ProcessingUnitCell controlPoint;
-    private ProcessingUnitCell cell1;
+    private ProcessingUnitCell cell0 = new ProcessingUnitCell();
+    private ProcessingUnitCell controlPoint = new ProcessingUnitCell();
+    private ProcessingUnitCell cell1 = new ProcessingUnitCell();
 
     QuantumProccessorHelper processorHelper;
+
+    public ProcessingUnit(QuantumProccessorHelper processorHelper){
+        this.processorHelper = processorHelper;
+    }
 
     public ProcessingUnitCell cellForUnitAddress(ProcessingUnitCellAddress address){
         switch (address){

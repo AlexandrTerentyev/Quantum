@@ -62,7 +62,7 @@ public class QuantumRegister {
     public String toString() {
         String result ="";
         for (int i=0; i<size; i++){
-            result= result+ vector[i] +" |"+i+">\n";
+            result= result+ vector[i] +" |"+i+"> ";
         }
         return result;
     }

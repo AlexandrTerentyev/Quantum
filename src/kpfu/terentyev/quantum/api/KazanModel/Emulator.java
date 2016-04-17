@@ -13,6 +13,10 @@ public class Emulator {
                      int processingUnitsCount){
         memory = new QuantumMemory(new QuantumMemoryInfo(maxMemoryFrequency, minMemoryFrequency, memoryTimeCycle), helper);
         processingUnits = new ProcessingUnit[processingUnitsCount];
+        this.processingUnitsCount = processingUnitsCount;
+        for (int i=0; i< processingUnitsCount; i++){
+            processingUnits[i] = new ProcessingUnit(helper);
+        }
     }
 
     private int processingUnitsCount;

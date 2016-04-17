@@ -35,7 +35,7 @@ public class QuantumMemory {
     boolean addressIsOutOfRanges (QuantumMemoryAddress address){
         return address.getFrequency() > info.getMaximumAvailableFrequency()
                 || address.getFrequency() < info.getMinimumAvailableFrequency()
-                || address.getTimeDelay() < info.getTimeInterval();
+                || address.getTimeDelay() > info.getTimeInterval();
     }
 
     public void initQubitForAddress(QuantumMemoryAddress address) throws Exception {
