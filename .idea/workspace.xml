@@ -6,19 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/MemoryHalf.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum/api/KazanModel/TestClass.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum/api/KazanModel/Emulator.class" afterPath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum/api/KazanModel/Emulator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryAddress.class" afterPath="$PROJECT_DIR$/out/production/Quantum/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryAddress.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryAddress.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryAddress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumProccessorHelper.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumProccessorHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/QuantumManager.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/QuantumManager.java" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -90,10 +78,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestClass.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3586006">
+            <state vertical-scroll-proportion="0.0">
               <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding>
                 <element signature="e#1589#1590#0" expanded="true" />
@@ -149,14 +137,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Emulator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Emulator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.83090377">
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
-                <element signature="e#1192#1193#0" expanded="true" />
-                <element signature="e#1232#1233#0" expanded="true" />
+                <element signature="docComment;class#Emulator#0" expanded="false" />
+                <element signature="method#Emulator#0;class#Emulator#0" expanded="false" />
+                <element signature="method#initLogicalQubit#0;class#Emulator#0" expanded="false" />
+                <element signature="method#load#0;class#Emulator#0" expanded="false" />
+                <element signature="method#save#0;class#Emulator#0" expanded="false" />
+                <element signature="method#QET#0;class#Emulator#0" expanded="false" />
+                <element signature="method#cQET#0;class#Emulator#0" expanded="false" />
+                <element signature="method#PHASE#0;class#Emulator#0" expanded="false" />
+                <element signature="method#measure#0;class#Emulator#0" expanded="false" />
+                <element signature="method#cellForProcessingAddress#0;class#Emulator#0" expanded="false" />
+                <element signature="method#memoryForAddress#0;class#Emulator#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -250,8 +247,8 @@
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/QuantumManager.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumProccessorHelper.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java" />
-        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java" />
+        <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" />
       </list>
     </option>
   </component>
@@ -1005,12 +1002,12 @@
       <workItem from="1459589985219" duration="4482000" />
       <workItem from="1460121408856" duration="5956000" />
       <workItem from="1460127932723" duration="322000" />
-      <workItem from="1460896398065" duration="9446000" />
+      <workItem from="1460896398065" duration="10240000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73936000" />
+    <option name="totallyTimeSpent" value="74730000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1036,6 +1033,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25686592" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1046,7 +1044,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3987034" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1491,6 +1488,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding>
+            <element signature="e#1589#1590#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1504,22 +1512,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.83090377">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
-            <element signature="e#1192#1193#0" expanded="true" />
-            <element signature="e#1232#1233#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3586006">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding>
-            <element signature="e#1589#1590#0" expanded="true" />
-            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="docComment;class#Emulator#0" expanded="false" />
+            <element signature="method#Emulator#0;class#Emulator#0" expanded="false" />
+            <element signature="method#initLogicalQubit#0;class#Emulator#0" expanded="false" />
+            <element signature="method#load#0;class#Emulator#0" expanded="false" />
+            <element signature="method#save#0;class#Emulator#0" expanded="false" />
+            <element signature="method#QET#0;class#Emulator#0" expanded="false" />
+            <element signature="method#cQET#0;class#Emulator#0" expanded="false" />
+            <element signature="method#PHASE#0;class#Emulator#0" expanded="false" />
+            <element signature="method#measure#0;class#Emulator#0" expanded="false" />
+            <element signature="method#cellForProcessingAddress#0;class#Emulator#0" expanded="false" />
+            <element signature="method#memoryForAddress#0;class#Emulator#0" expanded="false" />
           </folding>
         </state>
       </provider>
