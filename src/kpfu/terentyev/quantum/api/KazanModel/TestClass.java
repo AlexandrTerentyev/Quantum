@@ -31,6 +31,11 @@ public class TestClass {
         ProcessingAddress tranzistor0_c = new ProcessingAddress(0, ProcessingUnitCellAddress.ControlPoint);
 
 
+//        Transitions
+        QVM.load(q1Address, tranzistor0_0);
+        QVM.load(q2Address, tranzistor0_1);
+        QVM.QET(0, 3.14);
+
         System.out.print("End testing");
     }
 
