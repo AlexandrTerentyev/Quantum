@@ -1,6 +1,7 @@
 package kpfu.terentyev.quantum.api.KazanModel;
 
 import kpfu.terentyev.quantum.api.QuantumManager;
+import kpfu.terentyev.quantum.emulator.Complex;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,7 +39,7 @@ public class QuantumMemory {
                 || address.getTimeDelay() > info.getTimeInterval();
     }
 
-    public void initQubitForAddress(QuantumMemoryAddress address) throws Exception {
+    public QuantumManager.Qubit initQubitForAddress(QuantumMemoryAddress address) throws Exception {
         if (addressIsUsed(address)){
             throw new Exception("This address is already used!");
         }
@@ -47,8 +48,18 @@ public class QuantumMemory {
             throw new Exception("Address is out of available range");
         }
 
-        QuantumManager.Qubit qubit = helper.initNewQubit();
+        Complex alpha = Complex.zero(), beta = Complex.zero();
+        switch (address.getMemoryHalf()){
+            case HALF_0:
+                alpha = Complex.unit();
+                break;
+            case HALF_1:
+                beta = Complex.unit();
+                break;
+        }
+        QuantumManager.Qubit qubit = helper.initNewQubit(alpha, beta);
         qubits.put(address, qubit);
+        return qubit;
     }
 
     public void saveQubit (QuantumMemoryAddress address, QuantumManager.Qubit qubit){

@@ -92,4 +92,8 @@ public class QuantumProccessorHelper extends QuantumManager {
         };
         performTransitionForQubits(matrix, Math.min(qubitAddressInRegister(a), qubitAddressInRegister(b)), regInfo, a, b);
     }
+
+    void mergeQubits (Qubit ...qubits) throws Exception {
+        checkAndMergeRegistersIfNeedForQubits(qubits);
+    }
 }

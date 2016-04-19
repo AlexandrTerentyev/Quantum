@@ -6,6 +6,7 @@ package kpfu.terentyev.quantum.api.KazanModel;
 public class QuantumMemoryAddress {
     private double frequency;
     private double timeDelay;
+    private MemoryHalf memoryHalf;
 
     public double getFrequency() {
         return frequency;
@@ -15,8 +16,12 @@ public class QuantumMemoryAddress {
         return timeDelay;
     }
 
-    public QuantumMemoryAddress(double frequency, double timeDelay) {
+    public MemoryHalf getMemoryHalf(){
+        return memoryHalf;
+    }
 
+    public QuantumMemoryAddress(double frequency, double timeDelay, MemoryHalf memoryHalf) {
+        this.memoryHalf = memoryHalf;
         this.frequency = frequency;
         this.timeDelay = timeDelay;
     }

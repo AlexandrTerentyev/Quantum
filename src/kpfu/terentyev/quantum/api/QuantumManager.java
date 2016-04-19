@@ -40,8 +40,12 @@ public class QuantumManager {
     protected static final String qubitDestroyedRegisterAddress = "Qubit destroyed";
 
 //    Qubit creation
-    public Qubit initNewQubit(){
-        QuantumRegister newRegister = new QuantumRegister(1);
+    public Qubit initNewQubit() throws Exception {
+        return initNewQubit (Complex.unit(), Complex.zero());
+    }
+
+    public Qubit initNewQubit(Complex alpha, Complex beta) throws Exception {
+        QuantumRegister newRegister = new QuantumRegister(1, new Complex[]{alpha, beta});
         String registerID = Double.toString(new Date().getTime() + new Random().nextDouble());
         Qubit newQubit = new Qubit(registerID, 0);
         ArrayList<Qubit> qubits = new ArrayList<Qubit>();
