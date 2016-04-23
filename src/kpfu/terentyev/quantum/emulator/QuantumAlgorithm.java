@@ -30,6 +30,7 @@ public class QuantumAlgorithm extends QuantumGate {
         this.mainGateIDs = mainGateIDs;
         qubitsNumber = algorithmSchemeMatrix.length;
         stepsNumber= algorithmSchemeMatrix[0].length;
+        size = (int) Math.pow(2, qubitsNumber);
     }
 
     Complex[][] generateStepMatrix(int step) throws Exception {

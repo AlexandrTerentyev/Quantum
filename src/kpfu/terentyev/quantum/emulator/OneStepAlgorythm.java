@@ -28,5 +28,7 @@ public class OneStepAlgorythm extends QuantumAlgorithm {
         QuantumGate gate = new UGate(numberOfQubitsInGate, transformationMatrix);
         gates.put(gateId, gate);
         algorithmSchemeMatrix = algSheme;
+        qubitsNumber = qubitsInRegister;
+        size = (int) Math.pow(2, qubitsNumber);
     }
 }

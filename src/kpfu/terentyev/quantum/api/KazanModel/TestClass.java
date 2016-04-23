@@ -22,8 +22,8 @@ public class TestClass {
         QuantumMemoryAddress q4Address = new QuantumMemoryAddress(logicalQubit2Freq, logicalQubit2TimeDelay,
                 MemoryHalf.HALF_1);
 
-        QVM.initLogicalQubit(logicalQubit1Freq, logicalQubit1TimeDelay);
-        QVM.initLogicalQubit(logicalQubit2Freq, logicalQubit2TimeDelay);
+        QVM.initLogicalQubit(q1Address, q2Address);
+        QVM.initLogicalQubit(q3Address, q4Address);
 
 //        Tranzistor addresses
         ProcessingAddress tranzistor0_0 = new ProcessingAddress(0, ProcessingUnitCellAddress.Cell0);
@@ -34,7 +34,7 @@ public class TestClass {
 //        Transitions
         QVM.load(q1Address, tranzistor0_0);
         QVM.load(q2Address, tranzistor0_1);
-        QVM.QET(0, 3.14);
+        QVM.PHASE(0, 3.14);
 
         System.out.print("End testing");
     }

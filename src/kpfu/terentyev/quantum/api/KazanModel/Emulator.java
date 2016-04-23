@@ -31,12 +31,11 @@ public class Emulator {
         return memory0.getInfo();
     }
 
-    public void initLogicalQubit(double frequency, double timeDelay){
-        QuantumMemoryAddress mem0Addr = new QuantumMemoryAddress(frequency, timeDelay, MemoryHalf.HALF_0);
-        QuantumMemoryAddress mem1Addr = new QuantumMemoryAddress(frequency, timeDelay, MemoryHalf.HALF_1);
+    public void initLogicalQubit(QuantumMemoryAddress firstPhysicalQubitAddres,
+                                 QuantumMemoryAddress secondPhysicalAddress){
         try {
-            QuantumManager.Qubit impulse0 = memory0.initQubitForAddress(mem0Addr);
-            QuantumManager.Qubit impulse1 = memory1.initQubitForAddress(mem1Addr);
+            QuantumManager.Qubit impulse0 = memory0.initQubitForAddress(firstPhysicalQubitAddres);
+            QuantumManager.Qubit impulse1 = memory1.initQubitForAddress(secondPhysicalAddress);
             //связываем кубиты
             helper.mergeQubits(impulse0, impulse1);
         } catch (Exception e) {
