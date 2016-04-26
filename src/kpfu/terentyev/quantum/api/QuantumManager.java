@@ -106,6 +106,7 @@ public class QuantumManager {
 
     // Operations
     public int measure (Qubit qubit) throws Exception {
+//        TODO: Change addressInRegister for all qubits after measuredQubit
         RegisterInfo regInfo = registers.get(qubit.registerAddress);
         int result = regInfo.register.measureQubit(qubit.addressInRegister);
         regInfo.qubits.remove(qubit.addressInRegister);
