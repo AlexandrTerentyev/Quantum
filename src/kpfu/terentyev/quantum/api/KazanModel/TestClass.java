@@ -32,9 +32,15 @@ public class TestClass {
 
 
 //        Transitions
-        QVM.load(q1Address, tranzistor0_0);
-        QVM.load(q2Address, tranzistor0_1);
-        QVM.PHASE(0, 3.14);
+//        QVM.load(q1Address, tranzistor0_0);
+//        QVM.load(q2Address, tranzistor0_1);
+//        QVM.PHASE(0, 3.14);
+//        QVM.save(tranzistor0_0, q1Address);
+//        QVM.save(tranzistor0_1, q2Address);
+
+
+        System.out.print("q1: " + QVM.measure(q1Address) + "\n");
+        System.out.print("q2: " + QVM.measure(q2Address) + "\n");
 
         System.out.print("End testing");
     }

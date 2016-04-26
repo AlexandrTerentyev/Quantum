@@ -12,6 +12,10 @@ public class Complex {
         this.imaginary = imaginary;
     }
 
+    public double sqr(){
+        return real*real - imaginary*imaginary;
+    }
+
     public double getReal() {
         return real;
     }

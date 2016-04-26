@@ -84,7 +84,8 @@ public class QuantumRegister {
         }
         Complex [][] P0 = ComplexMath.zeroMatrix(size, size);
         int pow2n = (int) Math.pow(2, qubit);
-        for (int i = 0; i+pow2n<size; i+=2*pow2n){
+        // нужно пройти по всем состояниям, где текущий кубит 0
+        for (int i = 0, iter=0; iter < qubitsNumber; i+=pow2n, iter++){
             for (int j=i; j<i+pow2n; j++){
                 P0[j][j] = Complex.unit();
             }
@@ -106,7 +107,7 @@ public class QuantumRegister {
         if (new Random().nextDouble() >p.getReal()){
             result = 1;
             Pm = ComplexMath.zeroMatrix(size, size);
-            for (int i = pow2n; i<size; i+=2*pow2n){
+            for (int i = pow2n, iter=0; iter < qubitsNumber; i+=pow2n, iter++){
                 for (int j=i; j<i+pow2n; j++){
                     Pm[j][j] = Complex.unit();
                 }
@@ -117,7 +118,6 @@ public class QuantumRegister {
                     Pm, size, size);
             p1 = ComplexMath.matricesMultiplication(p1, 1, size, vectorKet, size, 1);
             p=p1[0][0];
-
         }else {
             Pm = P0;
         }
