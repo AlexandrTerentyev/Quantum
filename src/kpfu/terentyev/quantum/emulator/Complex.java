@@ -60,15 +60,19 @@ public class Complex {
     }
 
     public static Complex devide (Complex one, Complex two){
-        return new Complex((one.real*two.real + one.imaginary+two.imaginary)/
+        return new Complex(
+                (one.real*two.real + one.imaginary+two.imaginary)/
                 (two.real*two.real +two.imaginary*two.imaginary),
+
                 (two.real*one.imaginary-two.imaginary*one.real)/
                         (two.real*two.real +two.imaginary*two.imaginary)
                 );
     }
 
     public static Complex mult (Complex one, Complex two){
-        return new Complex(one.getReal()*two.getReal()-one.getImaginary()*two.getImaginary(),
+        return new Complex(
+                one.getReal()*two.getReal()-one.getImaginary()*two.getImaginary(),
+
                 one.getReal()*two.getImaginary()+one.getImaginary()*two.getReal());
     }
 

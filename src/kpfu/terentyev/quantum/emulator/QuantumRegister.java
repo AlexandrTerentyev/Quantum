@@ -79,14 +79,13 @@ public class QuantumRegister {
 
 /// Измерение
     public int measureQubit (int qubit) throws Exception {
-//        Todo: increase configuration size
         if (qubit >= qubitsNumber){
             throw  new Exception();
         }
         Complex [][] P0 = ComplexMath.zeroMatrix(size, size);
         int pow2n = (int) Math.pow(2, qubit);
         // нужно пройти по всем состояниям, где текущий кубит 0
-        for (int i = 0, iter=0; iter < qubitsNumber; i+=pow2n, iter++){
+        for (int i = 0, iter=0; iter < size/2; i+=pow2n, iter++){
             for (int j=i; j<i+pow2n; j++){
                 P0[j][j] = Complex.unit();
             }
@@ -108,7 +107,7 @@ public class QuantumRegister {
         if (new Random().nextDouble() >p.getReal()){
             result = 1;
             Pm = ComplexMath.zeroMatrix(size, size);
-            for (int i = pow2n, iter=0; iter < qubitsNumber; i+=pow2n, iter++){
+            for (int i = 2*pow2n, iter=0; iter < size/2; i+=pow2n, iter++){
                 for (int j=i; j<i+pow2n; j++){
                     Pm[j][j] = Complex.unit();
                 }
@@ -126,12 +125,29 @@ public class QuantumRegister {
         //norm
         vector= ComplexMath.multiplication(Pm, size,vector);
         Complex norma = Complex.zero();
+//        Fixme: fix norma computing!!!
         for (int i=0; i<size; i++){
             norma = Complex.add(norma, Complex.mult(vector[i], vector[i]));
         }
         for (int i =0; i<size; i++){
             vector[i] = Complex.devide(vector[i], norma);
         }
+
+        size = size/2;
+        qubitsNumber--;
+
+        Complex [] newVector = new Complex[size];
+        if (result==0){
+            for (int i = 0, j=0; j < size; i+=pow2n, j++) {
+                newVector [j] = vector[i];
+            }
+        }else{
+            for (int i = 2*pow2n, j=0; j < size; i+=pow2n, j++) {
+                newVector [j] = vector[i];
+            }
+        }
+
+        vector = newVector;
 
         return  result;
     }

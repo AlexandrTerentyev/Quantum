@@ -8,7 +8,6 @@ import kpfu.terentyev.quantum.emulator.OneStepOneQubitGateAlgorythm;
  * Created by aleksandrterentev on 29.03.16.
  */
 public class QuantumProccessorHelper extends QuantumManager {
-//    TODO: implement it!!!
     void physicalQET (Qubit a, Qubit b, double thetaPhaseInRadians) throws Exception {
         RegisterInfo regInfo = checkAndMergeRegistersIfNeedForQubits(a, b);
         Complex[][] matrix = {

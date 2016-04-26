@@ -110,10 +110,11 @@ public class QuantumManager {
         int result = regInfo.register.measureQubit(qubit.addressInRegister);
         int qubitPosition = regInfo.qubits.indexOf(qubit);
         regInfo.qubits.remove(qubitPosition);
-//        for (int i=qubitPosition; i< regInfo.qubits.size(); i++){
-//            regInfo.qubits.get(i).addressInRegister --;
-//        }
+        for (int i=qubitPosition; i< regInfo.qubits.size(); i++){
+            regInfo.qubits.get(i).addressInRegister --;
+        }
         qubit.registerAddress = qubitDestroyedRegisterAddress;
+//        TODO: remove register if qubits count is 0
         return result;
     }
 }

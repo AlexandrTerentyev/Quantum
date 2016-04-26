@@ -1,5 +1,7 @@
 package kpfu.terentyev.quantum.api.KazanModel;
 
+import kpfu.terentyev.quantum.emulator.Complex;
+
 /**
  * Created by aleksandrterentev on 17.04.16.
  */
@@ -22,7 +24,10 @@ public class TestClass {
         QuantumMemoryAddress q4Address = new QuantumMemoryAddress(logicalQubit2Freq, logicalQubit2TimeDelay,
                 MemoryHalf.HALF_1);
 
-        QVM.initLogicalQubit(q1Address, q2Address);
+        Complex alpha0 = new Complex(1/Math.sqrt(2.0),0), beta0 = new Complex(1/Math.sqrt(2.0), 0);
+        Complex alpha1 = new Complex(1/Math.sqrt(2.0),0), beta1 = new Complex(1/Math.sqrt(2.0), 0);
+
+        QVM.initLogicalQubit(q1Address, alpha0, beta0, q2Address, alpha1, beta1);
         QVM.initLogicalQubit(q3Address, q4Address);
 
 //        Tranzistor addresses
@@ -41,6 +46,9 @@ public class TestClass {
 
         System.out.print("q1: " + QVM.measure(q1Address) + "\n");
         System.out.print("q2: " + QVM.measure(q2Address) + "\n");
+
+        System.out.print("q3: " + QVM.measure(q3Address) + "\n");
+        System.out.print("q4: " + QVM.measure(q4Address) + "\n");
 
         System.out.print("End testing");
     }
