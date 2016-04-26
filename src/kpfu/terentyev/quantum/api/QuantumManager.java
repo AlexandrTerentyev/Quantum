@@ -107,7 +107,7 @@ public class QuantumManager {
     // Operations
     public int measure (Qubit qubit) throws Exception {
         RegisterInfo regInfo = registers.get(qubit.registerAddress);
-        int result = regInfo.register.measureQubit(qubit.addressInRegister);
+        int result = regInfo.register.measureQubit(qubit.addressInRegister, true);
         int qubitPosition = regInfo.qubits.indexOf(qubit);
         regInfo.qubits.remove(qubitPosition);
         for (int i=qubitPosition; i< regInfo.qubits.size(); i++){

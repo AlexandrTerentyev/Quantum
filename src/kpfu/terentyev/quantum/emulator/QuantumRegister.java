@@ -78,15 +78,16 @@ public class QuantumRegister {
 
 
 /// Измерение
-    public int measureQubit (int qubit) throws Exception {
+    public int measureQubit (int qubit, boolean needIncreaseQubitsNumber) throws Exception {
         if (qubit >= qubitsNumber){
             throw  new Exception();
         }
         Complex [][] P0 = ComplexMath.zeroMatrix(size, size);
-        int pow2n = (int) Math.pow(2, qubit);
+        int pow2n_q = (int) Math.pow(2, qubitsNumber - qubit);
+        int pow2n_q_1 = (int) Math.pow(2, qubitsNumber - qubit-1);
         // нужно пройти по всем состояниям, где текущий кубит 0
-        for (int i = 0, iter=0; iter < size/2; i+=pow2n, iter++){
-            for (int j=i; j<i+pow2n; j++){
+        for (int i = 0; i < size; i+=pow2n_q){
+            for (int j=i; j<i+pow2n_q_1; j++){
                 P0[j][j] = Complex.unit();
             }
         }
@@ -107,8 +108,8 @@ public class QuantumRegister {
         if (new Random().nextDouble() >p.getReal()){
             result = 1;
             Pm = ComplexMath.zeroMatrix(size, size);
-            for (int i = 2*pow2n, iter=0; iter < size/2; i+=pow2n, iter++){
-                for (int j=i; j<i+pow2n; j++){
+            for (int i = pow2n_q_1; i < size; i+=pow2n_q){
+                for (int j=i; j<i+pow2n_q_1; j++){
                     Pm[j][j] = Complex.unit();
                 }
             }
@@ -133,21 +134,25 @@ public class QuantumRegister {
             vector[i] = Complex.devide(vector[i], norma);
         }
 
-        size = size/2;
-        qubitsNumber--;
+        if (needIncreaseQubitsNumber){
+            int oldSize = size;
+            size/= 2;
+            qubitsNumber--;
 
-        Complex [] newVector = new Complex[size];
-        if (result==0){
-            for (int i = 0, j=0; j < size; i+=pow2n, j++) {
-                newVector [j] = vector[i];
+            Complex [] newVector = new Complex[size];
+            int firstIndex = result == 0 ? 0 : pow2n_q_1;
+
+            int z = 0;
+
+            for (int i = firstIndex; i < oldSize; i+=pow2n_q){
+                for (int j=i; j<i+pow2n_q_1; j++){
+                    newVector[z] = vector[j];
+                    z++;
+                }
             }
-        }else{
-            for (int i = 2*pow2n, j=0; j < size; i+=pow2n, j++) {
-                newVector [j] = vector[i];
-            }
+
+            vector = newVector;
         }
-
-        vector = newVector;
 
         return  result;
     }
