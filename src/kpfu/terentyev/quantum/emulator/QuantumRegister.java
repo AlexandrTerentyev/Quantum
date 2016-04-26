@@ -79,6 +79,7 @@ public class QuantumRegister {
 
 /// Измерение
     public int measureQubit (int qubit) throws Exception {
+//        Todo: increase configuration size
         if (qubit >= qubitsNumber){
             throw  new Exception();
         }

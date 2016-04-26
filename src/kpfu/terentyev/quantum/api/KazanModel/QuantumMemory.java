@@ -39,7 +39,8 @@ public class QuantumMemory {
                 || address.getTimeDelay() > info.getTimeInterval();
     }
 
-    public QuantumManager.Qubit initQubitForAddress(QuantumMemoryAddress address) throws Exception {
+    public QuantumManager.Qubit initQubitForAddress(QuantumMemoryAddress address,
+                                                    Complex alpha, Complex beta) throws Exception {
         if (addressIsUsed(address)){
             throw new Exception("This address is already used!");
         }
@@ -48,6 +49,12 @@ public class QuantumMemory {
             throw new Exception("Address is out of available range");
         }
 
+        QuantumManager.Qubit qubit = helper.initNewQubit(alpha, beta);
+        qubits.put(address, qubit);
+        return qubit;
+    }
+
+    public QuantumManager.Qubit initQubitForAddress(QuantumMemoryAddress address) throws Exception {
         Complex alpha = Complex.zero(), beta = Complex.zero();
         switch (address.getMemoryHalf()){
             case HALF_0:
@@ -57,10 +64,9 @@ public class QuantumMemory {
                 beta = Complex.unit();
                 break;
         }
-        QuantumManager.Qubit qubit = helper.initNewQubit(alpha, beta);
-        qubits.put(address, qubit);
-        return qubit;
+        return initQubitForAddress(address, alpha, beta);
     }
+
 
     public void saveQubit (QuantumMemoryAddress address, QuantumManager.Qubit qubit){
         qubits.put(address, qubit);

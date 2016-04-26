@@ -1,6 +1,7 @@
 package kpfu.terentyev.quantum.api.KazanModel;
 
 import kpfu.terentyev.quantum.api.QuantumManager;
+import kpfu.terentyev.quantum.emulator.Complex;
 
 /**
  * Created by aleksandrterentev on 29.03.16.
@@ -31,11 +32,29 @@ public class Emulator {
         return memory0.getInfo();
     }
 
+    /**
+     * Method creates new Logical |0> qubit  (physical pair (|0>, |1>) -> |01> )
+     * */
     public void initLogicalQubit(QuantumMemoryAddress firstPhysicalQubitAddres,
                                  QuantumMemoryAddress secondPhysicalAddress){
         try {
             QuantumManager.Qubit impulse0 = memory0.initQubitForAddress(firstPhysicalQubitAddres);
             QuantumManager.Qubit impulse1 = memory1.initQubitForAddress(secondPhysicalAddress);
+            //связываем кубиты
+            helper.mergeQubits(impulse0, impulse1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * First Qubit will be written to memory0 with alpha0 and beta0 amplitudes, second to memory1 with alpha1, beta1
+     * */
+    public void initLogicalQubit(QuantumMemoryAddress physicalAddress0, Complex alpha0, Complex beta0,
+                                 QuantumMemoryAddress physicalAddress1, Complex alpha1, Complex beta1){
+        try {
+            QuantumManager.Qubit impulse0 = memory0.initQubitForAddress(physicalAddress0, alpha0, beta0);
+            QuantumManager.Qubit impulse1 = memory1.initQubitForAddress(physicalAddress1, alpha1, beta1);
             //связываем кубиты
             helper.mergeQubits(impulse0, impulse1);
         } catch (Exception e) {
