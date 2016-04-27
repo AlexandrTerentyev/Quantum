@@ -125,13 +125,16 @@ public class QuantumRegister {
 
         //norm
         vector= ComplexMath.multiplication(Pm, size,vector);
-        Complex norma = Complex.zero();
+        double norma = 0.0;
 //        Fixme: fix norma computing!!!
         for (int i=0; i<size; i++){
-            norma = Complex.add(norma, Complex.mult(vector[i], vector[i]));
+            norma += vector[i].sqr();
         }
+        norma = Math.sqrt(norma);
+        Complex complexNorma = new Complex(norma, 0);
+
         for (int i =0; i<size; i++){
-            vector[i] = Complex.devide(vector[i], norma);
+            vector[i] = Complex.devide(vector[i], complexNorma);
         }
 
         if (needIncreaseQubitsNumber){
