@@ -27,8 +27,8 @@ public class TestClass {
         Complex alpha0 = new Complex(1/Math.sqrt(2.0),0), beta0 = new Complex(1/Math.sqrt(2.0), 0);
         Complex alpha1 = new Complex(1/Math.sqrt(2.0),0), beta1 = new Complex(1/Math.sqrt(2.0), 0);
 
-        QVM.initLogicalQubit(q1Address, alpha0, beta0, q2Address, alpha1, beta1);
-        QVM.initLogicalQubit(q3Address, q4Address);
+        QVM.initLogicalQubit(q3Address, alpha0, beta0, q4Address, alpha1, beta1);
+        QVM.initLogicalQubit(q1Address, q2Address);
 
 //        Tranzistor addresses
         ProcessingAddress tranzistor0_0 = new ProcessingAddress(0, ProcessingUnitCellAddress.Cell0);
@@ -37,11 +37,11 @@ public class TestClass {
 
 
 //        Transitions
-//        QVM.load(q1Address, tranzistor0_0);
-//        QVM.load(q2Address, tranzistor0_1);
-//        QVM.PHASE(0, 3.14);
-//        QVM.save(tranzistor0_0, q1Address);
-//        QVM.save(tranzistor0_1, q2Address);
+        QVM.load(q1Address, tranzistor0_0);
+        QVM.load(q2Address, tranzistor0_1);
+        QVM.QET(0, 3.14);
+        QVM.save(tranzistor0_0, q1Address);
+        QVM.save(tranzistor0_1, q2Address);
 
 
         System.out.print("q1: " + QVM.measure(q1Address) + "\n");
