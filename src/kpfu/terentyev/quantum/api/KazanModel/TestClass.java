@@ -39,7 +39,7 @@ public class TestClass {
 //        Transitions
         QVM.load(q1Address, tranzistor0_0);
         QVM.load(q2Address, tranzistor0_1);
-        QVM.QET(0, 3.14);
+        QVM.QET(0, Math.PI / 3.0);
         QVM.save(tranzistor0_0, q1Address);
         QVM.save(tranzistor0_1, q2Address);
 
@@ -47,8 +47,8 @@ public class TestClass {
         System.out.print("q1: " + QVM.measure(q1Address) + "\n");
         System.out.print("q2: " + QVM.measure(q2Address) + "\n");
 
-        System.out.print("q3: " + QVM.measure(q3Address) + "\n");
-        System.out.print("q4: " + QVM.measure(q4Address) + "\n");
+//        System.out.print("q3: " + QVM.measure(q3Address) + "\n");
+//        System.out.print("q4: " + QVM.measure(q4Address) + "\n");
 
         System.out.print("End testing");
     }

@@ -17,7 +17,11 @@ public class Complex {
     }
 
     public double mod(){
-        return Math.sqrt(real*real + imaginary*imaginary);
+        return Math.sqrt(norma());
+    }
+
+    public double norma(){
+        return real*real + imaginary*imaginary;
     }
 
     public double getReal() {
