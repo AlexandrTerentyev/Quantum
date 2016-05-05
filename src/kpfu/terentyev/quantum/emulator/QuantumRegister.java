@@ -105,7 +105,7 @@ public class QuantumRegister {
 
         //measure and normalize
         Complex [][] Pm;
-        if (new Random().nextDouble() >p.getReal()){
+        if (new Random().nextDouble() > p.mod()){
             result = 1;
             Pm = ComplexMath.zeroMatrix(size, size);
             for (int i = pow2n_q_1; i < size; i+=pow2n_q){
