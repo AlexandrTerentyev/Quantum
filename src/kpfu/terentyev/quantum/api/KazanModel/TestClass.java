@@ -12,28 +12,20 @@ public class TestClass {
 
 
 //        Qubits initialization
+
+
         double logicalQubit1Freq = 60, logicalQubit1TimeDelay = 1;
         QuantumMemoryAddress q1Address = new QuantumMemoryAddress(logicalQubit1Freq, logicalQubit1TimeDelay,
                 MemoryHalf.HALF_0);
         QuantumMemoryAddress q2Address = new QuantumMemoryAddress(logicalQubit1Freq, logicalQubit1TimeDelay,
                 MemoryHalf.HALF_1);
-
-        double logicalQubit2Freq = 60, logicalQubit2TimeDelay = 2;
-        QuantumMemoryAddress q3Address = new QuantumMemoryAddress(logicalQubit2Freq, logicalQubit2TimeDelay,
-                MemoryHalf.HALF_0);
-        QuantumMemoryAddress q4Address = new QuantumMemoryAddress(logicalQubit2Freq, logicalQubit2TimeDelay,
-                MemoryHalf.HALF_1);
-
-        Complex alpha0 = new Complex(1/Math.sqrt(2.0),0), beta0 = new Complex(1/Math.sqrt(2.0), 0);
-        Complex alpha1 = new Complex(1/Math.sqrt(2.0),0), beta1 = new Complex(1/Math.sqrt(2.0), 0);
-
-        QVM.initLogicalQubit(q3Address, alpha0, beta0, q4Address, alpha1, beta1);
         QVM.initLogicalQubit(q1Address, q2Address);
 
 //        Tranzistor addresses
         ProcessingAddress tranzistor0_0 = new ProcessingAddress(0, ProcessingUnitCellAddress.Cell0);
         ProcessingAddress tranzistor0_1 = new ProcessingAddress(0, ProcessingUnitCellAddress.Cell1);
         ProcessingAddress tranzistor0_c = new ProcessingAddress(0, ProcessingUnitCellAddress.ControlPoint);
+
 
 
 //        Transitions
@@ -47,8 +39,6 @@ public class TestClass {
         System.out.print("q1: " + QVM.measure(q1Address) + "\n");
         System.out.print("q2: " + QVM.measure(q2Address) + "\n");
 
-//        System.out.print("q3: " + QVM.measure(q3Address) + "\n");
-//        System.out.print("q4: " + QVM.measure(q4Address) + "\n");
 
         System.out.print("End testing");
     }
