@@ -9,17 +9,17 @@ import kpfu.terentyev.quantum.api.QuantumManager.Qubit;
 public class ProcessingUnitCell {
     private Qubit qubit;
 
-    public void loadQubit (Qubit qubit){
+    void loadQubit (Qubit qubit){
         this.qubit = qubit;
     }
 
-    public Qubit unloadQubit (){
+    Qubit unloadQubit (){
         Qubit result = qubit;
         qubit = null;
         return result;
     }
 
-    public Qubit getQubit() {
+    Qubit getQubit() {
         return qubit;
     }
 }

@@ -6,40 +6,42 @@ import kpfu.terentyev.quantum.emulator.Complex;
 import java.util.HashMap;
 import java.util.Map;
 
+import static kpfu.terentyev.quantum.api.QuantumManager.*;
+
 /**
  * Created by aleksandrterentev on 29.03.16.
  */
 public class QuantumMemory {
     private QuantumMemoryInfo info;
 
-    public QuantumMemoryInfo getInfo() {
+    QuantumMemoryInfo getInfo() {
         return info;
     }
 
-    public void setInfo(QuantumMemoryInfo info) {
+    void setInfo(QuantumMemoryInfo info) {
         this.info = info;
     }
 
-    public QuantumMemory(QuantumMemoryInfo info, QuantumProccessorHelper helper) {
+    QuantumMemory (QuantumMemoryInfo info, QuantumProccessorHelper helper) {
         this.info = info;
         this.helper = helper;
     }
 
-    public QuantumProccessorHelper helper;
+    QuantumProccessorHelper helper;
 
-    private Map<QuantumMemoryAddress, QuantumManager.Qubit> qubits = new HashMap<QuantumMemoryAddress, QuantumManager.Qubit>();
+    private Map<QuantumMemoryAddress, Qubit> qubits = new HashMap<QuantumMemoryAddress, QuantumManager.Qubit>();
 
-    boolean addressIsUsed (QuantumMemoryAddress address){
+    private boolean addressIsUsed (QuantumMemoryAddress address){
         return qubits.containsKey(address);
     }
 
-    boolean addressIsOutOfRanges (QuantumMemoryAddress address){
+    private boolean addressIsOutOfRanges (QuantumMemoryAddress address){
         return address.getFrequency() > info.getMaximumAvailableFrequency()
                 || address.getFrequency() < info.getMinimumAvailableFrequency()
                 || address.getTimeDelay() > info.getTimeInterval();
     }
 
-    public QuantumManager.Qubit initQubitForAddress(QuantumMemoryAddress address,
+    Qubit initQubitForAddress(QuantumMemoryAddress address,
                                                     Complex alpha, Complex beta) throws Exception {
         if (addressIsUsed(address)){
             throw new Exception("This address is already used!");
@@ -49,12 +51,12 @@ public class QuantumMemory {
             throw new Exception("Address is out of available range");
         }
 
-        QuantumManager.Qubit qubit = helper.initNewQubit(alpha, beta);
+        Qubit qubit = helper.initNewQubit(alpha, beta);
         qubits.put(address, qubit);
         return qubit;
     }
 
-    public QuantumManager.Qubit initQubitForAddress(QuantumMemoryAddress address) throws Exception {
+    Qubit initQubitForAddress(QuantumMemoryAddress address) throws Exception {
         Complex alpha = Complex.zero(), beta = Complex.zero();
         switch (address.getMemoryHalf()){
             case HALF_0:
@@ -68,12 +70,12 @@ public class QuantumMemory {
     }
 
 
-    public void saveQubit (QuantumMemoryAddress address, QuantumManager.Qubit qubit){
+    void saveQubit (QuantumMemoryAddress address, Qubit qubit){
         qubits.put(address, qubit);
     }
 
-    public QuantumManager.Qubit popQubit(QuantumMemoryAddress address){
-        QuantumManager.Qubit qubit = qubits.get(address);
+    Qubit popQubit(QuantumMemoryAddress address){
+        Qubit qubit = qubits.get(address);
         qubits.remove(address);
         return qubit;
     }

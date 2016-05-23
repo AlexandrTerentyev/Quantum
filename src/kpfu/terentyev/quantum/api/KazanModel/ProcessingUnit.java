@@ -11,11 +11,11 @@ public class ProcessingUnit {
 
     QuantumProccessorHelper processorHelper;
 
-    public ProcessingUnit(QuantumProccessorHelper processorHelper){
+    ProcessingUnit(QuantumProccessorHelper processorHelper){
         this.processorHelper = processorHelper;
     }
 
-    public ProcessingUnitCell cellForUnitAddress(ProcessingUnitCellAddress address){
+    ProcessingUnitCell cellForUnitAddress(ProcessingUnitCellAddress address){
         switch (address){
             case Cell0:
                 return cell0;
@@ -55,17 +55,17 @@ public class ProcessingUnit {
     * которые по ошибке прораммиста остались в процессоре и как на них влияют физические операции.
     * */
 
-    public void QET(double phase) throws Exception {
+    void QET(double phase) throws Exception {
         checkCells(false);
         processorHelper.physicalQET(cell0.getQubit(), cell1.getQubit(), phase);
     }
 
-    public void cQET (double phase) throws Exception {
+    void cQET (double phase) throws Exception {
         checkCells(true);
         processorHelper.physicalCQET(cell0.getQubit(), controlPoint.getQubit(), cell1.getQubit(), phase);
     }
 
-    public void PHASE (double phase) throws Exception {
+    void PHASE (double phase) throws Exception {
         checkCells(false);
         processorHelper.physicalPHASE(cell0.getQubit(), cell1.getQubit(), phase);
     }
