@@ -117,4 +117,19 @@ public class Emulator {
     private QuantumMemory memoryForAddress (QuantumMemoryAddress address){
         return address.getMemoryHalf()==MemoryHalf.HALF_0 ? memory0 : memory1;
     }
+
+    QuantumProccessorHelper.IsolatedQubitInfoToShare uploadIsolatedQubit (QuantumManager.Qubit q){
+        QuantumProccessorHelper.IsolatedQubitInfoToShare info = null;
+        try {
+            info = helper.upload(q);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return info;
+    }
+
+    void saveIsolatedQubit (QuantumProccessorHelper.IsolatedQubitInfoToShare info){
+        helper.saveIsolatedQubit(info);
+    }
 }

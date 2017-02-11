@@ -44,14 +44,26 @@ public class QuantumManager {
         return initNewQubit (Complex.unit(), Complex.zero());
     }
 
+    public String addressForNewRegister(){
+        Double.toString(new Date().getTime() + new Random().nextDouble());
+    }
+
     public Qubit initNewQubit(Complex alpha, Complex beta) throws Exception {
         QuantumRegister newRegister = new QuantumRegister(1, new Complex[]{alpha, beta});
-        String registerID = Double.toString(new Date().getTime() + new Random().nextDouble());
+        String registerID = addressForNewRegister();
         Qubit newQubit = new Qubit(registerID, 0);
         ArrayList<Qubit> qubits = new ArrayList<Qubit>();
         qubits.add(newQubit);
         registers.put(registerID, new RegisterInfo(qubits, newRegister));
         return newQubit;
+    }
+
+    public RegisterInfo uploadRegister (String registerAddress){
+        return registers.remove(registerAddress);
+    }
+
+    public void addRegister (RegisterInfo register){
+        registers.put(addressForNewRegister(), register);
     }
 
 
@@ -94,6 +106,9 @@ public class QuantumManager {
 
     protected int qubitAddressInRegister(Qubit q){
         return q.addressInRegister;
+    }
+    protected String qubitRegisterAddress (Qubit q){
+        return q.registerAddress;
     }
 
     protected void performTransitionForQubits (Complex[][] transitionMatrix, int firstQubitAddressInRegister,
