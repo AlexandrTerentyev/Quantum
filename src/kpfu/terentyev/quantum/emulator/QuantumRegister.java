@@ -114,8 +114,6 @@ public class QuantumRegister {
 
         int result = 0;
 
-        double norma = 0.0;
-
         Complex[][] P0Transpose = ComplexMath.hermitianTransposeForMatrix(P0, size, size);
 
         Complex[][] P0Transpose_P0 = ComplexMath.multiplication(P0Transpose, size, size, P0, size, size);
