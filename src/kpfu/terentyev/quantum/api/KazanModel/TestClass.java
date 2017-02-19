@@ -1,5 +1,6 @@
 package kpfu.terentyev.quantum.api.KazanModel;
 
+import kpfu.terentyev.quantum.api.QuantumManager;
 import kpfu.terentyev.quantum.emulator.Complex;
 
 /**
@@ -52,9 +53,37 @@ public class TestClass {
         System.out.print("End testing");
     }
 
+    static void testQuantumManager(){
+
+
+        try {
+            QuantumManager manager = new QuantumManager();
+            QuantumManager.Qubit qubit1 = manager.initNewQubit(Complex.zero(), Complex.unit());
+            QuantumManager.Qubit qubit2 = manager.initNewQubit();
+
+            Complex u = Complex.unit();
+            Complex z = Complex.zero();
+
+            Complex[][] U = {
+                    {u, z, z, z},
+                    {z, u, z, z},
+                    {z, z, u, z},
+                    {z, z, z, u},
+            };
+            manager.performTransitionForQubits(U, qubit1, qubit2);
+           
+            System.out.print("Qubit 1:" + manager.measure(qubit1) + "\n");
+            System.out.print("Qubit 2:" + manager.measure(qubit2) + "\n");
+        } catch (Exception e) {
+
+        }
+
+
+    }
+
 
 
     public static void main(String[] args) {
-        testKazanModelEmulator();
+        testQuantumManager();
     }
 }

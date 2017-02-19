@@ -16,7 +16,7 @@ public class QuantumProccessorHelper extends QuantumManager {
                 {Complex.zero(), new Complex(0, Math.sin(thetaPhaseInRadians/2)), new Complex(Math.cos(thetaPhaseInRadians/2), 0), Complex.zero()},
                 {Complex.zero(), Complex.zero(), Complex.zero(), Complex.unit()}
         };
-        performTransitionForQubits(matrix, Math.min(qubitAddressInRegister(a), qubitAddressInRegister(b)), regInfo, a, b);
+        performTransitionForQubits(matrix, regInfo, a, b);
     }
     void physicalCQET (Qubit a, Qubit control, Qubit b, double thetaInRadians) throws Exception {
         RegisterInfo regInfo = checkAndMergeRegistersIfNeedForQubits(a, control, b);
@@ -41,7 +41,7 @@ public class QuantumProccessorHelper extends QuantumManager {
                     {z,z,z,z, z, z, u, z},
                     {z,z,z,z, z, z, z, u}
             };
-            performTransitionForQubits(matrix, qubitAddressInRegister(control),
+            performTransitionForQubits(matrix,
                     regInfo, a, b, control);
         }else if (qubitAddressInRegister(control) > minAddressOfAB &&
                 qubitAddressInRegister(control) < maxAddressOfAB){
@@ -59,7 +59,7 @@ public class QuantumProccessorHelper extends QuantumManager {
                     {z, z, z,z,z,z, u, z},
                     {z, z, z,z,z,z, z, u}
             };
-            performTransitionForQubits(matrix, minAddressOfAB,
+            performTransitionForQubits(matrix,
                     regInfo, a, b, control);
         }else{
             //control qubit is last
@@ -77,7 +77,7 @@ public class QuantumProccessorHelper extends QuantumManager {
                     {z, z, z, u, z,z,z,z}
             };
 
-            performTransitionForQubits(matrix, minAddressOfAB,
+            performTransitionForQubits(matrix,
                     regInfo, a, b, control);
         }
     }
@@ -89,7 +89,7 @@ public class QuantumProccessorHelper extends QuantumManager {
                 {Complex.zero(), Complex.zero(), new Complex(Math.cos(thetaInRadians/2.0), Math.sin(thetaInRadians/2.0)), Complex.zero()},
                 {Complex.zero(), Complex.zero(), Complex.zero(), Complex.unit()}
         };
-        performTransitionForQubits(matrix, Math.min(qubitAddressInRegister(a), qubitAddressInRegister(b)), regInfo, a, b);
+        performTransitionForQubits(matrix, regInfo, a, b);
     }
 
     void mergeQubits (Qubit ...qubits) throws Exception {

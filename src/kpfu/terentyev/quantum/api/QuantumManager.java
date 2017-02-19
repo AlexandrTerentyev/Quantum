@@ -98,7 +98,7 @@ public class QuantumManager {
         return q.addressInRegister;
     }
 
-    protected void performTransitionForQubits (Complex[][] transitionMatrix, int firstQubitAddressInRegister,
+    protected void performTransitionForQubits (Complex[][] transitionMatrix,
                                      RegisterInfo mergedRegisterInfo, Qubit ... qubits) throws Exception {
         ArrayList<Integer> qubitIndexes = new ArrayList<Integer>();
         for (Qubit q: qubits
@@ -111,6 +111,10 @@ public class QuantumManager {
         mergedRegisterInfo.register.performAlgorythm(alg);
     }
 
+    public void performTransitionForQubits (Complex[][] transitionMatrix, Qubit ... qubits) throws Exception {
+        RegisterInfo info = checkAndMergeRegistersIfNeedForQubits(qubits);
+        performTransitionForQubits(transitionMatrix, info, qubits);
+    }
 
     // Operations
     public int measure (Qubit qubit) throws Exception {
