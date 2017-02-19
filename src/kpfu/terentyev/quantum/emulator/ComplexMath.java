@@ -20,6 +20,16 @@ public class ComplexMath {
         return result;
     }
 
+    public static Complex[][] multiplication (Complex a, Complex [][] matrix, int size){
+        Complex [][] result = new Complex[size][size];
+        for (int i=0; i<size;i++) {
+            for (int j=0; j<size; j++) {
+                result [i][j] = Complex.mult(a, matrix[i][j]);
+            }
+        }
+        return result;
+    }
+
     public static Complex[] multiplication (Complex [][] matrix, int size, Complex[] vector){
         Complex [] result = new Complex[size];
         for (int i=0; i<size;i++) {
@@ -42,8 +52,20 @@ public class ComplexMath {
         return result;
     }
 
-    public  static Complex[][] matricesMultiplication (Complex[][] matrixA, int heightA, int widthA,
-                                                       Complex [][] matrixB, int heightB, int widthB){
+    public static Complex[][] ketBraTensorMultiplication (Complex[] ket, Complex[] bra){
+        Complex [][] result = new Complex[ket.length][bra.length];
+
+        for (int i = 0; i < ket.length; i++){
+            for (int j = 0; j < bra.length; j++){
+                result [i][j] = Complex.mult(ket[i], bra[j]);
+            }
+        }
+
+        return result;
+    }
+
+    public  static Complex[][] multiplication(Complex[][] matrixA, int heightA, int widthA,
+                                              Complex [][] matrixB, int heightB, int widthB){
         Complex [][]result = new Complex[heightA][widthB];
         for (int i=0; i<heightA; i++){
             for (int j=0; j<widthB; j++){
@@ -85,6 +107,15 @@ public class ComplexMath {
         for (int i=0; i<height; i++)
             for (int j=0; j<width; j++)
                 result[j][i] = matrix[i][j].conjugate();
+        return result;
+    }
+
+    public static Complex trace (Complex[][] matrix, int size){
+        Complex result = Complex.zero();
+        for (int i=0; i < size; i++){
+            result = Complex.add(result, matrix[i][i]);
+        }
+
         return result;
     }
 }

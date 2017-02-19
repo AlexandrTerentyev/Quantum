@@ -69,13 +69,15 @@ public class QuantumManager {
         }
 
         //       Create new register merged registers
-        Complex[] newRegisterConfiguration = {Complex.unit()};
+        Complex[][] newRegisterConfiguration = {{Complex.unit()}};
         ArrayList <Qubit> newRegisterQubits = new ArrayList<Qubit>();
         String newRegisterAddress = Double.toString(new Date().getTime());
 
         for (String registerAddress: usedRegisterAddresses) {
             RegisterInfo currentRegisterInfo = registers.get(registerAddress);
-            newRegisterConfiguration = ComplexMath.tensorMultiplication(newRegisterConfiguration, currentRegisterInfo.register.getVector());
+            int tempSize = newRegisterConfiguration.length;
+            int currentSize = currentRegisterInfo.register.getDensityMatrix().length;
+            newRegisterConfiguration = ComplexMath.tensorMultiplication(newRegisterConfiguration, tempSize, tempSize, currentRegisterInfo.register.getDensityMatrix(), currentSize, currentSize);
             for (Qubit qubit: currentRegisterInfo.qubits){
                 newRegisterQubits.add(qubit);
                 qubit.registerAddress = newRegisterAddress;
@@ -107,13 +109,13 @@ public class QuantumManager {
     // Operations
     public int measure (Qubit qubit) throws Exception {
         RegisterInfo regInfo = registers.get(qubit.registerAddress);
-        int result = regInfo.register.measureQubit(qubit.addressInRegister, true);
-        int qubitPosition = regInfo.qubits.indexOf(qubit);
-        regInfo.qubits.remove(qubitPosition);
-        for (int i=qubitPosition; i< regInfo.qubits.size(); i++){
-            regInfo.qubits.get(i).addressInRegister --;
-        }
-        qubit.registerAddress = qubitDestroyedRegisterAddress;
+        int result = regInfo.register.measureQubit(qubit.addressInRegister);
+//        int qubitPosition = regInfo.qubits.indexOf(qubit);
+//        regInfo.qubits.remove(qubitPosition);
+//        for (int i=qubitPosition; i< regInfo.qubits.size(); i++){
+//            regInfo.qubits.get(i).addressInRegister --;
+//        }
+//        qubit.registerAddress = qubitDestroyedRegisterAddress;
 //        TODO: remove register if qubits count is 0
         return result;
     }
