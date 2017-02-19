@@ -100,8 +100,14 @@ public class QuantumManager {
 
     protected void performTransitionForQubits (Complex[][] transitionMatrix, int firstQubitAddressInRegister,
                                      RegisterInfo mergedRegisterInfo, Qubit ... qubits) throws Exception {
+        ArrayList<Integer> qubitIndexes = new ArrayList<Integer>();
+        for (Qubit q: qubits
+             ) {
+            qubitIndexes.add(q.addressInRegister);
+        }
+
         OneStepAlgorythm alg = new OneStepAlgorythm(mergedRegisterInfo.qubits.size(),
-                firstQubitAddressInRegister, qubits.length, transitionMatrix);
+                qubitIndexes, transitionMatrix);
         mergedRegisterInfo.register.performAlgorythm(alg);
     }
 
