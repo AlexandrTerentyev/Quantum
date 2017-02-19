@@ -23,8 +23,14 @@ public class Main extends Application {
     }
 
     public static void testKazanModelEmulator(){
+
+
 //        QVM initialization
-        Emulator QVM = new Emulator(200, 50, 50, 3);
+
+        double MAX_MEMORY_FREQUENCY = 200, MIN_MEMORY_FREQUENCY = 50, MEMORY_TIME_CYCLE = 50;
+        int PROCCESSING_UNITS_COUNT = 3;
+
+        Emulator QVM = new Emulator(MAX_MEMORY_FREQUENCY, MIN_MEMORY_FREQUENCY, MEMORY_TIME_CYCLE, PROCCESSING_UNITS_COUNT);
 
 
 //        Qubits initialization
@@ -37,19 +43,20 @@ public class Main extends Application {
                 MemoryHalf.HALF_1);
         QVM.initLogicalQubit(q1Address, q2Address);
 
-//        Tranzistor addresses
-        ProcessingAddress tranzistor0_0 = new ProcessingAddress(0, ProcessingUnitCellAddress.Cell0);
-        ProcessingAddress tranzistor0_1 = new ProcessingAddress(0, ProcessingUnitCellAddress.Cell1);
-        ProcessingAddress tranzistor0_c = new ProcessingAddress(0, ProcessingUnitCellAddress.ControlPoint);
+//        Transistor addresses
+        int currentTransisotorIndex = 0;
+        ProcessingAddress transistor0_0 = new ProcessingAddress(currentTransisotorIndex, ProcessingUnitCellAddress.Cell0);
+        ProcessingAddress transistor0_1 = new ProcessingAddress(currentTransisotorIndex, ProcessingUnitCellAddress.Cell1);
+        ProcessingAddress transistor0_c = new ProcessingAddress(currentTransisotorIndex, ProcessingUnitCellAddress.ControlPoint);
 
 
 
 //        Transitions
-        QVM.load(q1Address, tranzistor0_0);
-        QVM.load(q2Address, tranzistor0_1);
-        QVM.QET(0, Math.PI / 3.0);
-        QVM.save(tranzistor0_0, q1Address);
-        QVM.save(tranzistor0_1, q2Address);
+        QVM.load(q1Address, transistor0_0);
+        QVM.load(q2Address, transistor0_1);
+        QVM.QET(currentTransisotorIndex, Math.PI / 3.0);
+        QVM.save(transistor0_0, q1Address);
+        QVM.save(transistor0_1, q2Address);
 
 
         System.out.print("q1: " + QVM.measure(q1Address) + "\n");
