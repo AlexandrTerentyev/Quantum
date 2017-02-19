@@ -95,25 +95,4 @@ public class QuantumProccessorHelper extends QuantumManager {
     void mergeQubits (Qubit ...qubits) throws Exception {
         checkAndMergeRegistersIfNeedForQubits(qubits);
     }
-
-    public static class IsolatedQubitInfoToShare{
-        RegisterInfo info;
-
-        IsolatedQubitInfoToShare(RegisterInfo info){
-            this.info = info;
-        }
-    }
-
-    public IsolatedQubitInfoToShare upload (Qubit qubit) throws Exception {
-        String qubitRegisterAddress = qubitRegisterAddress(qubit);
-        if (registers.get(qubitRegisterAddress).qubits.size()!=1){
-            throw new Exception("try to upload not isolated qubit");
-        }
-
-        return new IsolatedQubitInfoToShare(uploadRegister(qubitRegisterAddress));
-    }
-
-    public void saveIsolatedQubit(IsolatedQubitInfoToShare info){
-        addRegister(info.info);
-    }
 }

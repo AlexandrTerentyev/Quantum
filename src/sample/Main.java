@@ -22,26 +22,6 @@ public class Main extends Application {
         testKazanModelEmulator();
     }
 
-//    void CNOT (Qubit controlQubit, Qubit targetQubit){
-//        LOAD(targetQubit.logicalZeroAddress, transistor.0);
-//        LOAD (targetQubit.logicalUnitAddress, transistor.1);
-//        LOAD(controlQubit.logicalZeroAddress, transistor.controlPoint);
-//
-//        QET();
-//
-//        SAVE(transistor.0, targetQubit.logicalZeroAddress);
-//        SAVE(transistor.1, targetQubit.logicalUnitAddress);
-//        SAVE(transistor.controlPoint, controlQubit);
-//
-//        LOAD(controlQubit.logicalZeroAddress, transistor.0);
-//        LOAD (controlQubit.logicalUnitAddress, transistor.1);
-//
-//        PHASE(Pi/2);
-//
-//        SAVE(transistor.1, controlQubit.logicalUnitAddress);
-//        SAVE(transistor.0, controlQubit.logicalZeroAddress);
-//    }
-
     public static void testKazanModelEmulator(){
 //        QVM initialization
         Emulator QVM = new Emulator(200, 50, 50, 3);
