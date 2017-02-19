@@ -52,3 +52,6 @@ called Emulator in this repo.
 
 
 ```
+
+###Integration
+You can download jar file by [link](https://github.com/AlexandrTerentyev/Quantum/raw/master/jars/Quantum/Quantum.jar)
