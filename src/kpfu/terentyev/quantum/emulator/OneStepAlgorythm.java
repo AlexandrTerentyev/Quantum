@@ -11,19 +11,28 @@ import java.util.List;
  */
 
 /**
- * Algorythm matrix must math to qubits order in algorythm scheme
+ * Algorythm matrix must math to qubits order in algorythm scheme.
+ *
+ * To not use controlQubit pass value NotAnIndex
  * */
+
 public class OneStepAlgorythm extends QuantumAlgorithm {
+
+    public static final int NotAnIndex = -1;
+
     public OneStepAlgorythm(int qubitsInRegister,
-                                        List<Integer> gateQubitIndexes,
-                                        Complex[][] transformationMatrix) throws Exception {
+                            int controlQubitIndex,
+                            List<Integer> gateQubitIndexes,
+                            Complex[][] transformationMatrix) throws Exception {
         stepsNumber = 1;
         QuantumSchemeStepQubitAttributes [][] algSheme = new QuantumSchemeStepQubitAttributes[qubitsInRegister][1];
         String gateId = "Gate";
         for (int i = 0; i < qubitsInRegister; i++){
             if (gateQubitIndexes.contains(new Integer(i))){
                 algSheme[i][0] = new QuantumSchemeStepQubitAttributes(gateId, false);
-            }else {
+            }else if(i == controlQubitIndex){
+                algSheme[i][0] = new QuantumSchemeStepQubitAttributes(gateId, true);
+            }else{
                 algSheme[i][0] = new QuantumSchemeStepQubitAttributes();
             }
         }

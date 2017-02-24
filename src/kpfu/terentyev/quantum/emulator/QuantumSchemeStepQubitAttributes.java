@@ -9,15 +9,15 @@ public class QuantumSchemeStepQubitAttributes {
     /*
     * This equals to qubit is "upper than other"
     * */
-    boolean controlled;
+    boolean control;
     public static String IdentityGateID = "IdentityGateID";
 
-    public QuantumSchemeStepQubitAttributes(String gateID, boolean controlled) {
+    public QuantumSchemeStepQubitAttributes(String gateID, boolean control) {
         this.gateID = gateID;
-        this.controlled = controlled;
+        this.control = control;
     }
     public QuantumSchemeStepQubitAttributes (){
         this.gateID = IdentityGateID;
-        this.controlled=false;
+        this.control =false;
     }
 }

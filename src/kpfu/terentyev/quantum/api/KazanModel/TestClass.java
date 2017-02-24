@@ -59,7 +59,8 @@ public class TestClass {
         try {
             QuantumManager manager = new QuantumManager();
             QuantumManager.Qubit qubit1 = manager.initNewQubit(Complex.zero(), Complex.unit());
-            QuantumManager.Qubit qubit2 = manager.initNewQubit();
+            QuantumManager.Qubit qubit2 = manager.initNewQubit(Complex.zero(), Complex.unit());
+            QuantumManager.Qubit qubit3 = manager.initNewQubit(Complex.zero(), Complex.unit());
 
             Complex u = Complex.unit();
             Complex z = Complex.zero();
@@ -67,15 +68,17 @@ public class TestClass {
             Complex[][] U = {
                     {u, z, z, z},
                     {z, u, z, z},
-                    {z, z, u, z},
                     {z, z, z, u},
+                    {z, z, u, z},
             };
-            manager.performTransitionForQubits(U, qubit1, qubit2);
+            manager.performTransitionForQubits(qubit2, U, qubit1);
+//            manager.performTransitionForQubits(qubit1, U, qubit3);
            
             System.out.print("Qubit 1:" + manager.measure(qubit1) + "\n");
             System.out.print("Qubit 2:" + manager.measure(qubit2) + "\n");
+            System.out.print("Qubit 3:" + manager.measure(qubit3) + "\n");
         } catch (Exception e) {
-
+            System.out.print("Exception:" + e.getLocalizedMessage() + "\n");
         }
 
 

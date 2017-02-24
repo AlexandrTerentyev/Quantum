@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
 
+import static kpfu.terentyev.quantum.emulator.OneStepAlgorythm.NotAnIndex;
+
 /**
  * Created by aleksandrterentev on 24.01.16.
  */
@@ -98,7 +100,7 @@ public class QuantumManager {
         return q.addressInRegister;
     }
 
-    protected void performTransitionForQubits (Complex[][] transitionMatrix,
+    protected void performTransitionForQubits (Qubit controlQubit, Complex[][] transitionMatrix,
                                      RegisterInfo mergedRegisterInfo, Qubit ... qubits) throws Exception {
         ArrayList<Integer> qubitIndexes = new ArrayList<Integer>();
         for (Qubit q: qubits
@@ -106,14 +108,30 @@ public class QuantumManager {
             qubitIndexes.add(q.addressInRegister);
         }
 
-        OneStepAlgorythm alg = new OneStepAlgorythm(mergedRegisterInfo.qubits.size(),
+        int controlQubitIndex = NotAnIndex;
+        if (controlQubit != null){
+            controlQubitIndex = controlQubit.addressInRegister;
+        }
+
+        OneStepAlgorythm alg = new OneStepAlgorythm(mergedRegisterInfo.qubits.size(), controlQubitIndex,
                 qubitIndexes, transitionMatrix);
         mergedRegisterInfo.register.performAlgorythm(alg);
     }
 
-    public void performTransitionForQubits (Complex[][] transitionMatrix, Qubit ... qubits) throws Exception {
-        RegisterInfo info = checkAndMergeRegistersIfNeedForQubits(qubits);
-        performTransitionForQubits(transitionMatrix, info, qubits);
+    public void performTransitionForQubits (Qubit controlQubit, Complex[][] transitionMatrix, Qubit ... qubits) throws Exception {
+        ArrayList<Qubit> allQubits = new ArrayList<Qubit>();
+        for (Qubit q: qubits){
+            allQubits.add(q);
+        }
+
+        if (controlQubit != null) {
+            allQubits.add(controlQubit);
+        }
+
+        Qubit[] qubitsArray = new Qubit[allQubits.size()];
+        qubitsArray = allQubits.toArray(qubitsArray);
+        RegisterInfo info = checkAndMergeRegistersIfNeedForQubits(qubitsArray);
+        performTransitionForQubits(controlQubit, transitionMatrix, info, qubits);
     }
 
     // Operations
