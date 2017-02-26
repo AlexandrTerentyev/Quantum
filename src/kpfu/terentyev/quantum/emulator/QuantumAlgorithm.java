@@ -1,6 +1,7 @@
 package kpfu.terentyev.quantum.emulator;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -135,7 +136,12 @@ public class QuantumAlgorithm extends QuantumGate {
 
             Complex[][] swapMatrix = null;
 
-            for (int level=0; level< levelNumber; level++){
+            boolean[] currentQubitsPositions = new boolean[qubitsNumber];
+            for (Number index: mainGateQubits){
+                currentQubitsPositions[index.intValue()] = true;
+            }
+
+            for (int level=0; level<= levelNumber; level++){
                 //find upper and lower qubits. Upper index is less than lower index
                 upperQubit=-1; lowerQubit=-1; //empty
                 int upperPlace = gravityCenter-level;
@@ -146,18 +152,20 @@ public class QuantumAlgorithm extends QuantumGate {
 
                 int distance;
                 for (; upperIndex>=0; upperIndex--){
-                    QuantumSchemeStepQubitAttributes upperQubitParams = algorithmSchemeMatrix[upperIndex][step];
-                    if (upperQubit==-1 && upperQubitParams.gateID.equals(mainGateID)){
+                    if (upperQubit==-1 && currentQubitsPositions[upperIndex]){
                         upperQubit=upperIndex;
+                        currentQubitsPositions[upperIndex] = false;
+                        currentQubitsPositions[gravityCenter-level] = true;
                         break;
                     }
                 }
 
                 if (level>0) {
                     for (; lowerIndex < qubitsNumber; lowerIndex++) {
-                        QuantumSchemeStepQubitAttributes lowerQubitParams = algorithmSchemeMatrix[lowerIndex][step];
-                        if (lowerQubit == -1 && lowerQubitParams.gateID.equals(mainGateID)) {
+                        if (lowerQubit == -1 && currentQubitsPositions[lowerIndex]) {
                             lowerQubit = lowerIndex;
+                            currentQubitsPositions[lowerIndex] = false;
+                            currentQubitsPositions[gravityCenter+level] = true;
                             break;
                         }
                     }
@@ -173,6 +181,15 @@ public class QuantumAlgorithm extends QuantumGate {
                         if ((i==upperQubit && upperQubit==upperPlace-distance) ||
                                 (i==lowerQubit-1 && lowerQubit==lowerPlace+distance)){
                             //need to swap upper gate
+
+                            if (i == upperQubit){
+                                upperQubit++;
+                            }
+
+                            if (i == lowerQubit - 1){
+                                lowerQubit--;
+                            }
+
                             currentDistanceSwap = ComplexMath.tensorMultiplication(currentDistanceSwap,
                                     currentDistanceSwap.length, currentDistanceSwap.length,
                                     swapGateMatrix,

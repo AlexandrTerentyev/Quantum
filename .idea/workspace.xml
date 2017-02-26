@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jars/Quantum/Quantum.jar" afterPath="$PROJECT_DIR$/jars/Quantum/Quantum.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumAlgorithm.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumAlgorithm.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -84,14 +84,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="QuantumAlgorithm.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="QuantumAlgorithm.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+            <state relative-caret-position="-225">
+              <caret line="261" column="14" lean-forward="false" selection-start-line="261" selection-start-column="14" selection-end-line="261" selection-end-column="14" />
               <folding>
-                <element signature="e#1297#1305#0" expanded="true" />
-                <element signature="e#3483#3496#0" expanded="true" />
+                <element signature="e#1320#1328#0" expanded="true" />
+                <element signature="e#3506#3519#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestClass.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="62" column="93" lean-forward="false" selection-start-line="62" selection-start-column="93" selection-end-line="62" selection-end-column="93" />
+            <state relative-caret-position="74">
+              <caret line="60" column="53" lean-forward="false" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -897,12 +897,12 @@
       <workItem from="1487961700782" duration="223000" />
       <workItem from="1487962925032" duration="2670000" />
       <workItem from="1488112008556" duration="952000" />
-      <workItem from="1488126231624" duration="5836000" />
+      <workItem from="1488126231624" duration="9698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127735000" />
+    <option name="totallyTimeSpent" value="131597000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -926,7 +926,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3206687" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35106382" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3355049" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -1025,17 +1025,11 @@
           <properties />
           <option name="timeStamp" value="90" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumAlgorithm.java</url>
-          <line>208</line>
-          <properties />
-          <option name="timeStamp" value="216" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="217" />
+      <option name="time" value="226" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1416,23 +1410,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumAlgorithm.java">
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+        <state relative-caret-position="74">
+          <caret line="60" column="53" lean-forward="false" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
           <folding>
-            <element signature="e#1297#1305#0" expanded="true" />
-            <element signature="e#3483#3496#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/TestClass.java">
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="62" column="93" lean-forward="false" selection-start-line="62" selection-start-column="93" selection-end-line="62" selection-end-column="93" />
+        <state relative-caret-position="-225">
+          <caret line="261" column="14" lean-forward="false" selection-start-line="261" selection-start-column="14" selection-end-line="261" selection-end-column="14" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1320#1328#0" expanded="true" />
+            <element signature="e#3506#3519#0" expanded="true" />
           </folding>
         </state>
       </provider>
