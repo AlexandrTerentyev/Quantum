@@ -123,8 +123,11 @@ public class QuantumAlgorithm extends QuantumGate {
             if (count>0){
                 gravityCenter = mainGateIndexesSum/count;
             }
+
+            int currentUpperQubitIdex = mainGateQubits.get(0).intValue();
+
             int upperQubit, lowerQubit;
-            int levelNumber = mainGateQubits.size()/2;
+            int levelNumber = mainGateQubits.size()/2 + mainGateQubits.size()%2;
 //            ArrayList <Complex[][]> swapMatrices = new ArrayList<Complex[][]>();
             Complex[][] centralMatrix = {{Complex.unit()}}; //matrix perfomed main gate when all qubits are near
             Complex[][] swapGateMatrix = QuantumGate.swapGateMatrix();
@@ -142,7 +145,7 @@ public class QuantumAlgorithm extends QuantumGate {
 
 
                 int distance;
-                for (; upperIndex<=gravityCenter; upperIndex++){
+                for (; upperIndex>=0; upperIndex--){
                     QuantumSchemeStepQubitAttributes upperQubitParams = algorithmSchemeMatrix[upperIndex][step];
                     if (upperQubit==-1 && upperQubitParams.gateID.equals(mainGateID)){
                         upperQubit=upperIndex;
@@ -150,17 +153,20 @@ public class QuantumAlgorithm extends QuantumGate {
                     }
                 }
 
-                for (; lowerIndex>gravityCenter; lowerIndex--){
-                    QuantumSchemeStepQubitAttributes lowerQubitParams = algorithmSchemeMatrix[lowerIndex][step];
-                    if (lowerQubit == -1 && lowerQubitParams.gateID.equals(mainGateID)){
-                        lowerQubit = lowerIndex;
-                        break;
+                if (level>0) {
+                    for (; lowerIndex < qubitsNumber; lowerIndex++) {
+                        QuantumSchemeStepQubitAttributes lowerQubitParams = algorithmSchemeMatrix[lowerIndex][step];
+                        if (lowerQubit == -1 && lowerQubitParams.gateID.equals(mainGateID)) {
+                            lowerQubit = lowerIndex;
+                            break;
+                        }
                     }
                 }
+
                 distance = Math.max(upperPlace-upperQubit, lowerQubit-lowerPlace);
 
                 //move qubits to gravity center + level
-                for (; distance>level; distance--){
+                for (; distance>0; distance--){
                     //form swap matrix
                     Complex currentDistanceSwap[][] = {{Complex.unit()}};
                     for (int i=0; i<qubitsNumber; ){
@@ -188,18 +194,22 @@ public class QuantumAlgorithm extends QuantumGate {
                     }
                 }
 
+
+                if (upperQubit != -1){
+                    currentUpperQubitIdex = upperPlace;
+                }
             }
 
-            //Move control qubit to bottom if need
+            //Move control qubit to top if need
             int controlQubitIndex = -1;
-            for (int i=0; i<mainGateQubits.size()-1; i++){
+            for (int i=0; i<mainGateQubits.size(); i++){
                 if (algorithmSchemeMatrix[mainGateQubits.get(i).intValue()][step].control)
                     controlQubitIndex=i;
             }
             if (controlQubitIndex!=-1) {
                 //project to current positions
-                controlQubitIndex = gravityCenter - levelNumber + controlQubitIndex;
-                for (; controlQubitIndex > gravityCenter-levelNumber; controlQubitIndex--){
+                controlQubitIndex = currentUpperQubitIdex + controlQubitIndex;
+                for (; controlQubitIndex > currentUpperQubitIdex; controlQubitIndex--){
                     Complex currentSwap[][] = {{Complex.unit()}};
                     for (int i=0; i<qubitsNumber;){
                         if (i < qubitsNumber - 1 && i+1==controlQubitIndex){
