@@ -99,15 +99,20 @@ public class QuantumAlgorithm extends QuantumGate {
                     }
                     swapMatrices.add(currentSwap);
                 }
-                result=swapMatrices.get(0).clone();
-                for (int i=1 ; i<swapMatrices.size(); i++){
-                    result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
+
+                if (swapMatrices.size() > 0) {
+                    result=swapMatrices.get(0).clone();
+                    for (int i=1 ; i<swapMatrices.size(); i++){
+                        result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
+                    }
+
+                    Complex[][] swapConj = ComplexMath.hermitianTransposeForMatrix(result, result.length, result.length);
+
+                    result=ComplexMath.squareMatricesMultiplication(result, centralMatr, result.length);
+                    result=ComplexMath.squareMatricesMultiplication(result, swapConj, result.length);
+                }else{
+                    result=centralMatr;
                 }
-
-                Complex[][] swapConj = ComplexMath.hermitianTransposeForMatrix(result, result.length, result.length);
-
-                result=ComplexMath.squareMatricesMultiplication(result, centralMatr, result.length);
-                result=ComplexMath.squareMatricesMultiplication(result, swapConj, result.length);
             }else {
                 result=centralMatr;
             }

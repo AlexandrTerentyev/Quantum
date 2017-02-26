@@ -59,7 +59,7 @@ public class TestClass {
         try {
             QuantumManager manager = new QuantumManager();
             QuantumManager.Qubit qubit1 = manager.initNewQubit(Complex.zero(), Complex.unit());
-            QuantumManager.Qubit qubit2 = manager.initNewQubit(Complex.zero(), Complex.unit());
+            QuantumManager.Qubit qubit2 = manager.initNewQubit(Complex.unit(), Complex.zero());
             QuantumManager.Qubit qubit3 = manager.initNewQubit(Complex.zero(), Complex.unit());
 
             Complex u = Complex.unit();
@@ -71,8 +71,8 @@ public class TestClass {
                     {z, z, z, u},
                     {z, z, u, z},
             };
-            manager.performTransitionForQubits(qubit2, U, qubit1);
-//            manager.performTransitionForQubits(qubit1, U, qubit3);
+            manager.performTransitionForQubits(qubit1, U, qubit2);
+            manager.performTransitionForQubits(qubit2, U, qubit3);
            
             System.out.print("Qubit 1:" + manager.measure(qubit1) + "\n");
             System.out.print("Qubit 2:" + manager.measure(qubit2) + "\n");

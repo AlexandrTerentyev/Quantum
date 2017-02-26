@@ -88,11 +88,17 @@ public class QuantumRegister {
     }
 
     public void performAlgorythm (QuantumAlgorithm algorythm) throws Exception {
-        densityMatrix = ComplexMath.multiplication(algorythm.getMatrix(), size, size, densityMatrix, size, size);
+        performTransformationWithMatrix(algorythm.getMatrix());
     }
 
     public void performAlgorythm (OneStepOneQubitGateAlgorythm algorythm) throws Exception {
-        densityMatrix = ComplexMath.multiplication(algorythm.getMatrix(), size, size, densityMatrix, size, size);
+        performTransformationWithMatrix(algorythm.getMatrix());
+    }
+
+    private void performTransformationWithMatrix (Complex[][] U){
+        densityMatrix = ComplexMath.squareMatricesMultiplication(U, densityMatrix, size);
+        Complex[][] U_transpose = ComplexMath.hermitianTransposeForMatrix(U, size, size);
+        densityMatrix = ComplexMath.squareMatricesMultiplication(densityMatrix, U_transpose, size);
     }
 
 
