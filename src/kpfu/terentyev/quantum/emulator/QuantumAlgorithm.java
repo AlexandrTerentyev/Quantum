@@ -136,13 +136,13 @@ public class QuantumAlgorithm extends QuantumGate {
                 //find upper and lower qubits. Upper index is less than lower index
                 upperQubit=-1; lowerQubit=-1; //empty
                 int upperPlace = gravityCenter-level;
-                int lowerPlace = gravityCenter+1+level;
+                int lowerPlace = gravityCenter+level;
                 int upperIndex = upperPlace;
                 int lowerIndex = lowerPlace;
 
 
                 int distance;
-                for (; upperIndex>=0; upperIndex--){
+                for (; upperIndex<=gravityCenter; upperIndex++){
                     QuantumSchemeStepQubitAttributes upperQubitParams = algorithmSchemeMatrix[upperIndex][step];
                     if (upperQubit==-1 && upperQubitParams.gateID.equals(mainGateID)){
                         upperQubit=upperIndex;
@@ -150,7 +150,7 @@ public class QuantumAlgorithm extends QuantumGate {
                     }
                 }
 
-                for (; lowerIndex<qubitsNumber; lowerIndex++){
+                for (; lowerIndex>gravityCenter; lowerIndex--){
                     QuantumSchemeStepQubitAttributes lowerQubitParams = algorithmSchemeMatrix[lowerIndex][step];
                     if (lowerQubit == -1 && lowerQubitParams.gateID.equals(mainGateID)){
                         lowerQubit = lowerIndex;

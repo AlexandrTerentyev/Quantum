@@ -72,7 +72,7 @@ public class TestClass {
                     {z, z, u, z},
             };
             manager.performTransitionForQubits(qubit1, U, qubit2);
-            manager.performTransitionForQubits(qubit2, U, qubit3);
+            manager.performTransitionForQubits(qubit1, U, qubit3);
            
             System.out.print("Qubit 1:" + manager.measure(qubit1) + "\n");
             System.out.print("Qubit 2:" + manager.measure(qubit2) + "\n");
