@@ -26,7 +26,8 @@ public class TestClass {
                 MemoryHalf.HALF_0);
         QuantumMemoryAddress q2Address = new QuantumMemoryAddress(logicalQubit1Freq, logicalQubit1TimeDelay,
                 MemoryHalf.HALF_1);
-        QVM.initLogicalQubit(q1Address, q2Address);
+        QVM.initLogicalQubit(q1Address, new Complex(1, 0), new Complex(0,0),
+                q2Address, new Complex(0,0), new Complex(1,0));
 
 //        Transistor addresses
         int currentTransisotorIndex = 0;
@@ -39,7 +40,8 @@ public class TestClass {
 //        Transitions
         QVM.load(q1Address, transistor0_0);
         QVM.load(q2Address, transistor0_1);
-        QVM.QET(currentTransisotorIndex, Math.PI / 3.0);
+        QVM.QET(currentTransisotorIndex, Math.PI / 4.0);
+        QVM.QET(currentTransisotorIndex, Math.PI / 4.0);
         QVM.save(transistor0_0, q1Address);
         QVM.save(transistor0_1, q2Address);
 
@@ -134,6 +136,6 @@ public class TestClass {
 
 
     public static void main(String[] args) {
-        testQuantumManager();
+        testKazanModelEmulator();
     }
 }
