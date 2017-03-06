@@ -125,7 +125,7 @@ public class QuantumRegister {
         Complex[][] P0Transpose_P0 = ComplexMath.multiplication(P0Transpose, size, size, P0, size, size);
         Complex [][] P0Transpose_P0_ro = ComplexMath.multiplication(P0Transpose_P0,size, size, densityMatrix, size, size);
 
-        double p0Norma =  ComplexMath.trace(P0Transpose_P0_ro, size).norma();
+        double p0Norma =  ComplexMath.trace(P0Transpose_P0_ro, size).getReal();
 
         //measure and normalize
         Complex [][] Pm;
