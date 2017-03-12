@@ -40,8 +40,8 @@ public class TestClass {
 //        Transitions
         QVM.load(q1Address, transistor0_0);
         QVM.load(q2Address, transistor0_1);
-        QVM.QET(currentTransisotorIndex, Math.PI / 2.0);
-        QVM.QET(currentTransisotorIndex, Math.PI / 2.0);
+        QVM.QET(currentTransisotorIndex, Math.PI / 4.0);
+        QVM.QET(currentTransisotorIndex, Math.PI / 4.0);
         QVM.save(transistor0_0, q1Address);
         QVM.save(transistor0_1, q2Address);
 
@@ -136,6 +136,6 @@ public class TestClass {
 
 
     public static void main(String[] args) {
-        testKazanModelEmulator();
+        testQuantumManager();
     }
 }
