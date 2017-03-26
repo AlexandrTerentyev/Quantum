@@ -144,10 +144,9 @@ public class QuantumRegister {
 
         Complex[][] PmTranspose = ComplexMath.hermitianTransposeForMatrix(Pm, size, size);
 
-        Complex[][] Pm_ro = ComplexMath.squareMatricesMultiplication(Pm,  densityMatrix, size);
-
         Complex [][] Pm_ro_PmTranspose = ComplexMath.squareMatricesMultiplication(
-                Pm_ro, PmTranspose, size
+                ComplexMath.squareMatricesMultiplication(Pm,  densityMatrix, size),
+                PmTranspose, size
         );
 
         Complex [][] PmTranspose_Pm_ro = ComplexMath.squareMatricesMultiplication(
@@ -155,10 +154,7 @@ public class QuantumRegister {
                 densityMatrix, size
                 );
 
-        Complex trace =  ComplexMath.trace(PmTranspose_Pm_ro, size);
-        Complex devider = new Complex(1 / trace.getReal(), 0);
-
-        densityMatrix = ComplexMath.multiplication(devider,
+        densityMatrix = ComplexMath.multiplication(ComplexMath.trace(PmTranspose_Pm_ro, size).conjugate(),
                 Pm_ro_PmTranspose, size
                 );
 

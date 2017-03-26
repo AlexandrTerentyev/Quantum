@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Quantum.iml" filepath="$PROJECT_DIR$/Quantum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/QuantumEmulator.iml" filepath="$PROJECT_DIR$/.idea/modules/QuantumEmulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/QuantumEmulator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/QuantumEmulator_main.iml" group="QuantumEmulator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/QuantumEmulator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/QuantumEmulator_test.iml" group="QuantumEmulator" />
     </modules>
   </component>
 </project>

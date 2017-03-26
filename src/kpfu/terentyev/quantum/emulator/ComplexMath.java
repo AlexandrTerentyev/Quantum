@@ -105,13 +105,8 @@ public class ComplexMath {
     public static  Complex[][] hermitianTransposeForMatrix (Complex[][] matrix, int height, int width){
         Complex [][] result = new Complex[width][height];
         for (int i=0; i<height; i++)
-            for (int j=0; j<width; j++) {
-                if (i==j){
-                    result[j][i] = matrix[i][j];
-                }else {
-                    result[j][i] = matrix[i][j].conjugate();
-                }
-            }
+            for (int j=0; j<width; j++)
+                result[j][i] = matrix[i][j].conjugate();
         return result;
     }
 
