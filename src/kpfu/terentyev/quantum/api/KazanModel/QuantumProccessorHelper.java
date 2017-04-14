@@ -1,8 +1,6 @@
 package kpfu.terentyev.quantum.api.KazanModel;
 
 import kpfu.terentyev.quantum.api.QuantumManager;
-import kpfu.terentyev.quantum.emulator.Complex;
-import kpfu.terentyev.quantum.emulator.OneStepOneQubitGateAlgorythm;
 
 /**
  * Created by aleksandrterentev on 29.03.16.

@@ -1,6 +1,5 @@
 package kpfu.terentyev.quantum.api;
 
-import kpfu.terentyev.quantum.emulator.Complex;
 import kpfu.terentyev.quantum.emulator.OneStepOneQubitGateAlgorythm;
 import kpfu.terentyev.quantum.emulator.Gates.PhaseGate;
 import kpfu.terentyev.quantum.emulator.OneStepTwoQubitGateAlgorythm;

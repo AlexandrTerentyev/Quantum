@@ -1,5 +1,6 @@
 package kpfu.terentyev.quantum.emulator;
 
+import jcuda.cuComplex;
 import kpfu.terentyev.quantum.emulator.Gates.UGate;
 import kpfu.terentyev.quantum.emulator.QuantumAlgorithm;
 
@@ -23,7 +24,7 @@ public class OneStepAlgorythm extends QuantumAlgorithm {
     public OneStepAlgorythm(int qubitsInRegister,
                             int controlQubitIndex,
                             List<Integer> gateQubitIndexes,
-                            Complex[][] transformationMatrix) throws Exception {
+                            cuComplex[][] transformationMatrix) throws Exception {
         stepsNumber = 1;
         QuantumSchemeStepQubitAttributes [][] algSheme = new QuantumSchemeStepQubitAttributes[qubitsInRegister][1];
         String gateId = "Gate";

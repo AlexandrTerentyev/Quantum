@@ -1,5 +1,7 @@
 package kpfu.terentyev.quantum.emulator;
 
+import jcuda.cuComplex;
+
 /**
  * Created by alexandrterentyev on 25.02.15.
  */
@@ -11,7 +13,7 @@ public abstract class QuantumGate {
 
     @Override
     public String toString(){
-        Complex [][] matrix = new Complex[0][];
+        cuComplex[][] matrix = new cuComplex[0][];
         try {
             matrix = this.getMatrix();
         } catch (Exception e) {
@@ -27,47 +29,47 @@ public abstract class QuantumGate {
         return result;
     }
 
-    public abstract Complex [][] getMatrix () throws Exception;
+    public abstract cuComplex [][] getMatrix () throws Exception;
 
 
     //Gate matrices
-    public static Complex [][] identityGateMatrix(){
-        Complex result [][] = {
+    public static cuComplex [][] identityGateMatrix(){
+        cuComplex result [][] = {
                 {Complex.unit(),Complex.zero()},
                 {Complex.zero(),Complex.unit()}
         };
         return result;
     }
-    public static Complex [][] hadamardGateMatrix (){
-        Complex result [][] = {
-                {new Complex(1/Math.sqrt(2), 0),new Complex(1/Math.sqrt(2),0)},
-                {new Complex(1/Math.sqrt(2), 0),new Complex(-1/Math.sqrt(2),0)}
+    public static cuComplex [][] hadamardGateMatrix (){
+        cuComplex result [][] = {
+                {cuComplex.cuCmplx((float) (1/Math.sqrt(2)), 0),cuComplex.cuCmplx((float) (1/Math.sqrt(2)),0)},
+                {cuComplex.cuCmplx((float) (1/Math.sqrt(2)), 0),cuComplex.cuCmplx((float) (-1/Math.sqrt(2)),0)}
         };
         return result;
     }
-    public static Complex [][] pauliXGateMatrix (){
-        Complex result [][] = {
+    public static cuComplex [][] pauliXGateMatrix (){
+        cuComplex result [][] = {
                 {Complex.zero(),Complex.unit()},
                 {Complex.unit(),Complex.zero()}
         };
         return result;
     }
-    public static Complex [][] pauliYGateMatrix (){
-        Complex result [][] = {
-                {Complex.zero(),new Complex(0, -1)},
-                {new Complex(0,1),Complex.zero()}
+    public static cuComplex [][] pauliYGateMatrix (){
+        cuComplex result [][] = {
+                {Complex.zero(),cuComplex.cuCmplx(0, -1)},
+                {cuComplex.cuCmplx(0,1),Complex.zero()}
         };
         return result;
     }
-    public static Complex [][] pauliZGateMatrix (){
-        Complex result [][] = {
-                {new Complex(0,1),Complex.zero()},
-                {Complex.zero(),new Complex(0, -1)}
+    public static cuComplex [][] pauliZGateMatrix (){
+        cuComplex result [][] = {
+                {cuComplex.cuCmplx(0,1),Complex.zero()},
+                {Complex.zero(),cuComplex.cuCmplx(0, -1)}
         };
         return result;
     }
-    public static Complex [][] swapGateMatrix(){
-        Complex result [][] = {
+    public static cuComplex [][] swapGateMatrix(){
+        cuComplex result [][] = {
                 {Complex.unit(), Complex.zero(), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.zero(), Complex.unit(), Complex.zero()},
                 {Complex.zero(), Complex.unit(), Complex.zero(), Complex.zero()},
@@ -75,8 +77,8 @@ public abstract class QuantumGate {
         };
         return result;
     }
-    public static Complex [][] controlledNOTGateMatrix(){
-        Complex result [][] = {
+    public static cuComplex [][] controlledNOTGateMatrix(){
+        cuComplex result [][] = {
                 {Complex.unit(), Complex.zero(), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.unit(), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.zero(), Complex.zero(), Complex.unit()},
@@ -84,11 +86,11 @@ public abstract class QuantumGate {
         };
         return result;
     }
-    public static Complex [][] controlledUGateMatrix(Complex[][] uMatrix) throws Exception {
+    public static cuComplex [][] controlledUGateMatrix(cuComplex[][] uMatrix) throws Exception {
         if (uMatrix.length!=2 || (uMatrix.length==2 && (uMatrix[0].length!=2 || uMatrix[1].length!=2))){
             throw new Exception();
         }
-        Complex result [][] = {
+        cuComplex result [][] = {
                 {Complex.unit(), Complex.zero(), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.unit(), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.zero(), uMatrix[0][0], uMatrix[0][1]},
@@ -96,8 +98,8 @@ public abstract class QuantumGate {
         };
         return result;
     }
-    public static Complex [][] toffoliGateMatrix(){
-        Complex result [][] = {
+    public static cuComplex [][] toffoliGateMatrix(){
+        cuComplex result [][] = {
                 {Complex.unit(), Complex.zero(), Complex.zero(), Complex.zero(),
                         Complex.zero(), Complex.zero(), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.unit(), Complex.zero(), Complex.zero(),
@@ -117,8 +119,8 @@ public abstract class QuantumGate {
         };
         return result;
     }
-    public static Complex [][] fredkinGateMatrix(){
-        Complex result [][] = {
+    public static cuComplex [][] fredkinGateMatrix(){
+        cuComplex result [][] = {
                 {Complex.unit(), Complex.zero(), Complex.zero(), Complex.zero(),
                         Complex.zero(), Complex.zero(), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.unit(), Complex.zero(), Complex.zero(),

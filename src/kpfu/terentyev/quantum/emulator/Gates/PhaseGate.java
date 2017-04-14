@@ -1,7 +1,8 @@
 package kpfu.terentyev.quantum.emulator.Gates;
 
-import kpfu.terentyev.quantum.emulator.Complex;
+import jcuda.cuComplex;
 import kpfu.terentyev.quantum.emulator.QuantumGate;
+import kpfu.terentyev.quantum.emulator.Complex;
 
 /**
  * Created by aleksandrterentev on 08.03.16.
@@ -17,10 +18,10 @@ public class PhaseGate extends QuantumGate {
     }
 
     @Override
-    public Complex[][] getMatrix() throws Exception {
-        Complex [][] result = {
-                {new Complex(Math.cos(-thetaPhaseInRadians/2.0), Math.sin(-thetaPhaseInRadians/2.0)), Complex.zero()},
-                {Complex.zero(), new Complex(Math.cos(thetaPhaseInRadians/2.0), Math.sin(thetaPhaseInRadians/2.0))},
+    public cuComplex[][] getMatrix() throws Exception {
+        cuComplex [][] result = {
+                {cuComplex.cuCmplx((float)Math.cos(-thetaPhaseInRadians/2.0),(float) Math.sin(-thetaPhaseInRadians/2.0)), Complex.zero()},
+                {Complex.zero(), cuComplex.cuCmplx((float)Math.cos(thetaPhaseInRadians/2.0), (float) Math.sin(thetaPhaseInRadians/2.0))},
         };
         return result;
     }

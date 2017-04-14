@@ -1,7 +1,6 @@
 package kpfu.terentyev.quantum.api.KazanModel;
 
 import kpfu.terentyev.quantum.api.QuantumManager;
-import kpfu.terentyev.quantum.emulator.Complex;
 
 /**
  * Created by aleksandrterentev on 17.04.16.

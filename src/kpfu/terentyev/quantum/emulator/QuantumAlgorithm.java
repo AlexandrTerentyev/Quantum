@@ -1,5 +1,7 @@
 package kpfu.terentyev.quantum.emulator;
 
+import jcuda.cuComplex;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +36,7 @@ public class QuantumAlgorithm extends QuantumGate {
         size = (int) Math.pow(2, qubitsNumber);
     }
 
-    Complex[][] generateStepMatrix(int step) throws Exception {
+    cuComplex[][] generateStepMatrix(int step) throws Exception {
         int mainGateIndexesSum = 0;
         int count=0;
         String mainGateID = mainGateIDs[step];
@@ -47,10 +49,10 @@ public class QuantumAlgorithm extends QuantumGate {
                 mainGateQubits.add(qubitNum);
             }
         }
-        Complex [][] gateMatrix = gates.get(mainGateID).getMatrix();
-        Complex [][] result = {{Complex.unit()}};
+        cuComplex [][] gateMatrix = gates.get(mainGateID).getMatrix();
+        cuComplex [][] result = {{Complex.unit()}};
         if (checkAdjustment(mainGateQubits)){
-            Complex centralMatr[][] = {{Complex.unit()}};
+            cuComplex centralMatr[][] = {{Complex.unit()}};
             //if qubits is near to each other just multiply identity gates and mainGate matrices (tensors)
             for (int currentQubit=0; currentQubit<qubitsNumber;){//loop for each qubit
                 QuantumSchemeStepQubitAttributes qubitParams = algorithmSchemeMatrix[currentQubit][step];
@@ -59,7 +61,7 @@ public class QuantumAlgorithm extends QuantumGate {
                     centralMatr = ComplexMath.tensorMultiplication(centralMatr,centralMatr.length,centralMatr.length,
                             gateMatrix, gateMatrix.length, gateMatrix.length);
                 }else if (qubitParams.gateID.equals(QuantumSchemeStepQubitAttributes.IdentityGateID)){
-                    Complex [][] gateMatrx = QuantumGate.identityGateMatrix();
+                    cuComplex [][] gateMatrx = QuantumGate.identityGateMatrix();
                     centralMatr =ComplexMath.tensorMultiplication(centralMatr,centralMatr.length,centralMatr.length,
                             gateMatrx, gateMatrx.length, gateMatrx.length);
                     currentQubit++;
@@ -76,14 +78,14 @@ public class QuantumAlgorithm extends QuantumGate {
                     controlQubitIndex= qubitIndex;
             }
 
-            ArrayList <Complex[][]> swapMatrices = new ArrayList<Complex[][]>();
+            ArrayList <cuComplex[][]> swapMatrices = new ArrayList<cuComplex[][]>();
             
             if (controlQubitIndex!=-1) {
-                Complex[][] swapGateMatrix = QuantumGate.swapGateMatrix();
-                Complex [][] identityMatrx = QuantumGate.identityGateMatrix();
+                cuComplex[][] swapGateMatrix = QuantumGate.swapGateMatrix();
+                cuComplex [][] identityMatrx = QuantumGate.identityGateMatrix();
                 int higherQubitIndex = mainGateQubits.get(0).intValue();
                 for (; controlQubitIndex>higherQubitIndex; controlQubitIndex--){
-                    Complex currentSwap[][] = {{Complex.unit()}};
+                    cuComplex currentSwap[][] = {{Complex.unit()}};
                     for (int i=0; i<qubitsNumber;){
                         if (i < qubitsNumber-1 && i+1 == controlQubitIndex){
                             currentSwap = ComplexMath.tensorMultiplication(currentSwap,
@@ -107,7 +109,7 @@ public class QuantumAlgorithm extends QuantumGate {
                         result=ComplexMath.squareMatricesMultiplication(result, swapMatrices.get(i), result.length);
                     }
 
-                    Complex[][] swapConj = ComplexMath.hermitianTransposeForMatrix(result, result.length, result.length);
+                    cuComplex[][] swapConj = ComplexMath.hermitianTransposeForMatrix(result, result.length, result.length);
 
                     result=ComplexMath.squareMatricesMultiplication(result, centralMatr, result.length);
                     result=ComplexMath.squareMatricesMultiplication(result, swapConj, result.length);
@@ -130,11 +132,11 @@ public class QuantumAlgorithm extends QuantumGate {
             int upperQubit, lowerQubit;
             int levelNumber = mainGateQubits.size()/2 + mainGateQubits.size()%2;
 //            ArrayList <Complex[][]> swapMatrices = new ArrayList<Complex[][]>();
-            Complex[][] centralMatrix = {{Complex.unit()}}; //matrix perfomed main gate when all qubits are near
-            Complex[][] swapGateMatrix = QuantumGate.swapGateMatrix();
-            Complex [][] identityMatrx = QuantumGate.identityGateMatrix();
+            cuComplex[][] centralMatrix = {{Complex.unit()}}; //matrix perfomed main gate when all qubits are near
+            cuComplex[][] swapGateMatrix = QuantumGate.swapGateMatrix();
+            cuComplex [][] identityMatrx = QuantumGate.identityGateMatrix();
 
-            Complex[][] swapMatrix = null;
+            cuComplex[][] swapMatrix = null;
 
             boolean[] currentQubitsPositions = new boolean[qubitsNumber];
             for (Number index: mainGateQubits){
@@ -176,7 +178,7 @@ public class QuantumAlgorithm extends QuantumGate {
                 //move qubits to gravity center + level
                 for (; distance>0; distance--){
                     //form swap matrix
-                    Complex currentDistanceSwap[][] = {{Complex.unit()}};
+                    cuComplex currentDistanceSwap[][] = {{Complex.unit()}};
                     for (int i=0; i<qubitsNumber; ){
                         if ((i==upperQubit && upperQubit==upperPlace-distance) ||
                                 (i==lowerQubit-1 && lowerQubit==lowerPlace+distance)){
@@ -227,7 +229,7 @@ public class QuantumAlgorithm extends QuantumGate {
                 //project to current positions
                 controlQubitIndex = currentUpperQubitIdex + controlQubitIndex;
                 for (; controlQubitIndex > currentUpperQubitIdex; controlQubitIndex--){
-                    Complex currentSwap[][] = {{Complex.unit()}};
+                    cuComplex currentSwap[][] = {{Complex.unit()}};
                     for (int i=0; i<qubitsNumber;){
                         if (i < qubitsNumber - 1 && i+1==controlQubitIndex){
                             currentSwap = ComplexMath.tensorMultiplication(currentSwap,
@@ -258,7 +260,7 @@ public class QuantumAlgorithm extends QuantumGate {
                     i++;
                 }
             }
-            Complex [][] swapConjugateMatrix = ComplexMath.hermitianTransposeForMatrix(swapMatrix,
+            cuComplex [][] swapConjugateMatrix = ComplexMath.hermitianTransposeForMatrix(swapMatrix,
                     swapMatrix.length, swapMatrix.length);
             result = ComplexMath.squareMatricesMultiplication(centralMatrix, swapMatrix,swapMatrix.length);
             result = ComplexMath.squareMatricesMultiplication(swapConjugateMatrix, result, swapMatrix.length);
@@ -286,8 +288,8 @@ public class QuantumAlgorithm extends QuantumGate {
     }
 
     @Override
-    public Complex[][] getMatrix() throws Exception {
-        Complex [][]result = generateStepMatrix(stepsNumber - 1);
+    public cuComplex[][] getMatrix() throws Exception {
+        cuComplex [][]result = generateStepMatrix(stepsNumber - 1);
         for (int i=stepsNumber-2; i>=0; i--){
             result=ComplexMath.squareMatricesMultiplication(result, generateStepMatrix(i), result.length);
         }

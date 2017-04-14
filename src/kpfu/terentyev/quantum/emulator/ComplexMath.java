@@ -1,18 +1,20 @@
 package kpfu.terentyev.quantum.emulator;
+import jcuda.cuComplex;
 
 /**
  * Created by alexandrterentyev on 25.03.15.
  */
 public class ComplexMath {
-    public static Complex[][] tensorMultiplication (Complex [][] firstMatrix, int firstMatrixHeight,
-            int firstMatrixWidth, Complex[][] secondMatrix,int secondMatrixHeight, int secondMatrixWidth){
-        Complex [][] result = new Complex[firstMatrixHeight*secondMatrixHeight][firstMatrixWidth*secondMatrixWidth];
+
+    public static cuComplex[][] tensorMultiplication (cuComplex [][] firstMatrix, int firstMatrixHeight,
+            int firstMatrixWidth, cuComplex[][] secondMatrix,int secondMatrixHeight, int secondMatrixWidth){
+        cuComplex [][] result = new cuComplex[firstMatrixHeight*secondMatrixHeight][firstMatrixWidth*secondMatrixWidth];
         for (int iFirst = 0; iFirst< firstMatrixHeight; iFirst++){
             for (int jFirst=0; jFirst < firstMatrixWidth; jFirst++){
                 for (int iSecond=0; iSecond<secondMatrixHeight; iSecond++){
                     for (int jSecond=0; jSecond<secondMatrixWidth; jSecond++){
                         result [iFirst*secondMatrixHeight+iSecond][jFirst*secondMatrixWidth+jSecond] =
-                                Complex.mult(firstMatrix[iFirst][jFirst],secondMatrix[iSecond][jSecond]);
+                                cuComplex.cuCmul(firstMatrix[iFirst][jFirst],secondMatrix[iSecond][jSecond]);
                     }
                 }
             }
@@ -20,58 +22,58 @@ public class ComplexMath {
         return result;
     }
 
-    public static Complex[][] multiplication (Complex a, Complex [][] matrix, int size){
-        Complex [][] result = new Complex[size][size];
+    public static cuComplex[][] multiplication (cuComplex a, cuComplex [][] matrix, int size){
+        cuComplex [][] result = new cuComplex[size][size];
         for (int i=0; i<size;i++) {
             for (int j=0; j<size; j++) {
-                result [i][j] = Complex.mult(a, matrix[i][j]);
+                result [i][j] = cuComplex.cuCmul(a, matrix[i][j]);
             }
         }
         return result;
     }
 
-    public static Complex[] multiplication (Complex [][] matrix, int size, Complex[] vector){
-        Complex [] result = new Complex[size];
+    public static cuComplex[] multiplication (cuComplex [][] matrix, int size, cuComplex[] vector){
+        cuComplex [] result = new cuComplex[size];
         for (int i=0; i<size;i++) {
-            Complex sum = Complex.zero();
+            cuComplex sum = Complex.zero();
             for (int j=0; j<size; j++) {
-                sum = Complex.add(sum, Complex.mult(matrix[i][j], vector[j]));
+                sum = cuComplex.cuCadd(sum, cuComplex.cuCmul(matrix[i][j], vector[j]));
             }
             result[i]=sum;
         }
         return result;
     }
 
-    public static Complex[] tensorMultiplication(Complex[] a, Complex[] b){
-        Complex [] result = new Complex[a.length*b.length];
+    public static cuComplex[] tensorMultiplication(cuComplex[] a, cuComplex[] b){
+        cuComplex [] result = new cuComplex[a.length*b.length];
         for (int i=0; i< a.length; i++){
             for (int j=0; j<b.length; j++){
-                result[i*b.length+j] = Complex.mult(a[i], b[j]);
+                result[i*b.length+j] = cuComplex.cuCmul(a[i], b[j]);
             }
         }
         return result;
     }
 
-    public static Complex[][] ketBraTensorMultiplication (Complex[] ket, Complex[] bra){
-        Complex [][] result = new Complex[ket.length][bra.length];
+    public static cuComplex[][] ketBraTensorMultiplication (cuComplex[] ket, cuComplex[] bra){
+        cuComplex [][] result = new cuComplex[ket.length][bra.length];
 
         for (int i = 0; i < ket.length; i++){
             for (int j = 0; j < bra.length; j++){
-                result [i][j] = Complex.mult(ket[i], bra[j]);
+                result [i][j] = cuComplex.cuCmul(ket[i], bra[j]);
             }
         }
 
         return result;
     }
 
-    public  static Complex[][] multiplication(Complex[][] matrixA, int heightA, int widthA,
-                                              Complex [][] matrixB, int heightB, int widthB){
-        Complex [][]result = new Complex[heightA][widthB];
+    public  static cuComplex[][] multiplication(cuComplex[][] matrixA, int heightA, int widthA,
+                                                cuComplex [][] matrixB, int heightB, int widthB){
+        cuComplex [][]result = new cuComplex[heightA][widthB];
         for (int i=0; i<heightA; i++){
             for (int j=0; j<widthB; j++){
-                Complex sum = Complex.zero();
+                cuComplex sum = Complex.zero();
                 for (int z=0; z<widthA; z++){
-                    sum = Complex.add(sum, Complex.mult(matrixA[i][z],matrixB[z][j]));
+                    sum = cuComplex.cuCadd(sum, cuComplex.cuCmul(matrixA[i][z],matrixB[z][j]));
                 }
                 result [i][j]=sum;
             }
@@ -79,41 +81,41 @@ public class ComplexMath {
         return result;
     }
 
-    public static Complex [][] zeroMatrix (int height, int width){
-        Complex [] [] result = new Complex [height][width];
+    public static cuComplex [][] zeroMatrix (int height, int width){
+        cuComplex [] [] result = new cuComplex [height][width];
         for (int i=0 ; i<height; i++){
             for (int j = 0; j<width; j++){
-                result [i][j] = Complex.unit().zero();
+                result [i][j] = Complex.zero();
             }
         }
         return result;
     }
 
-    public  static Complex[][] squareMatricesMultiplication (Complex[][] matrixA, Complex [][] matrixB, int size){
-        Complex [][]result = new Complex[size][size];
+    public  static cuComplex[][] squareMatricesMultiplication (cuComplex[][] matrixA, cuComplex [][] matrixB, int size){
+        cuComplex [][]result = new cuComplex[size][size];
         for (int i=0; i<size; i++){
             for (int j=0; j<size; j++){
-                Complex sum = Complex.zero();
+                cuComplex sum = Complex.zero();
                 for (int z=0; z<size; z++){
-                    sum = Complex.add(sum, Complex.mult(matrixA[i][z],matrixB[z][j]));
+                    sum = cuComplex.cuCadd(sum, cuComplex.cuCmul(matrixA[i][z],matrixB[z][j]));
                 }
                 result [i][j]=sum;
             }
         }
         return result;
     }
-    public static  Complex[][] hermitianTransposeForMatrix (Complex[][] matrix, int height, int width){
-        Complex [][] result = new Complex[width][height];
+    public static  cuComplex[][] hermitianTransposeForMatrix (cuComplex[][] matrix, int height, int width){
+        cuComplex [][] result = new cuComplex[width][height];
         for (int i=0; i<height; i++)
             for (int j=0; j<width; j++)
-                result[j][i] = matrix[i][j].conjugate();
+                result[j][i] = cuComplex.cuConj(matrix[i][j]);
         return result;
     }
 
-    public static Complex trace (Complex[][] matrix, int size){
-        Complex result = Complex.zero();
+    public static cuComplex trace (cuComplex[][] matrix, int size){
+        cuComplex result = Complex.zero();
         for (int i=0; i < size; i++){
-            result = Complex.add(result, matrix[i][i]);
+            result = cuComplex.cuCadd(result, matrix[i][i]);
         }
 
         return result;
