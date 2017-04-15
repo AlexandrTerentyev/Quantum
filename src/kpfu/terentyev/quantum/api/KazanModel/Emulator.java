@@ -1,5 +1,6 @@
 package kpfu.terentyev.quantum.api.KazanModel;
 
+import jcuda.cuComplex;
 import kpfu.terentyev.quantum.api.QuantumManager;
 
 /**
@@ -49,8 +50,8 @@ public class Emulator {
     /**
      * First Qubit will be written to memory0 with alpha0 and beta0 amplitudes, second to memory1 with alpha1, beta1
      * */
-    public void initLogicalQubit(QuantumMemoryAddress physicalAddress0, Complex alpha0, Complex beta0,
-                                 QuantumMemoryAddress physicalAddress1, Complex alpha1, Complex beta1){
+    public void initLogicalQubit(QuantumMemoryAddress physicalAddress0, cuComplex alpha0, cuComplex beta0,
+                                 QuantumMemoryAddress physicalAddress1, cuComplex alpha1, cuComplex beta1){
         try {
             QuantumManager.Qubit impulse0 = memory0.initQubitForAddress(physicalAddress0, alpha0, beta0);
             QuantumManager.Qubit impulse1 = memory1.initQubitForAddress(physicalAddress1, alpha1, beta1);

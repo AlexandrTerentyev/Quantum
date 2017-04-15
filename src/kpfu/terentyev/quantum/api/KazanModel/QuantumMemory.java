@@ -1,6 +1,8 @@
 package kpfu.terentyev.quantum.api.KazanModel;
 
+import jcuda.cuComplex;
 import kpfu.terentyev.quantum.api.QuantumManager;
+import kpfu.terentyev.quantum.emulator.Complex;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,7 +43,7 @@ public class QuantumMemory {
     }
 
     Qubit initQubitForAddress(QuantumMemoryAddress address,
-                                                    Complex alpha, Complex beta) throws Exception {
+                              cuComplex alpha, cuComplex beta) throws Exception {
         if (addressIsUsed(address)){
             throw new Exception("This address is already used!");
         }
@@ -56,7 +58,7 @@ public class QuantumMemory {
     }
 
     Qubit initQubitForAddress(QuantumMemoryAddress address) throws Exception {
-        Complex alpha = Complex.zero(), beta = Complex.zero();
+        cuComplex alpha = Complex.zero(), beta = Complex.zero();
         switch (address.getMemoryHalf()){
             case HALF_0:
                 alpha = Complex.unit();
