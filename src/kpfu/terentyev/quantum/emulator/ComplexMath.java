@@ -1,5 +1,8 @@
 package kpfu.terentyev.quantum.emulator;
+import jcuda.Pointer;
+import jcuda.Sizeof;
 import jcuda.cuComplex;
+import jcuda.runtime.JCuda;
 
 /**
  * Created by alexandrterentyev on 25.03.15.
@@ -19,6 +22,7 @@ public class ComplexMath {
                 }
             }
         }
+
         return result;
     }
 
@@ -78,6 +82,13 @@ public class ComplexMath {
                 result [i][j]=sum;
             }
         }
+
+
+        float [][] floatA = Complex.complexMatrToCudaFloat(matrixA, heightA, widthA);
+        float [][] floatB = Complex.complexMatrToCudaFloat(matrixB, heightB, widthB);
+
+        
+
         return result;
     }
 
