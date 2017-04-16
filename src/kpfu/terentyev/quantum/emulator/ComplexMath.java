@@ -41,10 +41,12 @@ public class ComplexMath {
         cuDoubleComplex [] result = new cuDoubleComplex[size];
         for (int i=0; i<size;i++) {
             cuDoubleComplex sum = Complex.zero();
-            for (int j=0; j<size; j++) {
-                sum = cuDoubleComplex.cuCadd(sum, cuDoubleComplex.cuCmul(matrix[i][j], vector[j]));
-            }
-            result[i]=sum;
+            double [] a = Complex.complexToCudaComplex(Complex.getRow(matrix, i), size);
+            double [] b = Complex.complexToCudaComplex(vector, size);
+
+            int storageSpacing = Sizeof.DOUBLE;
+
+            result [i] = cublasZdotc(size, Pointer.to(a), storageSpacing, Pointer.to(b), storageSpacing);
         }
         return result;
     }
@@ -76,27 +78,14 @@ public class ComplexMath {
         cuDoubleComplex [][]result = new cuDoubleComplex[heightA][widthB];
         for (int i=0; i<heightA; i++){
             for (int j=0; j<widthB; j++){
-                cuDoubleComplex sum = Complex.zero();
-
                 double [] a = Complex.complexToCudaComplex(Complex.getRow(matrixA, i), widthA);
                 double [] b = Complex.complexToCudaComplex(Complex.getColumn(matrixB, widthB, heightA, j), widthA);
 
                 int storageSpacing = Sizeof.DOUBLE;
 
                 result [i][j] = cublasZdotc(widthA, Pointer.to(a), storageSpacing, Pointer.to(b), storageSpacing);
-
-                for (int z=0; z<widthA; z++){
-                    sum = cuDoubleComplex.cuCadd(sum, cuDoubleComplex.cuCmul(matrixA[i][z],matrixB[z][j]));
-                }
-                result [i][j]=sum;
             }
         }
-
-
-        double [][] floatA = Complex.complexMatrToCudaDouble(matrixA, heightA, widthA);
-        double [][] floatB = Complex.complexMatrToCudaDouble(matrixB, heightB, widthB);
-
-
 
         return result;
     }
@@ -112,18 +101,10 @@ public class ComplexMath {
     }
 
     public  static cuDoubleComplex[][] squareMatricesMultiplication (cuDoubleComplex[][] matrixA, cuDoubleComplex [][] matrixB, int size){
-        cuDoubleComplex [][]result = new cuDoubleComplex[size][size];
-        for (int i=0; i<size; i++){
-            for (int j=0; j<size; j++){
-                cuDoubleComplex sum = Complex.zero();
-                for (int z=0; z<size; z++){
-                    sum = cuDoubleComplex.cuCadd(sum, cuDoubleComplex.cuCmul(matrixA[i][z],matrixB[z][j]));
-                }
-                result [i][j]=sum;
-            }
-        }
-        return result;
+
+        return multiplication(matrixA, size, size, matrixB, size, size);
     }
+
     public static  cuDoubleComplex[][] hermitianTransposeForMatrix (cuDoubleComplex[][] matrix, int height, int width){
         cuDoubleComplex [][] result = new cuDoubleComplex[width][height];
         for (int i=0; i<height; i++)
