@@ -1,6 +1,6 @@
 package kpfu.terentyev.quantum.emulator.Gates;
 
-import jcuda.cuComplex;
+import jcuda.cuDoubleComplex;
 import kpfu.terentyev.quantum.emulator.Complex;
 import kpfu.terentyev.quantum.emulator.QuantumGate;
 
@@ -13,10 +13,10 @@ public class PauliYGate extends QuantumGate {
         this.size=2;
     }
     @Override
-    public cuComplex[][] getMatrix() {
-        cuComplex result [][] = {
-                {Complex.zero(),cuComplex.cuCmplx(0, -1)},
-                {cuComplex.cuCmplx(0,1),Complex.zero()}
+    public cuDoubleComplex[][] getMatrix() {
+        cuDoubleComplex result [][] = {
+                {Complex.zero(),cuDoubleComplex.cuCmplx(0, -1)},
+                {cuDoubleComplex.cuCmplx(0,1),Complex.zero()}
         };
         return result;
     }

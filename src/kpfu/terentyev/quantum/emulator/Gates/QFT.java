@@ -1,6 +1,6 @@
 package kpfu.terentyev.quantum.emulator.Gates;
 
-import jcuda.cuComplex;
+import jcuda.cuDoubleComplex;
 import kpfu.terentyev.quantum.emulator.QuantumGate;
 
 /**
@@ -13,8 +13,8 @@ public class QFT extends QuantumGate {
     }
 //    TODO: QFT computing
     @Override
-    public cuComplex[][] getMatrix() throws Exception {
-        cuComplex [][] result = new cuComplex[size][size];
+    public cuDoubleComplex[][] getMatrix() throws Exception {
+        cuDoubleComplex [][] result = new cuDoubleComplex[size][size];
         for (int i=0; i<size; i++){
             for (int j = 0 ; j<size; j++){
 //                result[i][j]=

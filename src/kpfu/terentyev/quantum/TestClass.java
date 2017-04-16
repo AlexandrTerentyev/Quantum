@@ -1,6 +1,6 @@
 package kpfu.terentyev.quantum.api.KazanModel;
 
-import jcuda.cuComplex;
+import jcuda.cuDoubleComplex;
 import kpfu.terentyev.quantum.api.QuantumManager;
 import kpfu.terentyev.quantum.emulator.Complex;
 
@@ -27,8 +27,8 @@ public class TestClass {
                 MemoryHalf.HALF_0);
         QuantumMemoryAddress q2Address = new QuantumMemoryAddress(logicalQubit1Freq, logicalQubit1TimeDelay,
                 MemoryHalf.HALF_1);
-        QVM.initLogicalQubit(q1Address, cuComplex.cuCmplx(1, 0), cuComplex.cuCmplx(0,0),
-                q2Address, cuComplex.cuCmplx(0,0), cuComplex.cuCmplx(1,0));
+        QVM.initLogicalQubit(q1Address, cuDoubleComplex.cuCmplx(1, 0), cuDoubleComplex.cuCmplx(0,0),
+                q2Address, cuDoubleComplex.cuCmplx(0,0), cuDoubleComplex.cuCmplx(1,0));
 
 //        Transistor addresses
         int currentTransisotorIndex = 0;
@@ -85,10 +85,10 @@ public class TestClass {
 
             System.out.print("\n\n-----OPERATIONS-----\n\n");
 
-            cuComplex u = Complex.unit();
-            cuComplex z = Complex.zero();
+            cuDoubleComplex u = Complex.unit();
+            cuDoubleComplex z = Complex.zero();
 
-            cuComplex[][] U = {
+            cuDoubleComplex[][] U = {
                     {u, z, z, z},
                     {z, u, z, z},
                     {z, z, z, u},

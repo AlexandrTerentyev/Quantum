@@ -1,7 +1,6 @@
 package kpfu.terentyev.quantum.emulator.Gates;
 
-import jcuda.cuComplex;
-import kpfu.terentyev.quantum.emulator.Complex;
+import jcuda.cuDoubleComplex;
 import kpfu.terentyev.quantum.emulator.QuantumGate;
 
 /**
@@ -13,10 +12,10 @@ public class HadamardGate extends QuantumGate {
         this.size=2;
     }
     @Override
-    public cuComplex[][] getMatrix() {
-        cuComplex result [][] = {
-                {cuComplex.cuCmplx((float) ((float) 1/Math.sqrt(2)), 0),cuComplex.cuCmplx((float)(1/Math.sqrt(2)),0)},
-                {cuComplex.cuCmplx((float)(1/Math.sqrt(2)), 0),cuComplex.cuCmplx((float)(-1/Math.sqrt(2)),0)}
+    public cuDoubleComplex[][] getMatrix() {
+        cuDoubleComplex result [][] = {
+                {cuDoubleComplex.cuCmplx((float) ((float) 1/Math.sqrt(2)), 0),cuDoubleComplex.cuCmplx((float)(1/Math.sqrt(2)),0)},
+                {cuDoubleComplex.cuCmplx((float)(1/Math.sqrt(2)), 0),cuDoubleComplex.cuCmplx((float)(-1/Math.sqrt(2)),0)}
         };
         return result;
     }

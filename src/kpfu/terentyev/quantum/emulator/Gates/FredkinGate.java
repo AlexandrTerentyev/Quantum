@@ -1,6 +1,6 @@
 package kpfu.terentyev.quantum.emulator.Gates;
 
-import jcuda.cuComplex;
+import jcuda.cuDoubleComplex;
 import kpfu.terentyev.quantum.emulator.Complex;
 import kpfu.terentyev.quantum.emulator.QuantumGate;
 
@@ -13,8 +13,8 @@ public class FredkinGate extends QuantumGate {
         this.size=8;
     }
     @Override
-    public cuComplex[][] getMatrix() {
-        cuComplex[][] result  = {
+    public cuDoubleComplex[][] getMatrix() {
+        cuDoubleComplex[][] result  = {
                 {Complex.unit(), Complex.zero(), Complex.zero(), Complex.zero(),
                         Complex.zero(), Complex.zero(), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.unit(), Complex.zero(), Complex.zero(),

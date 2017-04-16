@@ -1,21 +1,27 @@
 package kpfu.terentyev.quantum.emulator;
 
-import jcuda.cuComplex;
+import jcuda.cuDoubleComplex;
 
 /**
  * Created by aleksandrterentev on 14.04.17.
  */
 public class Complex {
-    public static cuComplex  zero () {
-        return cuComplex.cuCmplx(0, 0);
+
+
+    public static cuDoubleComplex complex (double real, double imagine){
+        return cuDoubleComplex.cuCmplx(real, imagine);
     }
 
-    public static cuComplex unit (){
-        return cuComplex.cuCmplx(1, 0);
+    public static cuDoubleComplex zero () {
+        return cuDoubleComplex.cuCmplx(0, 0);
     }
 
-    public  static  float[] complexToCudaComplex (cuComplex[] array, int size){
-        float [] result = new float[size*2];
+    public static cuDoubleComplex unit (){
+        return cuDoubleComplex.cuCmplx(1, 0);
+    }
+
+    public  static  double[] complexToCudaComplex (cuDoubleComplex[] array, int size){
+        double [] result = new double[size*2];
 
         for (int i=0; i< size; i++){
             result [i*2] = array [i].x;
@@ -25,12 +31,28 @@ public class Complex {
         return result;
     }
 
-    public static float [][] complexMatrToCudaFloat(cuComplex[][]matr, int height, int width){
-        float [][] result = new float[height][width*2];
+    public static double [][] complexMatrToCudaDouble(cuDoubleComplex[][]matr, int height, int width){
+        double [][] result = new double[height][width*2];
         for (int i = 0; i < height; i++){
             result[i] = Complex.complexToCudaComplex(matr[i], width);
         }
 
         return result;
+    }
+
+    public static cuDoubleComplex [] getRow(cuDoubleComplex[][] matr, int row){
+        return matr [row];
+    }
+
+    public static  cuDoubleComplex [] getColumn (cuDoubleComplex[][] matr, int width, int height, int col){
+        //TODO: optimize it!
+
+        cuDoubleComplex[] res = new cuDoubleComplex[height];
+
+        for (int i = 0; i < height; i++){
+            res[i] = matr [i][col];
+        }
+
+        return res;
     }
 }

@@ -1,7 +1,7 @@
 package kpfu.terentyev.quantum.api;
 
 
-import jcuda.cuComplex;
+import jcuda.cuDoubleComplex;
 import kpfu.terentyev.quantum.emulator.*;
 
 import java.util.ArrayList;
@@ -47,8 +47,8 @@ public class QuantumManager {
         return initNewQubit (Complex.unit(), Complex.zero());
     }
 
-    public Qubit initNewQubit(cuComplex alpha, cuComplex beta) throws Exception {
-        QuantumRegister newRegister = new QuantumRegister(1, new cuComplex[]{alpha, beta});
+    public Qubit initNewQubit(cuDoubleComplex alpha, cuDoubleComplex beta) throws Exception {
+        QuantumRegister newRegister = new QuantumRegister(1, new cuDoubleComplex[]{alpha, beta});
         String registerID = Double.toString(new Date().getTime() + new Random().nextDouble());
         Qubit newQubit = new Qubit(registerID, 0);
         ArrayList<Qubit> qubits = new ArrayList<Qubit>();
@@ -72,7 +72,7 @@ public class QuantumManager {
         }
 
         //       Create new register merged registers
-        cuComplex[][] newRegisterConfiguration = {{Complex.unit()}};
+        cuDoubleComplex[][] newRegisterConfiguration = {{Complex.unit()}};
         ArrayList <Qubit> newRegisterQubits = new ArrayList<Qubit>();
         String newRegisterAddress = Double.toString(new Date().getTime());
 
@@ -101,7 +101,7 @@ public class QuantumManager {
         return q.addressInRegister;
     }
 
-    protected void performTransitionForQubits (Qubit controlQubit, cuComplex[][] transitionMatrix,
+    protected void performTransitionForQubits (Qubit controlQubit, cuDoubleComplex[][] transitionMatrix,
                                      RegisterInfo mergedRegisterInfo, Qubit ... qubits) throws Exception {
         ArrayList<Integer> qubitIndexes = new ArrayList<Integer>();
         for (Qubit q: qubits
@@ -119,7 +119,7 @@ public class QuantumManager {
         mergedRegisterInfo.register.performAlgorythm(alg);
     }
 
-    public void performTransitionForQubits (Qubit controlQubit, cuComplex[][] transitionMatrix, Qubit ... qubits) throws Exception {
+    public void performTransitionForQubits (Qubit controlQubit, cuDoubleComplex[][] transitionMatrix, Qubit ... qubits) throws Exception {
         ArrayList<Qubit> allQubits = new ArrayList<Qubit>();
         for (Qubit q: qubits){
             allQubits.add(q);

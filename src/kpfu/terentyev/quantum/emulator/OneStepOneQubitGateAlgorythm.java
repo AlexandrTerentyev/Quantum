@@ -1,6 +1,6 @@
 package kpfu.terentyev.quantum.emulator;
 
-import jcuda.cuComplex;
+import jcuda.cuDoubleComplex;
 import kpfu.terentyev.quantum.emulator.Gates.IdentityGate;
 
 /**
@@ -12,18 +12,18 @@ public class OneStepOneQubitGateAlgorythm extends QuantumGate  {
      * New gate for register that for transition qubit at position
      * */
 
-    cuComplex[][] matrix;
+    cuDoubleComplex[][] matrix;
 
     public OneStepOneQubitGateAlgorythm(int qubitsNumber, QuantumGate oneQubitGate, int qubitPosition) throws Exception {
         configureGateForOneQubitTransition(qubitsNumber, oneQubitGate.getMatrix(), qubitPosition);
     }
 
-    public OneStepOneQubitGateAlgorythm(int qubitsNumber, cuComplex[][] oneQubitGateMatrix, int qubitPosition) throws Exception {
+    public OneStepOneQubitGateAlgorythm(int qubitsNumber, cuDoubleComplex[][] oneQubitGateMatrix, int qubitPosition) throws Exception {
         configureGateForOneQubitTransition(qubitsNumber, oneQubitGateMatrix, qubitPosition);
     }
 
-    private void configureGateForOneQubitTransition(int qubitsNumber, cuComplex[][] oneQubitGateMatrix, int qubitPosition) throws Exception {
-        matrix = new cuComplex[][]{{Complex.unit()}};
+    private void configureGateForOneQubitTransition(int qubitsNumber, cuDoubleComplex[][] oneQubitGateMatrix, int qubitPosition) throws Exception {
+        matrix = new cuDoubleComplex[][]{{Complex.unit()}};
         QuantumGate identityGate = new IdentityGate();
         for (int i=0; i< qubitPosition; i++){
             matrix = ComplexMath.tensorMultiplication(matrix, matrix.length, matrix.length, identityGate.getMatrix(), 2,2);
@@ -39,7 +39,7 @@ public class OneStepOneQubitGateAlgorythm extends QuantumGate  {
     }
 
     @Override
-    public cuComplex[][] getMatrix() throws Exception {
+    public cuDoubleComplex[][] getMatrix() throws Exception {
         return matrix;
     }
 }

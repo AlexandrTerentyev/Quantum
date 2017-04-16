@@ -1,6 +1,6 @@
 package kpfu.terentyev.quantum.api;
 
-import jcuda.cuComplex;
+import jcuda.cuDoubleComplex;
 import kpfu.terentyev.quantum.emulator.Complex;
 import kpfu.terentyev.quantum.emulator.OneStepOneQubitGateAlgorythm;
 import kpfu.terentyev.quantum.emulator.Gates.PhaseGate;
@@ -71,9 +71,9 @@ public class QuantumMemoryManager extends QuantumManager {
     public void QET (double thetaInRadians, Qubit qubit) throws Exception {
         checkQubitsBeforePerformTransformation(qubit);
         RegisterInfo registerInfo = registers.get(qubit.registerAddress);
-        cuComplex[][] matrix = {
-                {cuComplex.cuCmplx((float)Math.cos(thetaInRadians/2), 0), cuComplex.cuCmplx(0, (float)Math.sin(thetaInRadians/2))},
-                {cuComplex.cuCmplx(0, (float) Math.sin(thetaInRadians/2)), cuComplex.cuCmplx((float) Math.cos(thetaInRadians/2), 0)}
+        cuDoubleComplex[][] matrix = {
+                {cuDoubleComplex.cuCmplx((float)Math.cos(thetaInRadians/2), 0), cuDoubleComplex.cuCmplx(0, (float)Math.sin(thetaInRadians/2))},
+                {cuDoubleComplex.cuCmplx(0, (float) Math.sin(thetaInRadians/2)), cuDoubleComplex.cuCmplx((float) Math.cos(thetaInRadians/2), 0)}
         };
         OneStepOneQubitGateAlgorythm oneStepOneQubitGateAlgorythm = new OneStepOneQubitGateAlgorythm(registerInfo.register.getQubitsNumber(),
                 matrix,
@@ -88,9 +88,9 @@ public class QuantumMemoryManager extends QuantumManager {
     public void cQET (double thetaInRadians, Qubit controllingQubit, Qubit controlledQubit) throws Exception {
         checkQubitsBeforePerformTransformation(controlledQubit, controllingQubit);
         RegisterInfo registerInfo = checkAndMergeRegistersIfNeedForQubits(controllingQubit, controlledQubit);
-        cuComplex[][] matrix = {
-                {cuComplex.cuCmplx((float) Math.cos(thetaInRadians/2), 0), cuComplex.cuCmplx(0, (float) Math.sin(thetaInRadians/2)), Complex.zero(), Complex.zero()},
-                {cuComplex.cuCmplx(0, (float) Math.sin(thetaInRadians/2)), cuComplex.cuCmplx((float) Math.cos(thetaInRadians/2), 0), Complex.zero(), Complex.zero()},
+        cuDoubleComplex[][] matrix = {
+                {cuDoubleComplex.cuCmplx((float) Math.cos(thetaInRadians/2), 0), cuDoubleComplex.cuCmplx(0, (float) Math.sin(thetaInRadians/2)), Complex.zero(), Complex.zero()},
+                {cuDoubleComplex.cuCmplx(0, (float) Math.sin(thetaInRadians/2)), cuDoubleComplex.cuCmplx((float) Math.cos(thetaInRadians/2), 0), Complex.zero(), Complex.zero()},
                 {Complex.zero(), Complex.zero(), Complex.unit(), Complex.zero()},
                 {Complex.zero(), Complex.zero(), Complex.zero(), Complex.unit()}
         };
