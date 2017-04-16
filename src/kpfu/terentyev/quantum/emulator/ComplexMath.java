@@ -1,8 +1,13 @@
 package kpfu.terentyev.quantum.emulator;
+import kpfu.terentyev.quantum.emulator.Complex;
+
 import jcuda.Pointer;
 import jcuda.Sizeof;
 import jcuda.cuDoubleComplex;
+import jcuda.jcublas.JCublas;
+import sun.security.jca.JCAUtil;
 
+import static jcuda.LogLevel.*;
 import static jcuda.jcublas.JCublas.cublasZdotc;
 
 /**
@@ -11,7 +16,7 @@ import static jcuda.jcublas.JCublas.cublasZdotc;
 public class ComplexMath {
 
     public static cuDoubleComplex[][] tensorMultiplication (cuDoubleComplex [][] firstMatrix, int firstMatrixHeight,
-            int firstMatrixWidth, cuDoubleComplex[][] secondMatrix,int secondMatrixHeight, int secondMatrixWidth){
+                                                            int firstMatrixWidth, cuDoubleComplex[][] secondMatrix,int secondMatrixHeight, int secondMatrixWidth){
         cuDoubleComplex [][] result = new cuDoubleComplex[firstMatrixHeight*secondMatrixHeight][firstMatrixWidth*secondMatrixWidth];
         for (int iFirst = 0; iFirst< firstMatrixHeight; iFirst++){
             for (int jFirst=0; jFirst < firstMatrixWidth; jFirst++){
@@ -40,13 +45,7 @@ public class ComplexMath {
     public static cuDoubleComplex[] multiplication (cuDoubleComplex [][] matrix, int size, cuDoubleComplex[] vector){
         cuDoubleComplex [] result = new cuDoubleComplex[size];
         for (int i=0; i<size;i++) {
-            cuDoubleComplex sum = Complex.zero();
-            double [] a = Complex.complexToCudaComplex(Complex.getRow(matrix, i), size);
-            double [] b = Complex.complexToCudaComplex(vector, size);
-
-            int storageSpacing = Sizeof.DOUBLE;
-
-            result [i] = cublasZdotc(size, Pointer.to(a), storageSpacing, Pointer.to(b), storageSpacing);
+            result [i] = vectorProduct(Complex.getRow(matrix, i), vector);
         }
         return result;
     }
@@ -73,52 +72,59 @@ public class ComplexMath {
         return result;
     }
 
-    public  static cuDoubleComplex[][] multiplication(cuDoubleComplex[][] matrixA, int heightA, int widthA,
-                                                cuDoubleComplex [][] matrixB, int heightB, int widthB){
+    public static cuDoubleComplex[][] multiplication(cuDoubleComplex[][] matrixA, int heightA, int widthA,
+                                                     cuDoubleComplex [][] matrixB, int heightB, int widthB){
+
+
+        JCublas.setLogLevel(LOG_ERROR);
         cuDoubleComplex [][]result = new cuDoubleComplex[heightA][widthB];
         for (int i=0; i<heightA; i++){
             for (int j=0; j<widthB; j++){
-                double [] a = Complex.complexToCudaComplex(Complex.getRow(matrixA, i), widthA);
-                double [] b = Complex.complexToCudaComplex(Complex.getColumn(matrixB, widthB, heightA, j), widthA);
+                cuDoubleComplex [] a = Complex.getRow(matrixA, i);
+                cuDoubleComplex [] b = Complex.getColumn(matrixB, widthB, heightA, j);
 
-                int storageSpacing = Sizeof.DOUBLE;
-
-                result [i][j] = cublasZdotc(widthA, Pointer.to(a), storageSpacing, Pointer.to(b), storageSpacing);
+                result [i][j] = vectorProduct(a, b);
             }
         }
 
         return result;
+    }
+
+    public static cuDoubleComplex vectorProduct (cuDoubleComplex[]a, cuDoubleComplex []b){
+
+        JCublas.cublasInit();
+
+        int size = Sizeof.DOUBLE;
+
+        int length = a.length;
+        int gpuArraySize =length*2;
+
+        Pointer aOnGPU = new Pointer();
+        Pointer bOnGPU = new Pointer();
+
+        JCublas.cublasAlloc(gpuArraySize, size, aOnGPU);
+        JCublas.cublasAlloc(gpuArraySize, size, bOnGPU);
+
+        int offset = 0;
+
+        JCublas.cublasSetVector(gpuArraySize, size, Pointer.to(Complex.complexToCudaComplex(a, length)),
+                1,aOnGPU, 1);
+        JCublas.cublasSetVector(gpuArraySize, size, Pointer.to(Complex.complexToCudaComplex(b, length)),
+                1,bOnGPU, 1);
+
+
+        cuDoubleComplex res = cublasZdotc(gpuArraySize, aOnGPU, 1, bOnGPU, 1);
+
+        JCublas.cublasFree(aOnGPU);
+        JCublas.cublasFree(bOnGPU);
+
+        JCublas.cublasShutdown();
+
+        return res;
     }
 
     public static cuDoubleComplex [][] zeroMatrix (int height, int width){
         cuDoubleComplex [] [] result = new cuDoubleComplex [height][width];
         for (int i=0 ; i<height; i++){
             for (int j = 0; j<width; j++){
-                result [i][j] = Complex.zero();
-            }
-        }
-        return result;
-    }
-
-    public  static cuDoubleComplex[][] squareMatricesMultiplication (cuDoubleComplex[][] matrixA, cuDoubleComplex [][] matrixB, int size){
-
-        return multiplication(matrixA, size, size, matrixB, size, size);
-    }
-
-    public static  cuDoubleComplex[][] hermitianTransposeForMatrix (cuDoubleComplex[][] matrix, int height, int width){
-        cuDoubleComplex [][] result = new cuDoubleComplex[width][height];
-        for (int i=0; i<height; i++)
-            for (int j=0; j<width; j++)
-                result[j][i] = cuDoubleComplex.cuConj(matrix[i][j]);
-        return result;
-    }
-
-    public static cuDoubleComplex trace (cuDoubleComplex[][] matrix, int size){
-        cuDoubleComplex result = Complex.zero();
-        for (int i=0; i < size; i++){
-            result = cuDoubleComplex.cuCadd(result, matrix[i][i]);
-        }
-
-        return result;
-    }
-}
+                result [i][j] =
