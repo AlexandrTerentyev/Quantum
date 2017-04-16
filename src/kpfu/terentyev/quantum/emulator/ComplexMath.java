@@ -1,13 +1,10 @@
 package kpfu.terentyev.quantum.emulator;
-import kpfu.terentyev.quantum.emulator.Complex;
-
 import jcuda.Pointer;
 import jcuda.Sizeof;
 import jcuda.cuDoubleComplex;
 import jcuda.jcublas.JCublas;
-import sun.security.jca.JCAUtil;
 
-import static jcuda.LogLevel.*;
+import static jcuda.LogLevel.LOG_ERROR;
 import static jcuda.jcublas.JCublas.cublasZdotc;
 
 /**
@@ -72,15 +69,15 @@ public class ComplexMath {
         return result;
     }
 
-    public static cuDoubleComplex[][] multiplication(cuDoubleComplex[][] matrixA, int heightA, int widthA,
-                                                     cuDoubleComplex [][] matrixB, int heightB, int widthB){
+    public  static cuDoubleComplex[][] multiplication(cuDoubleComplex[][] matrixA, int heightA, int widthA,
+                                                      cuDoubleComplex [][] matrixB, int heightB, int widthB){
 
 
         JCublas.setLogLevel(LOG_ERROR);
         cuDoubleComplex [][]result = new cuDoubleComplex[heightA][widthB];
         for (int i=0; i<heightA; i++){
             for (int j=0; j<widthB; j++){
-                cuDoubleComplex [] a = Complex.getRow(matrixA, i);
+                cuDoubleComplex [] a =  Complex.getRow(matrixA, i);
                 cuDoubleComplex [] b = Complex.getColumn(matrixB, widthB, heightA, j);
 
                 result [i][j] = vectorProduct(a, b);
@@ -127,4 +124,31 @@ public class ComplexMath {
         cuDoubleComplex [] [] result = new cuDoubleComplex [height][width];
         for (int i=0 ; i<height; i++){
             for (int j = 0; j<width; j++){
-                result [i][j] =
+                result [i][j] = Complex.zero();
+            }
+        }
+        return result;
+    }
+
+    public  static cuDoubleComplex[][] squareMatricesMultiplication (cuDoubleComplex[][] matrixA, cuDoubleComplex [][] matrixB, int size){
+
+        return multiplication(matrixA, size, size, matrixB, size, size);
+    }
+
+    public static  cuDoubleComplex[][] hermitianTransposeForMatrix (cuDoubleComplex[][] matrix, int height, int width){
+        cuDoubleComplex [][] result = new cuDoubleComplex[width][height];
+        for (int i=0; i<height; i++)
+            for (int j=0; j<width; j++)
+                result[j][i] = cuDoubleComplex.cuConj(matrix[i][j]);
+        return result;
+    }
+
+    public static cuDoubleComplex trace (cuDoubleComplex[][] matrix, int size){
+        cuDoubleComplex result = Complex.zero();
+        for (int i=0; i < size; i++){
+            result = cuDoubleComplex.cuCadd(result, matrix[i][i]);
+        }
+
+        return result;
+    }
+}
