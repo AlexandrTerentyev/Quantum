@@ -20,6 +20,27 @@ public class Complex {
         return cuDoubleComplex.cuCmplx(1, 0);
     }
 
+    public static double [][] complexToCudaComplex (cuDoubleComplex[][] a, int height, int width){
+        double [][] result = new double [height][width*2];
+        for (int i = 0; i<height; i++){
+            result [i] = complexToCudaComplex(a[i], width);
+        }
+
+        return result;
+    }
+
+    public static double [][] columnOrderedCudaComplex (cuDoubleComplex[][] a, int height, int width){
+        double [][] result = new double [width][height*2];
+        for (int i = 0; i<height; i++){
+            for (int j=0; j <width; j++ ){
+                result [j][i] = a[i][j].x;
+                result [j][i+1] = a [i][j].y;
+            }
+        }
+
+        return result;
+    }
+
     public  static  double[] complexToCudaComplex (cuDoubleComplex[] array, int size){
         double [] result = new double[size*2];
 
