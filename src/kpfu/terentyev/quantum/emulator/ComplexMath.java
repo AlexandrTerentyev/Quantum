@@ -1,4 +1,7 @@
 package kpfu.terentyev.quantum.emulator;
+import jcuda.jcublas.JCublas2;
+import jcuda.runtime.JCuda;
+import jcuda.runtime.cudaDeviceProp;
 import kpfu.terentyev.quantum.emulator.Complex;
 
 import jcuda.Pointer;
@@ -75,37 +78,69 @@ public class ComplexMath {
     public static cuDoubleComplex [][] multiplication (cuDoubleComplex [][] a, int aHeight, int aWidth,
                                                         cuDoubleComplex[][] b, int bHeight, int bWidth){
         JCublas.cublasInit();
+
+        JCublas.setExceptionsEnabled(true);
+
+        cudaDeviceProp prop = new cudaDeviceProp();
+        JCuda.cudaGetDeviceProperties(prop, 0);
+
+        int elementSize = Sizeof.DOUBLE * 2;
+
         Pointer aOnGPU = new Pointer();
         Pointer bOnGPU = new Pointer();
         Pointer cOnGPU = new Pointer();
-
-        int elementSize = Sizeof.DOUBLE;
-
-        int space = 1;
-
-        JCublas.cublasAlloc(aHeight*aWidth, elementSize, aOnGPU);
-        JCublas.cublasAlloc(bHeight*bWidth*2, elementSize, bOnGPU);
-        JCublas.cublasAlloc(aHeight*bWidth, elementSize*2, cOnGPU);
-
-        double [][] aCuda = Complex.columnOrderedCudaComplex(a, aHeight, aWidth);
-        double [][] bCuda = Complex.columnOrderedCudaComplex(b, bHeight, bWidth);
-
-        JCublas.cublasSetMatrix(aHeight, aWidth, elementSize*2,
-                Pointer.to(aCuda[0]), aHeight, aOnGPU,  aHeight);
-
-        JCublas.cublasSetMatrix(bHeight, bWidth, elementSize*2,
-                Pointer.to(bCuda[0]),  bHeight, bOnGPU,  bHeight);
 
         int cHeight = aHeight;
         int cWidth = bWidth;
 
 
-        // http://peterwittek.com/cublas-matrix-c-style.html
-        JCublas.cublasZgemm('n', 'n', aHeight, bWidth, bHeight, Complex.unit(), aOnGPU, aHeight, bOnGPU, bHeight,
-                Complex.zero(), cOnGPU, aHeight);
+        int lda = aHeight;
+        int ldb = bHeight;
+        int ldc = cHeight;
 
-        cuDoubleComplex [][] c = new cuDoubleComplex[cWidth][cHeight];
-        JCublas.cublasGetMatrix(cHeight, cWidth, cOnGPU, cWidth, c[0],space, c.length);
+
+
+        int offset = 0;
+
+        JCublas.cublasAlloc(aHeight*aWidth, elementSize, aOnGPU);
+        JCublas.cublasAlloc(bHeight*bWidth, elementSize, bOnGPU);
+        JCublas.cublasAlloc(cHeight*cWidth, elementSize, cOnGPU);
+
+//        double [][] aCuda = Complex.complexMatrToCudaDouble(a, aHeight, aWidth);
+//        double [][] bCuda = Complex.complexMatrToCudaDouble(b, bHeight, bWidth);
+
+//        JCublas.cublasSetMatrix(aHeight, aWidth, elementSize,
+//                Pointer.to(aCuda[0]), aHeight, aOnGPU,  aHeight);
+//
+//        JCublas.cublasSetMatrix(bHeight, bWidth, elementSize*2,
+//                Pointer.to(bCuda[0]),  bHeight, bOnGPU,  bHeight);
+
+
+
+        JCublas.cublasSetMatrix(aHeight, aWidth, Complex.matrixToArray(a, aHeight, aWidth), offset, lda, aOnGPU, lda);
+        JCublas.cublasSetMatrix(bHeight, bWidth, Complex.matrixToArray(b, bHeight, bWidth), offset, ldb, bOnGPU, ldb);
+
+
+        // http://peterwittek.com/cublas-matrix-c-style.html
+        JCublas.cublasZgemm('n', 'n', aHeight, bWidth, bHeight, Complex.unit(), aOnGPU, lda, bOnGPU, ldb,
+                Complex.zero(), cOnGPU, ldc);
+
+        cuDoubleComplex [] c = new cuDoubleComplex[cHeight*cWidth];
+
+        JCuda.cudaDeviceSynchronize();
+
+        double [] doubleC = new double[cHeight*cWidth*2];
+        JCublas.cublasGetMatrix(cHeight, cWidth*2, elementSize/2, cOnGPU, ldc, Pointer.to(doubleC), ldc);
+
+        cuDoubleComplex [][] res = new cuDoubleComplex[cWidth][cHeight];
+
+        for (int i = 0; i< cHeight; i++){
+            for (int j = 0; j < cWidth; j++){
+                res [i][j] = cuDoubleComplex.cuCmplx(doubleC[i * cWidth * 2 + 2 * j], doubleC[i * cWidth * 2 + 2 * j + 1]);
+            }
+        }
+
+//        JCublas.cublasGetMatrix(cHeight, cWidth, cOnGPU, ldc, c,offset, ldc);
 
 
 
@@ -115,7 +150,8 @@ public class ComplexMath {
 
         JCublas.cublasShutdown();
 
-        return c;
+
+        return res;
     }
 
 
@@ -124,27 +160,29 @@ public class ComplexMath {
 
         JCublas.cublasInit();
 
-        int size = Sizeof.DOUBLE;
+        int size = Sizeof.DOUBLE * 2;
 
         int length = a.length;
-        int gpuArraySize =length*2;
 
         Pointer aOnGPU = new Pointer();
         Pointer bOnGPU = new Pointer();
 
-        JCublas.cublasAlloc(gpuArraySize, size, aOnGPU);
-        JCublas.cublasAlloc(gpuArraySize, size, bOnGPU);
+        JCublas.cublasAlloc(length, size, aOnGPU);
+        JCublas.cublasAlloc(length, size, bOnGPU);
 
-        JCublas.cublasSetVector(length, a, 1, 1, aOnGPU, 8);
-        JCublas.cublasSetVector(length, b, 1, 1, aOnGPU, 8);
+        int offset = 0;
 
-//        JCublas.cublasSetVector(gpuArraySize, size, Pointer.to(Complex.complexToCudaComplex(a, length)),
-//                1,aOnGPU, 1);
-//        JCublas.cublasSetVector(gpuArraySize, size, Pointer.to(Complex.complexToCudaComplex(b, length)),
-//                1,bOnGPU, 1);
+        int inc = 1;
 
 
-        cuDoubleComplex res = cublasZdotc(gpuArraySize, aOnGPU, 1, bOnGPU, 1);
+        JCublas.cublasSetVector(length, a, offset, inc, aOnGPU, inc);
+        JCublas.cublasSetVector(length, b, offset, inc, bOnGPU, inc);
+
+        cuDoubleComplex res = cublasZdotc(length, aOnGPU, inc, bOnGPU, inc);
+
+//        double [] test = new double[length*2];
+//
+//        JCublas.cublasGetVector(length*2, size/2, aOnGPU, inc, Pointer.to(test), inc);
 
         JCublas.cublasFree(aOnGPU);
         JCublas.cublasFree(bOnGPU);

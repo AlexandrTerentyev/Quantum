@@ -31,10 +31,10 @@ public class Complex {
 
     public static double [][] columnOrderedCudaComplex (cuDoubleComplex[][] a, int height, int width){
         double [][] result = new double [width][height*2];
-        for (int i = 0; i<height; i++){
-            for (int j=0; j <width; j++ ){
-                result [j][i] = a[i][j].x;
-                result [j][i+1] = a [i][j].y;
+        for (int i = 0; i<width; i++){
+            for (int j=0; j <height; j++ ){
+                result [i][j] = a[j][i].x;
+                result [i][j+1] = a [j][i].y;
             }
         }
 
@@ -50,6 +50,19 @@ public class Complex {
         }
 
         return result;
+    }
+
+    public static cuDoubleComplex [] matrixToArray (cuDoubleComplex[][] a, int rows, int cols){
+        cuDoubleComplex[] res = new cuDoubleComplex[rows*cols];
+        int z = 0;
+        for (int i=0; i < rows; i++){
+            for (int j =0; j < cols; j++){
+                res[z] = a[i][j];
+                z++;
+            }
+        }
+
+        return res;
     }
 
     public static double [][] complexMatrToCudaDouble(cuDoubleComplex[][]matr, int height, int width){

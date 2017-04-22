@@ -3,6 +3,7 @@ package kpfu.terentyev.quantum.api.KazanModel;
 import jcuda.cuDoubleComplex;
 import kpfu.terentyev.quantum.api.QuantumManager;
 import kpfu.terentyev.quantum.emulator.Complex;
+import kpfu.terentyev.quantum.emulator.ComplexMath;
 
 /**
  * Created by aleksandrterentev on 17.04.16.
@@ -107,14 +108,14 @@ public class TestClass {
             manager.performTransitionForQubits(qubit4, U, qubit5);
             System.out.print("CNOT(Q4, Q5)\n");
 
-//            manager.performTransitionForQubits(qubit6, U, qubit2);
-//            System.out.print("CNOT(Q6, Q2)\n");
+            manager.performTransitionForQubits(qubit6, U, qubit2);
+            System.out.print("CNOT(Q6, Q2)\n");
 //
-//            manager.performTransitionForQubits(qubit7, U, qubit2);
-//            System.out.print("CNOT(Q7, Q2)\n");
+            manager.performTransitionForQubits(qubit7, U, qubit2);
+            System.out.print("CNOT(Q7, Q2)\n");
 //
-//            manager.performTransitionForQubits(qubit8, U, qubit3);
-//            System.out.print("CNOT(Q8, Q3)\n");
+            manager.performTransitionForQubits(qubit8, U, qubit3);
+            System.out.print("CNOT(Q8, Q3)\n");
 
             System.out.print("\n\n-----MEASURMENT-----\n\n");
            
@@ -123,9 +124,9 @@ public class TestClass {
             System.out.print("Q3:" + manager.measure(qubit3) + "\n");
             System.out.print("Q4:" + manager.measure(qubit4) + "\n");
             System.out.print("Q5:" + manager.measure(qubit5) + "\n");
-//            System.out.print("Q6:" + manager.measure(qubit6) + "\n");
-//            System.out.print("Q7:" + manager.measure(qubit7) + "\n");
-//            System.out.print("Q8:" + manager.measure(qubit8) + "\n");
+            System.out.print("Q6:" + manager.measure(qubit6) + "\n");
+            System.out.print("Q7:" + manager.measure(qubit7) + "\n");
+            System.out.print("Q8:" + manager.measure(qubit8) + "\n");
 
         } catch (Exception e) {
             System.out.print("Exception:" + e.getLocalizedMessage() + "\n");
@@ -137,18 +138,18 @@ public class TestClass {
 
 
     public static void main(String[] args) {
-        testQuantumManager();
-//        testKazanModelEmulator();
-
+//        testQuantumManager();
+        testKazanModelEmulator();
+//
 //        cuDoubleComplex aa = Complex.complex(1, 2);
 //        cuDoubleComplex bb = Complex.complex(3, 4);
 //
-//        cuDoubleComplex [] a = {aa};
-//        cuDoubleComplex [] b = {bb};
+//        cuDoubleComplex [][] a = {{aa}};
+//        cuDoubleComplex [][] b = {{bb}};
 //
-//        cuDoubleComplex  res = kpfu.terentyev.quantum.emulator.ComplexMath.vectorProduct(a, b);
+//        cuDoubleComplex [][]  res = ComplexMath.multiplication(a, 1, 1, b, 1, 1);
 //        cuDoubleComplex res2 = cuDoubleComplex.cuCmul(aa, bb);
-//        System.out.print(res);
+//        System.out.print(res[0][0]);
 //        System.out.print(res2);
     }
 }
