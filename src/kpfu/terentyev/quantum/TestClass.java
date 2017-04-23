@@ -1,9 +1,8 @@
-package kpfu.terentyev.quantum.api.KazanModel;
+package kpfu.terentyev.quantum.KazanModel;
 
 import jcuda.cuDoubleComplex;
-import kpfu.terentyev.quantum.api.QuantumManager;
-import kpfu.terentyev.quantum.emulator.Complex;
-import kpfu.terentyev.quantum.emulator.ComplexMath;
+import kpfu.terentyev.quantum.emulator.api.QuantumManager;
+import kpfu.terentyev.quantum.emulator.core.Complex;
 
 /**
  * Created by aleksandrterentev on 17.04.16.
@@ -138,8 +137,8 @@ public class TestClass {
 
 
     public static void main(String[] args) {
-//        testQuantumManager();
-        testKazanModelEmulator();
+        testQuantumManager();
+//        testKazanModelEmulator();
 //
 //        cuDoubleComplex aa = Complex.complex(1, 2);
 //        cuDoubleComplex bb = Complex.complex(3, 4);
