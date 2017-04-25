@@ -2,66 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e14be48-cc25-4b8b-9105-49a665bdafbb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcublas-0.8.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcublas-natives-0.8.0-windows-x86_64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcuda-0.8.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcuda-natives-0.8.0-windows-x86_64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcufft-0.8.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcufft-natives-0.8.0-windows-x86_64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcurand-0.8.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcurand-natives-0.8.0-windows-x86_64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcusolver-0.8.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcusolver-natives-0.8.0-windows-x86_64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcusparse-0.8.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jcusparse-natives-0.8.0-windows-x86_64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jnvgraph-0.8.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/externalLibs/jnvgraph-natives-0.8.0-windows-x86_64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCell.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/ComplexMath.zip" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/Emulator.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/Emulator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ExternalInterface.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/OneQubitPhase/ExternalInterface.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/MemoryHalf.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/MemoryHalf.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingAddress.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingAddress.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnit.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnit.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/ProcessingUnitCellAddress.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCellAddress.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemory.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryAddress.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemoryAddress.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumMemoryInfo.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemoryInfo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/KazanModel/QuantumProccessorHelper.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumProccessorHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/QuantumManager.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/api/QuantumManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/api/QuantumMemoryManager.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/LogicalMemoryManager/QuantumMemoryManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Complex.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Complex.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/ComplexMath.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/ComplexMath.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/ControlledNotGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/ControlledNotGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/ControlledUGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/ControlledUGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/FredkinGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/FredkinGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/HadamardGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/HadamardGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/IdentityGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/IdentityGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/PauliXGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PauliXGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/PauliYGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PauliYGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/PauliZGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PauliZGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/PhaseGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PhaseGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/QFT.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/QFT.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/SwapGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/SwapGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/ToffoliGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/ToffoliGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/Gates/UGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/UGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/OneStepAlgorythm.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/OneStepAlgorythm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/OneStepOneQubitGateAlgorythm.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/OneStepOneQubitGateAlgorythm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/OneStepTwoQubitGateAlgorythm.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/OneStepTwoQubitGateAlgorythm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumAlgorithm.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumAlgorithm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumGate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumRegister.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumRegister.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/QuantumSchemeStepQubitAttributes.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumSchemeStepQubitAttributes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/QuantumEmulator.jar" afterPath="$PROJECT_DIR$/build/libs/QuantumEmulator.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/QuantumEmulator.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/3.4.1/fileContent/fileContent.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/QuantumEmulator.iml" afterPath="$PROJECT_DIR$/.idea/modules/QuantumEmulator.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/TestClass.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/TestClass.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -139,76 +89,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ComplexMath.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComplexMath.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/ComplexMath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="1065">
               <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestClass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/TestClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="141" column="2" lean-forward="true" selection-start-line="141" selection-start-column="2" selection-end-line="141" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuantumManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/api/QuantumManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-              <folding>
-                <element signature="e#4123#4124#0" expanded="true" />
-                <element signature="e#4165#4166#0" expanded="true" />
-                <element signature="e#4220#4221#0" expanded="true" />
-                <element signature="e#4260#4261#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuantumMemoryManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/LogicalMemoryManager/QuantumMemoryManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="100" column="54" lean-forward="false" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Emulator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/Emulator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="78" column="50" lean-forward="false" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExternalInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/OneQubitPhase/ExternalInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -217,18 +102,103 @@
       <file leaf-file-name="ProcessingUnit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
+            <state relative-caret-position="855">
               <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+              <folding>
+                <element signature="e#436#437#0" expanded="false" />
+                <element signature="e#490#491#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProcessingUnitCell.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCell.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#255#256#0" expanded="false" />
+                <element signature="e#289#290#0" expanded="false" />
+                <element signature="e#421#422#0" expanded="false" />
+                <element signature="e#449#450#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProcessingUnitCellAddress.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCellAddress.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuantumProccessorHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumProccessorHelper.java">
+      <file leaf-file-name="QuantumMemory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+            <state relative-caret-position="705">
+              <caret line="60" column="23" lean-forward="false" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#456#457#0" expanded="false" />
+                <element signature="e#483#484#0" expanded="false" />
+                <element signature="e#527#528#0" expanded="false" />
+                <element signature="e#559#560#0" expanded="false" />
+                <element signature="e#917#918#0" expanded="false" />
+                <element signature="e#967#968#0" expanded="false" />
+                <element signature="e#2293#2294#0" expanded="false" />
+                <element signature="e#2335#2336#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuantumMemoryAddress.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemoryAddress.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+              <folding>
+                <element signature="e#262#263#0" expanded="false" />
+                <element signature="e#294#295#0" expanded="false" />
+                <element signature="e#330#331#0" expanded="false" />
+                <element signature="e#362#363#0" expanded="false" />
+                <element signature="e#402#403#0" expanded="false" />
+                <element signature="e#435#436#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.properties" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jcuda/jcublas/0.8.0/jcublas-0.8.0.jar!/META-INF/maven/org.jcuda/jcublas/pom.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jcuda/jcublas/0.8.0/jcublas-0.8.0.jar!/META-INF/maven/org.jcuda/jcublas/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="39" column="21" lean-forward="false" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -567,9 +537,10 @@
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/AbstractMemoryManager/QuantumMemoryManager.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/LogicalMemoryManager/QuantumMemoryManager.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/OneQubitPhase/ExternalInterface.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/TestClass.java" />
         <option value="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/ComplexMath.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -639,11 +610,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QuantumEmulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QuantumEmulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gradle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wrapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -664,7 +653,7 @@
       <recent name="$PROJECT_DIR$/src/kpfu/terentyev/quantum" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Quantum">
+  <component name="RunManager" selected="Maven.MavenizedQuantum">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -990,6 +979,28 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -1054,8 +1065,31 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="false" name="MavenizedQuantum" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/../KazanQVM/src" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Quantum" />
+      <item index="1" class="java.lang.String" itemvalue="Maven.MavenizedQuantum" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -1080,6 +1114,10 @@
       <workItem from="1492381764477" duration="640000" />
       <workItem from="1492709687564" duration="584000" />
       <workItem from="1492944252606" duration="5195000" />
+      <workItem from="1492961819464" duration="197000" />
+      <workItem from="1493065517288" duration="703000" />
+      <workItem from="1493067696914" duration="1174000" />
+      <workItem from="1493070743508" duration="4996000" />
     </task>
     <servers />
   </component>
@@ -1089,42 +1127,42 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20454000" />
+    <option name="totallyTimeSpent" value="27524000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="692" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36585367" sideWeight="0.52907914" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36585367" sideWeight="0.47092083" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40940768" sideWeight="0.5355412" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40940768" sideWeight="0.4644588" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27351916" sideWeight="0.47415185" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.49676898" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2956381" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784185" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3118467" sideWeight="0.5056543" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31502423" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2584814" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36585367" sideWeight="0.4676898" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784185" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1152,15 +1190,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcuda-0.7.5.jar!/jcuda/runtime/cudaMemoryType.class" />
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcuda-0.7.5.jar!/jcuda/Sizeof.class" />
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcuda-0.7.5.jar!/jcuda/BufferUtils.class" />
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcuda-0.7.5.jar!/jcuda/runtime/JCuda.class" />
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcuda-0.7.5.jar!/jcuda/cuComplex.class" />
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcuda-0.7.5.jar!/jcuda/Pointer.class" />
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcublas-0.7.5.jar!/jcuda/jcublas/cublasFillMode.class" />
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcublas-0.7.5.jar!/jcuda/jcublas/cublasStatus.class" />
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcublas-0.7.5.jar!/jcuda/jcublas/cublasDataType.class" />
     <entry file="jar://$PROJECT_DIR$/externalLibs/jcublas-0.7.5.jar!/jcuda/jcublas/JCublas2.class" />
     <entry file="jar://$PROJECT_DIR$/externalLibs/jcublas-0.7.5.jar!/jcuda/jcublas/cublasAtomicsMode.class" />
     <entry file="jar://$PROJECT_DIR$/externalLibs/jcublas-0.7.5.jar!/jcuda/jcublas/cublasOperation.class" />
@@ -1169,9 +1198,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1179,11 +1205,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1059#1060#0" expanded="false" />
-            <element signature="e#1088#1089#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1191,9 +1212,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1201,9 +1219,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1211,9 +1226,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1221,9 +1233,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1231,9 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1241,9 +1247,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1251,9 +1254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1261,9 +1261,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1271,9 +1268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1281,9 +1275,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
           <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1291,9 +1282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1311,7 +1299,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
           <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1327,7 +1314,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1351,7 +1337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1359,52 +1344,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="60" column="23" lean-forward="false" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/api/QuantumManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="555">
           <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
           <folding>
-            <element signature="e#4123#4124#0" expanded="true" />
-            <element signature="e#4165#4166#0" expanded="true" />
-            <element signature="e#4220#4221#0" expanded="true" />
-            <element signature="e#4260#4261#0" expanded="true" />
+            <element signature="e#4123#4124#0" expanded="false" />
+            <element signature="e#4165#4166#0" expanded="false" />
+            <element signature="e#4220#4221#0" expanded="false" />
+            <element signature="e#4260#4261#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/Emulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="1095">
           <caret line="78" column="50" lean-forward="false" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/LogicalMemoryManager/QuantumMemoryManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="1290">
           <caret line="100" column="54" lean-forward="false" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1412,7 +1378,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,15 +1385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="1856" column="0" lean-forward="false" selection-start-line="1856" selection-start-column="0" selection-end-line="1856" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1436,26 +1392,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcuda-0.8.0.jar!/jcuda/LibUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="53" column="27" lean-forward="true" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/externalLibs/jcublas-0.8.0.jar!/jcuda/jcublas/JCublas.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1125">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/externalLibs/jcuda-0.8.0.jar!/jcuda/LibUtils.class" />
+    <entry file="jar://$PROJECT_DIR$/externalLibs/jcublas-0.8.0.jar!/jcuda/jcublas/JCublas.class" />
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1466,24 +1407,145 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/TestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="141" column="2" lean-forward="true" selection-start-line="141" selection-start-column="2" selection-end-line="141" selection-end-column="2" />
+        <state relative-caret-position="2085">
+          <caret line="141" column="2" lean-forward="false" selection-start-line="141" selection-start-column="2" selection-end-line="141" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/MemoryHalf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+          <folding>
+            <element signature="e#436#437#0" expanded="false" />
+            <element signature="e#490#491#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#255#256#0" expanded="false" />
+            <element signature="e#289#290#0" expanded="false" />
+            <element signature="e#421#422#0" expanded="false" />
+            <element signature="e#449#450#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCellAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="60" column="23" lean-forward="false" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#456#457#0" expanded="false" />
+            <element signature="e#483#484#0" expanded="false" />
+            <element signature="e#527#528#0" expanded="false" />
+            <element signature="e#559#560#0" expanded="false" />
+            <element signature="e#917#918#0" expanded="false" />
+            <element signature="e#967#968#0" expanded="false" />
+            <element signature="e#2293#2294#0" expanded="false" />
+            <element signature="e#2335#2336#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemoryAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#262#263#0" expanded="false" />
+            <element signature="e#294#295#0" expanded="false" />
+            <element signature="e#330#331#0" expanded="false" />
+            <element signature="e#362#363#0" expanded="false" />
+            <element signature="e#402#403#0" expanded="false" />
+            <element signature="e#435#436#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jcuda/jcublas/0.8.0/jcublas-0.8.0.jar!/META-INF/maven/org.jcuda/jcublas/pom.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jcuda/jcublas/0.8.0/jcublas-0.8.0.jar!/META-INF/maven/org.jcuda/jcublas/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="39" column="21" lean-forward="false" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/ComplexMath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="1065">
           <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-3.1-bin/37qejo6a26ua35lyn7h1u9v2n/gradle-3.1/lib/gradle-core-3.1.jar!/org/gradle/api/artifacts/dsl/RepositoryHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Maven/quantum.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1519,7 +1581,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>org.jcuda:jcuda:0.8.0</last-edited>
+          <last-edited>org.jcuda:jcublas:0.8.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1548,6 +1610,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

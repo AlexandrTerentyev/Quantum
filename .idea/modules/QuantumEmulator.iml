@@ -46,6 +46,5 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="org.jcuda:jcublas:0.8.0" level="application" />
-    <orderEntry type="library" name="org.jcuda:jcuda:0.8.0" level="application" />
   </component>
 </module>
