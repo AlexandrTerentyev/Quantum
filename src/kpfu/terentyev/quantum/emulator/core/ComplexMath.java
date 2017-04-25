@@ -4,9 +4,9 @@ import jcuda.Sizeof;
 import jcuda.cuDoubleComplex;
 import jcuda.jcublas.JCublas;
 import jcuda.runtime.JCuda;
-import jcuda.runtime.cudaDeviceProp;
 
 import static jcuda.jcublas.JCublas.cublasZdotc;
+import static jcuda.jcublas.cublasStatus.CUBLAS_STATUS_NOT_INITIALIZED;
 
 /**
  * Created by alexandrterentyev on 25.03.15.
@@ -70,13 +70,31 @@ public class ComplexMath {
         return result;
     }
 
+    public static cuDoubleComplex [][] cpuMultiplication (cuDoubleComplex [][] a, int aHeight, int aWidth,
+                                                       cuDoubleComplex[][] b, int bHeight, int bWidth) {
+        cuDoubleComplex [][] res = new cuDoubleComplex[aHeight][bWidth];
+
+        for (int i = 0; i < aHeight; i++){
+            for (int j = 0; j < bWidth; j++){
+                cuDoubleComplex resIJ = Complex.complex(0,0);
+
+                for (int z = 0; z < aWidth; z ++){
+                    resIJ = cuDoubleComplex.cuCadd(resIJ, cuDoubleComplex.cuCmul(a[i][z], b[z][j]));
+                }
+
+                res[i][j] = resIJ;
+            }
+        }
+
+        return res;
+    }
+
     public static cuDoubleComplex [][] multiplication (cuDoubleComplex [][] a, int aHeight, int aWidth,
                                                         cuDoubleComplex[][] b, int bHeight, int bWidth){
 
-        cudaDeviceProp prop = new cudaDeviceProp();
-        JCuda.cudaGetDeviceProperties(prop, 0);
-
-        JCublas.cublasInit();
+        if (JCublas.cublasInit() == CUBLAS_STATUS_NOT_INITIALIZED){
+            return cpuMultiplication(a, aHeight, aWidth, b, bHeight, bWidth);
+        }
 
         JCublas.setExceptionsEnabled(true);
 
@@ -151,10 +169,21 @@ public class ComplexMath {
     }
 
 
+    public static cuDoubleComplex cpuVectorProduct (cuDoubleComplex[]a, cuDoubleComplex []b){
+        cuDoubleComplex res = Complex.zero();
+
+        for (int i =0; i < a.length; i++){
+            res = cuDoubleComplex.cuCadd(res, cuDoubleComplex.cuCmul(a[i], b[i]));
+        }
+
+        return  res;
+    }
 
     public static cuDoubleComplex vectorProduct (cuDoubleComplex[]a, cuDoubleComplex []b){
 
-        JCublas.cublasInit();
+        if (JCublas.cublasInit() == CUBLAS_STATUS_NOT_INITIALIZED){
+            return cpuVectorProduct(a, b);
+        }
 
         int size = Sizeof.DOUBLE * 2;
 
@@ -187,6 +216,8 @@ public class ComplexMath {
 
         return res;
     }
+
+
 
     public static cuDoubleComplex [][] zeroMatrix (int height, int width){
         cuDoubleComplex [] [] result = new cuDoubleComplex [height][width];

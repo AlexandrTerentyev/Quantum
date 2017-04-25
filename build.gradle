@@ -4,8 +4,8 @@ apply plugin: 'idea'
 apply plugin: 'maven'
 
 repositories {
-//    jcenter()
     mavenCentral()
+    jcenter()
 //    maven {url "https://repo1.maven.org/maven2/"}
 }
 
