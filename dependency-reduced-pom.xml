@@ -25,7 +25,7 @@
         </executions>
         <configuration>
           <archive>
-            <finalName>Quantum-${version}</finalName>
+            <finalName>QuantumEmulator</finalName>
             <manifest>
               <addClasspath>true</addClasspath>
               <mainClass>kpfu.terentyev.quantum.TestClass</mainClass>
