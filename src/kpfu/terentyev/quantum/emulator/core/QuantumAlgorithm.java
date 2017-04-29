@@ -60,7 +60,7 @@ public class QuantumAlgorithm extends QuantumGate {
                     centralMatr = ComplexMath.tensorMultiplication(centralMatr,centralMatr.length,centralMatr.length,
                             gateMatrix, gateMatrix.length, gateMatrix.length);
                 }else if (qubitParams.gateID.equals(QuantumSchemeStepQubitAttributes.IdentityGateID)){
-                    cuDoubleComplex [][] gateMatrx = QuantumGate.identityGateMatrix();
+                    cuDoubleComplex [][] gateMatrx = identityGateMatrix();
                     centralMatr =ComplexMath.tensorMultiplication(centralMatr,centralMatr.length,centralMatr.length,
                             gateMatrx, gateMatrx.length, gateMatrx.length);
                     currentQubit++;
@@ -80,8 +80,8 @@ public class QuantumAlgorithm extends QuantumGate {
             ArrayList <cuDoubleComplex[][]> swapMatrices = new ArrayList<cuDoubleComplex[][]>();
             
             if (controlQubitIndex!=-1) {
-                cuDoubleComplex[][] swapGateMatrix = QuantumGate.swapGateMatrix();
-                cuDoubleComplex [][] identityMatrx = QuantumGate.identityGateMatrix();
+                cuDoubleComplex[][] swapGateMatrix = swapGateMatrix();
+                cuDoubleComplex [][] identityMatrx = identityGateMatrix();
                 int higherQubitIndex = mainGateQubits.get(0).intValue();
                 for (; controlQubitIndex>higherQubitIndex; controlQubitIndex--){
                     cuDoubleComplex currentSwap[][] = {{Complex.unit()}};
@@ -132,8 +132,8 @@ public class QuantumAlgorithm extends QuantumGate {
             int levelNumber = mainGateQubits.size()/2 + mainGateQubits.size()%2;
 //            ArrayList <Complex[][]> swapMatrices = new ArrayList<Complex[][]>();
             cuDoubleComplex[][] centralMatrix = {{Complex.unit()}}; //matrix perfomed main gate when all qubits are near
-            cuDoubleComplex[][] swapGateMatrix = QuantumGate.swapGateMatrix();
-            cuDoubleComplex [][] identityMatrx = QuantumGate.identityGateMatrix();
+            cuDoubleComplex[][] swapGateMatrix = swapGateMatrix();
+            cuDoubleComplex [][] identityMatrx = identityGateMatrix();
 
             cuDoubleComplex[][] swapMatrix = null;
 

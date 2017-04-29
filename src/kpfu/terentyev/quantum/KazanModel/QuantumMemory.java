@@ -7,8 +7,6 @@ import kpfu.terentyev.quantum.emulator.core.Complex;
 import java.util.HashMap;
 import java.util.Map;
 
-import static kpfu.terentyev.quantum.emulator.api.QuantumManager.*;
-
 /**
  * Created by aleksandrterentev on 29.03.16.
  */
@@ -30,7 +28,7 @@ public class QuantumMemory {
 
     QuantumProccessorHelper helper;
 
-    private Map<QuantumMemoryAddress, Qubit> qubits = new HashMap<QuantumMemoryAddress, QuantumManager.Qubit>();
+    private Map<QuantumMemoryAddress, QuantumManager.Qubit> qubits = new HashMap<QuantumMemoryAddress, QuantumManager.Qubit>();
 
     private boolean addressIsUsed (QuantumMemoryAddress address){
         return qubits.containsKey(address);
@@ -42,8 +40,8 @@ public class QuantumMemory {
                 || address.getTimeDelay() > info.getTimeInterval();
     }
 
-    Qubit initQubitForAddress(QuantumMemoryAddress address,
-                              cuDoubleComplex alpha, cuDoubleComplex beta) throws Exception {
+    QuantumManager.Qubit initQubitForAddress(QuantumMemoryAddress address,
+                                             cuDoubleComplex alpha, cuDoubleComplex beta) throws Exception {
         if (addressIsUsed(address)){
             throw new Exception("This address is already used!");
         }
@@ -52,12 +50,12 @@ public class QuantumMemory {
             throw new Exception("Address is out of available range");
         }
 
-        Qubit qubit = helper.initNewQubit(alpha, beta);
+        QuantumManager.Qubit qubit = helper.initNewQubit(alpha, beta);
         qubits.put(address, qubit);
         return qubit;
     }
 
-    Qubit initQubitForAddress(QuantumMemoryAddress address) throws Exception {
+    QuantumManager.Qubit initQubitForAddress(QuantumMemoryAddress address) throws Exception {
         cuDoubleComplex alpha = Complex.zero(), beta = Complex.zero();
         switch (address.getMemoryHalf()){
             case HALF_0:
@@ -71,12 +69,12 @@ public class QuantumMemory {
     }
 
 
-    void saveQubit (QuantumMemoryAddress address, Qubit qubit){
+    void saveQubit (QuantumMemoryAddress address, QuantumManager.Qubit qubit){
         qubits.put(address, qubit);
     }
 
-    Qubit popQubit(QuantumMemoryAddress address){
-        Qubit qubit = qubits.get(address);
+    QuantumManager.Qubit popQubit(QuantumMemoryAddress address){
+        QuantumManager.Qubit qubit = qubits.get(address);
         qubits.remove(address);
         return qubit;
     }

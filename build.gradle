@@ -17,7 +17,7 @@ dependencies {
 }
 
 jar {
-    manifest.attributes("Main-Class": "kpfu.terentyev.quantum.TestClass")
+    manifest.attributes("Main-Class": "TestClass")
 }
 
 sourceSets {

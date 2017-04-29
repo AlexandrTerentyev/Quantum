@@ -19,17 +19,23 @@
         </dependency>
     </dependencies>
     <build>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/</directory>
-            </resource>
-        </resources>
+        <sourceDirectory>src/</sourceDirectory>
         <plugins>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--&lt;!&ndash;<version>${org.apache.maven.plugins.maven-compiler-plugin.version}</version>&ndash;&gt;-->
+                <!--<configuration>-->
+                    <!--<source>${project.build.java.version}</source>-->
+                    <!--<target>${project.build.java.version}</target>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <archive>
                         <manifest>
+                            <addClasspath>true</addClasspath>
                             <mainClass>kpfu.terentyev.quantum.TestClass</mainClass>
                         </manifest>
                     </archive>
@@ -64,7 +70,7 @@
                         <!--<manifest>-->
                             <!--&lt;!&ndash;<classpathPrefix>lib/</classpathPrefix>&ndash;&gt;-->
                             <!--<addClasspath>true</addClasspath>-->
-                            <!--<mainClass>kpfu.terentyev.quantum.TestClass</mainClass>-->
+                            <!--<mainClass>TestClass</mainClass>-->
                         <!--</manifest>-->
                     <!--</archive>-->
                 <!--</configuration>-->
@@ -78,7 +84,7 @@
                         <!--<manifest>-->
                             <!--&lt;!&ndash;<classpathPrefix>lib/</classpathPrefix>&ndash;&gt;-->
                             <!--<addClasspath>true</addClasspath>-->
-                            <!--<mainClass>kpfu.terentyev.quantum.TestClass</mainClass>-->
+                            <!--<mainClass>TestClass</mainClass>-->
                         <!--</manifest>-->
                     <!--</archive>-->
                 <!--</configuration>-->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>kpfu.Quantum</groupId>
+  <groupId>jpfu.terentyev.quantum.kpfu.Quantum</groupId>
   <artifactId>Quantum</artifactId>
   <name>QuantumEmulator</name>
   <version>1.0</version>
@@ -13,6 +13,28 @@
       </resource>
     </resources>
     <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>kpfu.terentyev.quantum.TestClass</mainClass>
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+      </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
         <executions>
@@ -26,6 +48,17 @@
         <configuration>
           <archive>
             <finalName>QuantumEmulator</finalName>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>kpfu.terentyev.quantum.TestClass</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
             <manifest>
               <addClasspath>true</addClasspath>
               <mainClass>kpfu.terentyev.quantum.TestClass</mainClass>

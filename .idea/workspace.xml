@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e14be48-cc25-4b8b-9105-49a665bdafbb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jars/Quantum/Quantum.jar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/3.4.1/fileContent/fileContent.lock" />
@@ -11,8 +10,46 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/Emulator.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/Emulator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/LogicalMemoryManager/QuantumMemoryManager.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/LogicalMemoryManager/QuantumMemoryManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/MemoryHalf.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/MemoryHalf.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/OneQubitPhase/ExternalInterface.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/OneQubitPhase/ExternalInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingAddress.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingAddress.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnit.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCell.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCellAddress.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCellAddress.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemory.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemoryAddress.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemoryAddress.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemoryInfo.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumMemoryInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumProccessorHelper.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/QuantumProccessorHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/TestClass.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/TestClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/api/QuantumManager.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/api/QuantumManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Complex.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Complex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/ComplexMath.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/ComplexMath.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/ControlledNotGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/ControlledNotGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/ControlledUGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/ControlledUGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/FredkinGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/FredkinGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/HadamardGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/HadamardGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/IdentityGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/IdentityGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PauliXGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PauliXGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PauliYGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PauliYGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PauliZGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PauliZGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PhaseGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/PhaseGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/QFT.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/QFT.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/SwapGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/SwapGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/ToffoliGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/ToffoliGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/UGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/Gates/UGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/OneStepAlgorythm.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/OneStepAlgorythm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/OneStepOneQubitGateAlgorythm.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/OneStepOneQubitGateAlgorythm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/OneStepTwoQubitGateAlgorythm.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/OneStepTwoQubitGateAlgorythm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumAlgorithm.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumAlgorithm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumGate.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumGate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumRegister.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumSchemeStepQubitAttributes.java" afterPath="$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/QuantumSchemeStepQubitAttributes.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -93,7 +130,7 @@
       <file leaf-file-name="ComplexMath.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/ComplexMath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
+            <state relative-caret-position="1380">
               <caret line="92" column="16" lean-forward="false" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -132,7 +169,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProcessingUnitCellAddress.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProcessingUnitCellAddress.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/KazanModel/ProcessingUnitCellAddress.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -142,13 +179,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="32" column="59" lean-forward="false" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+            <state relative-caret-position="120">
+              <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
               <folding>
-                <marker date="1493327460000" expanded="false" signature="2971:3725" ph="..." />
+                <marker date="1493477711000" expanded="true" signature="3459:4190" ph="..." />
               </folding>
             </state>
           </provider>
@@ -604,32 +641,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuantumEmulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuantumEmulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quantum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KazanModel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -1144,6 +1159,8 @@
       <workItem from="1493154933646" duration="1147000" />
       <workItem from="1493323169027" duration="22000" />
       <workItem from="1493323296051" duration="4034000" />
+      <workItem from="1493474524793" duration="1411000" />
+      <workItem from="1493476890031" duration="585000" />
     </task>
     <servers />
   </component>
@@ -1153,11 +1170,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37656000" />
+    <option name="totallyTimeSpent" value="39652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="692" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1170,11 +1187,12 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40940768" sideWeight="0.45799676" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3118467" sideWeight="0.49596122" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3118467" sideWeight="0.49596122" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3457189" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35702747" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2584814" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1188,7 +1206,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32578397" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1518,19 +1535,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="32" column="59" lean-forward="false" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
-          <folding>
-            <marker date="1493327460000" expanded="false" signature="2971:3725" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kpfu/terentyev/quantum/emulator/core/ComplexMath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
+        <state relative-caret-position="1380">
           <caret line="92" column="16" lean-forward="false" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1567,6 +1574,16 @@
         <state relative-caret-position="75">
           <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <marker date="1493477711000" expanded="true" signature="3459:4190" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
