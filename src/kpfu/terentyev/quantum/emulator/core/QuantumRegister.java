@@ -104,6 +104,16 @@ public class QuantumRegister {
     }
 
 
+    public void performOneQubitTransitionForAllQubits(cuDoubleComplex[][]matrix){
+        cuDoubleComplex [][] resMatrix = {{Complex.unit()}};
+
+        for (int i = 0; i < qubitsNumber; i++){
+            resMatrix = ComplexMath.tensorMultiplication(resMatrix, resMatrix.length, resMatrix.length,
+                    matrix, matrix.length, matrix.length);
+        }
+
+        performTransformationWithMatrix(resMatrix);
+    }
 
 /// Измерение
     public int measureQubit (int qubit) throws Exception {
