@@ -21,15 +21,6 @@
     <build>
         <sourceDirectory>src/</sourceDirectory>
         <plugins>
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-compiler-plugin</artifactId>-->
-                <!--&lt;!&ndash;<version>${org.apache.maven.plugins.maven-compiler-plugin.version}</version>&ndash;&gt;-->
-                <!--<configuration>-->
-                    <!--<source>${project.build.java.version}</source>-->
-                    <!--<target>${project.build.java.version}</target>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
@@ -53,42 +44,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-shade-plugin</artifactId>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<phase>package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>shade</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--<archive>-->
-                        <!--<finalName>QuantumEmulator</finalName>-->
-                        <!--<manifest>-->
-                            <!--&lt;!&ndash;<classpathPrefix>lib/</classpathPrefix>&ndash;&gt;-->
-                            <!--<addClasspath>true</addClasspath>-->
-                            <!--<mainClass>TestClass</mainClass>-->
-                        <!--</manifest>-->
-                    <!--</archive>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-jar-plugin</artifactId>-->
-                <!--<configuration>-->
-                    <!--<archive>-->
-                        <!--&lt;!&ndash;<finalName>Quantum-${version}</finalName>&ndash;&gt;-->
-                        <!--<manifest>-->
-                            <!--&lt;!&ndash;<classpathPrefix>lib/</classpathPrefix>&ndash;&gt;-->
-                            <!--<addClasspath>true</addClasspath>-->
-                            <!--<mainClass>TestClass</mainClass>-->
-                        <!--</manifest>-->
-                    <!--</archive>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
         </plugins>
     </build>
 </project>
