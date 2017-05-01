@@ -237,8 +237,9 @@ public class ComplexMath {
     public static  cuDoubleComplex[][] hermitianTransposeForMatrix (cuDoubleComplex[][] matrix, int height, int width){
         cuDoubleComplex [][] result = new cuDoubleComplex[width][height];
         for (int i=0; i<height; i++)
-            for (int j=0; j<width; j++)
+            for (int j=0; j<width; j++) {
                 result[j][i] = cuDoubleComplex.cuConj(matrix[i][j]);
+            }
         return result;
     }
 
