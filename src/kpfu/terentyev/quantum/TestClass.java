@@ -3,6 +3,7 @@ package kpfu.terentyev.quantum;
 import jcuda.cuDoubleComplex;
 import kpfu.terentyev.quantum.KazanModel.*;
 import kpfu.terentyev.quantum.emulator.api.QuantumManager;
+import kpfu.terentyev.quantum.emulator.api.QuantumManager.Qubit;
 import kpfu.terentyev.quantum.emulator.core.Complex;
 
 /**
@@ -137,9 +138,9 @@ public class TestClass {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 //        testQuantumManager();
-        testKazanModelEmulator();
+//        testKazanModelEmulator();
 //
 //        cuDoubleComplex aa = Complex.complex(1, 2);
 //        cuDoubleComplex bb = Complex.complex(3, 4);
@@ -151,5 +152,27 @@ public class TestClass {
 //        cuDoubleComplex res2 = cuDoubleComplex.cuCmul(aa, bb);
 //        System.out.print(res[0][0]);
 //        System.out.print(res2);
+
+        QuantumManager manager = new QuantumManager();
+//        Qubit q = manager.initNewQubit(cuDoubleComplex.cuCmplx(3.0/5.0, 0.0), cuDoubleComplex.cuCmplx(4.0/5.0, 0.0));
+        Qubit q = manager.initNewQubit(Complex.unit(), Complex.zero());
+
+        double phase = Math.PI/3;
+        cuDoubleComplex [][] phaseMatr = new cuDoubleComplex[][]{
+                {Complex.complex(Math.cos(phase/2), Math.sin(-phase/2)), Complex.zero()},
+                {Complex.zero(),  Complex.complex(Math.cos(phase/2), Math.sin(phase/2))}
+        };
+
+        double theta = Math.PI/3;
+
+        cuDoubleComplex [][] qetMaatr = new cuDoubleComplex[][]{
+                {Complex.complex(Math.cos(theta/2), 0), Complex.complex(0, -Math.sin(theta/2))},
+                {Complex.complex(0, -Math.sin(theta/2)), Complex.complex(Math.cos(theta/2), 0)}
+        };
+
+        manager.performTransitionForQubits(null, qetMaatr, q);
+
+        int res =  manager.measure(q);
+        System.out.print(res);
     }
 }

@@ -10,8 +10,8 @@ repositories {
 }
 
 dependencies {
-        compile (group: 'org.jcuda', name: 'jcuda', version: '0.8.0')
-    compile (group: 'org.jcuda', name: 'jcublas', version: '0.8.0')
+//        compile (group: 'org.jcuda', name: 'jcuda', version: '0.8.0')
+//    compile (group: 'org.jcuda', name: 'jcublas', version: '0.8.0')
 //    compile (group: 'org.jcuda', name: 'jcuda-natives', version: '0.8.0')
 //    compile (group: 'org.jcuda', name: 'jcublas-natives', version: '0.8.0')
 }

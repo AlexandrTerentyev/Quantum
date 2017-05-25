@@ -76,7 +76,7 @@ public class ComplexMath {
 
         for (int i = 0; i < aHeight; i++){
             for (int j = 0; j < bWidth; j++){
-                cuDoubleComplex resIJ = Complex.complex(0,0);
+                cuDoubleComplex resIJ = Complex.zero();
 
                 for (int z = 0; z < aWidth; z ++){
                     resIJ = cuDoubleComplex.cuCadd(resIJ, cuDoubleComplex.cuCmul(a[i][z], b[z][j]));
