@@ -166,7 +166,7 @@ public class QuantumRegister {
                 densityMatrix, size
                 );
 
-        densityMatrix = ComplexMath.multiplication(cuDoubleComplex.cuConj(ComplexMath.trace(PmTranspose_Pm_ro, size)),
+        densityMatrix = ComplexMath.multiplication(cuDoubleComplex.cuCmplx(1.0 / ComplexMath.trace(PmTranspose_Pm_ro, size).x,0),
                 Pm_ro_PmTranspose, size
                 );
 
