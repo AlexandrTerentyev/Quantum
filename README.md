@@ -58,4 +58,4 @@ called Emulator in this repo.
 ```
 ./mvn clean package
 ```
-Требуемый файл - *lib/Quantum-1.0.jar*
+Требуемый файл - *target/Quantum-1.0.jar*
