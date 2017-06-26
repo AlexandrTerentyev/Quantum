@@ -2,3 +2,5 @@
 .gradle/
 /target
 .idea
+build/libs
+build

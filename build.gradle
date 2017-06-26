@@ -1,29 +1,75 @@
+group 'QuantumEmulator'
+version '1.0'
 
 apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'maven'
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+
+sourceSets {
+    main.java.srcDirs += 'kpfu.terentyev.quantum'
+}
+
+jar{
+    manifest {
+        attributes 'Main-Class': 'kpfu.terentyev.quantum.TestClass'
+    }
+}
+
+task jarForMac(type: Jar){
+    System.setProperty('jcuda.os', 'apple')
+    System.setProperty('jcuda.arch', 'x86_64')
+    baseName = project.name + '-Mac'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+task jarForWindows(type: Jar){
+    System.setProperty('jcuda.os', 'window')
+    System.setProperty('jcuda.arch', 'x86_64')
+    baseName = project.name + '-Win'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+task jarForLinuxX86_64(type: Jar){
+    System.setProperty('jcuda.os', 'linux')
+    System.setProperty('jcuda.arch', 'x86_64')
+    baseName = project.name + '-LinuxX86_64'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+
+def osString(){
+    return  System.getProperty('jcuda.os')
+}
+
+def archString(){
+    return  System.getProperty('jcuda.arch')
+}
 
 repositories {
     mavenCentral()
-    jcenter()
-//    maven {url "https://repo1.maven.org/maven2/"}
 }
+
+
 
 dependencies {
-//        compile (group: 'org.jcuda', name: 'jcuda', version: '0.8.0')
-//    compile (group: 'org.jcuda', name: 'jcublas', version: '0.8.0')
-//    compile (group: 'org.jcuda', name: 'jcuda-natives', version: '0.8.0')
-//    compile (group: 'org.jcuda', name: 'jcublas-natives', version: '0.8.0')
-}
+    def classifier = osString()+'-'+archString()
 
-jar {
-    manifest.attributes("Main-Class": "TestClass")
-}
+    compile group: 'org.jcuda', name: 'jcuda-natives', classifier: classifier, version: '0.8.0'
+    compile group: 'org.jcuda', name: 'jcublas-natives', classifier: classifier, version: '0.8.0'
 
-sourceSets {
-    main {
-        java {
-            srcDirs = ["src"]
-        }
+    compile (group: 'org.jcuda', name: 'jcuda', version: '0.8.0',){
+        transitive=false
+    }
+    compile (group: 'org.jcuda', name: 'jcublas', version: '0.8.0'){
+        transitive=false
     }
 }
