@@ -24,7 +24,7 @@ public class QuantumManager {
         // Можно было сделать его частным случаем регистра, но пока удобнее хранить идентификаторы регистров и их номер в регистре
         String registerAddress;
         int addressInRegister;
-        Qubit (String registerAddress, int addressInRegister){
+        public Qubit (String registerAddress, int addressInRegister){
             this.registerAddress = registerAddress;
             this.addressInRegister = addressInRegister;
         }
