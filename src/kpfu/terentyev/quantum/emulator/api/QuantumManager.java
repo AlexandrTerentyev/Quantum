@@ -34,7 +34,7 @@ public class QuantumManager {
         public QuantumRegister register;
         public ArrayList <Qubit> qubits;
 
-        RegisterInfo(ArrayList<Qubit> qubits, QuantumRegister register) {
+        public RegisterInfo(ArrayList<Qubit> qubits, QuantumRegister register) {
             this.qubits = qubits;
             this.register = register;
         }
