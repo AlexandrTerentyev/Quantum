@@ -21,14 +21,14 @@ public class QuantumMemory {
         this.info = info;
     }
 
-    QuantumMemory (QuantumMemoryInfo info, QuantumProccessorHelper helper) {
+    public QuantumMemory(QuantumMemoryInfo info, QuantumProccessorHelper helper) {
         this.info = info;
         this.helper = helper;
     }
 
     QuantumProccessorHelper helper;
 
-    private Map<QuantumMemoryAddress, QuantumManager.Qubit> qubits = new HashMap<QuantumMemoryAddress, QuantumManager.Qubit>();
+    protected Map<QuantumMemoryAddress, QuantumManager.Qubit> qubits = new HashMap<QuantumMemoryAddress, QuantumManager.Qubit>();
 
     private boolean addressIsUsed (QuantumMemoryAddress address){
         return qubits.containsKey(address);

@@ -13,5 +13,7 @@
     <orderEntry type="library" name="Maven: org.jcuda:jcuda-natives:apple-x86_64:0.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.jcuda:jcublas:0.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.jcuda:jcublas-natives:apple-x86_64:0.8.0" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.11" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
   </component>
 </module>
