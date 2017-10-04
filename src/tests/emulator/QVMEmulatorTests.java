@@ -15,18 +15,23 @@ public class QVMEmulatorTests {
     Emulator QVM;
 
     @Before
-    void init() {
+    public void init() {
         double MAX_MEMORY_FREQUENCY = 200, MIN_MEMORY_FREQUENCY = 50, MEMORY_TIME_CYCLE = 50;
         QVM = new Emulator(MAX_MEMORY_FREQUENCY, MIN_MEMORY_FREQUENCY, MEMORY_TIME_CYCLE, 1);
     }
 
     @After
-    void tearDown(){
+    public void tearDown(){
         QVM = null;
     }
 
     @Test
-    void testQET(){
+    public void testQET(){
+        doubleQET(Math.PI / 4, - Math.PI/4, 0, 1);
+        doubleQET(Math.PI / 4,  3* Math.PI/4, 1, 0);
+    }
+
+    public void doubleQET (double arg1, double arg2, int res1, int res2){
         double logicalQubit1Freq = 60, logicalQubit1TimeDelay = 1;
 
         QuantumMemoryAddress q1Address = new QuantumMemoryAddress(logicalQubit1Freq, logicalQubit1TimeDelay,
@@ -47,16 +52,22 @@ public class QVMEmulatorTests {
 //        Transitions
         QVM.load(q1Address, transistor0_0);
         QVM.load(q2Address, transistor0_1);
-        QVM.QET(currentTransisotorIndex, Math.PI / 4.0);
-        QVM.QET(currentTransisotorIndex, - Math.PI / 4.0);
+        QVM.QET(currentTransisotorIndex, arg1);
         QVM.save(transistor0_0, q1Address);
         QVM.save(transistor0_1, q2Address);
+
+        QVM.load(q1Address, transistor0_0);
+        QVM.load(q2Address, transistor0_1);
+        QVM.QET(currentTransisotorIndex, arg2);
+        QVM.save(transistor0_0, q1Address);
+        QVM.save(transistor0_1, q2Address);
+
 
         int q1 = QVM.measure(q1Address);
         int q2 = QVM.measure(q2Address);
 
-        assertTrue(q1 ==0);
-        assertTrue(q2 == 1);
+        assertTrue(q1 ==res1);
+        assertTrue(q2 == res2);
     }
 
 

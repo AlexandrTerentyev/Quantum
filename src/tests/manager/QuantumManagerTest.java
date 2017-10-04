@@ -17,10 +17,10 @@ public class QuantumManagerTest {
     private TestableQuantumManager manager;
 
     @Before public void init() {manager = new TestableQuantumManager();}
-    @After void tearDown() {manager = null;}
+    @After public void  tearDown() {manager = null;}
 
     @Test
-    void createQubit(){
+    public void createQubit(){
         QuantumManager.Qubit q = null;
         try {
             q = manager.initNewQubit(Complex.complex(1.0, 0.0), Complex.complex(0.0, 0.0));
